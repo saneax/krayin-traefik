@@ -1,0 +1,109 @@
+version: "3.8"
+
+services:
+  traefik:
+    image: "traefik:latest"
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      - "--api.insecure=false"
+      - "--api.dashboard=true"
+      - "--log.level=INFO"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.le.acme.httpchallenge=true"
+      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.le.acme.email=${LETSENCRYPT_EMAIL}"
+      - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./letsencrypt:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - web
+
+  krayin:
+    image: webkul/krayin:2.0.1
+    container_name: krayin
+    restart: unless-stopped
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_URL: "https://${DOMAIN}"
+      DB_CONNECTION: mysql
+      DB_HOST: krayin-mysql
+      DB_PORT: 3306
+      DB_DATABASE: ${MYSQL_DATABASE}
+      DB_USERNAME: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./app:/var/www/html
+      - ./uploads:/var/www/html/public/uploads
+    depends_on:
+      - krayin-mysql
+    labels:
+      - "traefik.enable=true"
+      # HTTP -> redirect to https
+      - "traefik.http.routers.krayin-http.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.krayin-http.entrypoints=web"
+      - "traefik.http.routers.krayin-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      # HTTPS router
+      - "traefik.http.routers.krayin.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.krayin.entrypoints=websecure"
+      - "traefik.http.routers.krayin.tls=true"
+      - "traefik.http.routers.krayin.tls.certresolver=le"
+      # if krayin listens on a non-standard port inside container change to the appropriate port (default 80)
+      - "traefik.http.services.krayin.loadbalancer.server.port=80"
+    networks:
+      - web
+      - internal
+
+  krayin-mysql:
+    image: mysql:8.0
+    container_name: krayin-mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    networks:
+      - internal
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: krayin-phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: krayin-mysql
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.${DOMAIN}`)"
+      - "traefik.http.routers.phpmyadmin.entrypoints=websecure"
+      - "traefik.http.routers.phpmyadmin.tls=true"
+      - "traefik.http.routers.phpmyadmin.tls.certresolver=le"
+      - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
+    networks:
+      - internal
+      - web
+
+networks:
+  web:
+    driver: bridge
+  internal:
+    driver: bridge
+
+volumes:
+  # using host-mounted directories for backups and visibility
+
