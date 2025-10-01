@@ -47,17 +47,14 @@ services:
       - krayin-mysql
     labels:
       - "traefik.enable=true"
-      # HTTP -> redirect to https
       - "traefik.http.routers.krayin-http.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.krayin-http.entrypoints=web"
       - "traefik.http.routers.krayin-http.middlewares=redirect-to-https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      # HTTPS router
       - "traefik.http.routers.krayin.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.krayin.entrypoints=websecure"
       - "traefik.http.routers.krayin.tls=true"
       - "traefik.http.routers.krayin.tls.certresolver=le"
-      # if krayin listens on a non-standard port inside container change to the appropriate port (default 80)
       - "traefik.http.services.krayin.loadbalancer.server.port=80"
     networks:
       - web
@@ -104,6 +101,5 @@ networks:
   internal:
     driver: bridge
 
-volumes:
-  # using host-mounted directories for backups and visibility
-
+# either remove this block completely or keep it as an empty mapping
+volumes: {}
