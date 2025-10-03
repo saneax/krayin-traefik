@@ -59,6 +59,7 @@ services:
     volumes:
       - ./app:/var/www/html:cached
       - krayin_storage:/var/www/html/laravel-crm/storage
+      - krayin_bootstrap_cache:/var/www/html/laravel-crm/bootstrap/cache
       - ./apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf:ro
     networks:
       - krayin-traefik_internal
@@ -93,6 +94,7 @@ services:
 volumes:
   db_data: {}
   krayin_storage: {}
+  krayin_bootstrap_cache: {}
 
 networks:
   krayin-traefik_internal:
