@@ -57,9 +57,8 @@ services:
       # tell Traefik what port the krayin container serves on
       - "traefik.http.services.krayin.loadbalancer.server.port=80"
     volumes:
-      - ./app/laravel-crm:/var/www/html:cached
+      - ./app:/var/www/html:cached
       - ./apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf:ro
-      - ./app/laravel-crm/.env:/var/www/html/.env:ro
     networks:
       - krayin-traefik_internal
       - krayin-traefik_web
@@ -90,17 +89,9 @@ services:
     networks:
       - krayin-traefik_internal
 
-networks:
-  krayin-traefik_internal:
-    name: krayin-traefik_internal
-  krayin-traefik_web:
-    name: krayin-traefik_web
-
 volumes:
   db_data: {}
 
 networks:
   krayin-traefik_internal:
-    driver: bridge
   krayin-traefik_web:
-    driver: bridge

@@ -44,13 +44,13 @@ mkdir -p app
 echo " -> app/ exists at $ROOT/app"
 
 # 4) Backup existing app/.env
-if [ -f app/.env ]; then
-  echo "Backing up app/.env -> app/.env.backup.$(date +%s)"
-  sudo cp -av app/.env app/.env.backup.$(date +%s)
-fi
-
-# 5) Write app/.env (use sudo so it works even if app is root-owned)
-sudo tee app/.env > /dev/null <<'EOF'
+if [ ! -f app/.env ]; then
+  if [ -f app/.env.example ]; then
+    sudo cp app/.env.example app/.env
+    echo " -> app/.env created from app/.env.example"
+  else
+    # Use sudo tee to create the file even if app/ is owned by another user (e.g., root)
+    sudo tee app/.env > /dev/null <<'EOF'
 APP_URL=https://crm.agenticone.in
 DB_CONNECTION=mysql
 DB_HOST=krayin-mysql
@@ -59,13 +59,15 @@ DB_DATABASE=krayin_db
 DB_USERNAME=krayin_user
 DB_PASSWORD=TwoVision!23
 EOF
-echo " -> app/.env written"
+    echo " -> app/.env created with default values."
+  fi
+else
+  echo "app/.env already present"
+fi
 
-# 6) Fix ownership: container uses uid 1000. Also let your user edit files:
-#    We set owner to 1000:1000 (container user) and give group write so you can add your user to group if needed.
-sudo chown -R 1000:1000 app || true
-sudo chmod -R u+rwX,g+rwX,o-rwx app || true
-echo " -> changed app/ ownership to 1000:1000 and tightened perms"
+# 5) Fix permissions using scripts (Docker-based, portable)
+./scripts/fix-perms.sh
+./scripts/fix-files-perms.sh
 
 # 7) Validate docker-compose file and start stack
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
