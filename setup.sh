@@ -39,9 +39,22 @@ touch traefik/acme.json
 chmod 600 traefik/acme.json
 echo " -> traefik/acme.json ready (600)"
 
-# 3) Ensure app/ dir exists
+# 3) Ensure app/ dir exists and is populated with Krayin source
 mkdir -p app
 echo " -> app/ exists at $ROOT/app"
+
+# Check if app/ is empty or not populated with Krayin files (e.g., public/index.php)
+if [ ! -f app/public/index.php ]; then
+  echo " -> app/ directory is empty or not populated. Copying Krayin source from image..."
+  TEMP_CONTAINER_NAME="krayin-source-extractor-$(date +%s)"
+  docker create --name "$TEMP_CONTAINER_NAME" webkul/krayin:2.0.1
+  docker cp "$TEMP_CONTAINER_NAME":/var/www/html/. "$ROOT/app"
+  docker rm "$TEMP_CONTAINER_NAME"
+  echo " -> Krayin source copied to $ROOT/app"
+else
+  echo " -> app/ directory already populated with Krayin source."
+fi
+
 
 # 4) Backup existing app/.env
 if [ ! -f app/.env ]; then
