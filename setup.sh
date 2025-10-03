@@ -1,71 +1,51 @@
 #!/usr/bin/env bash
 set -euo pipefail
-ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$ROOT_DIR"
 
-echo "=== setup.sh: Starting ($(date)) ==="
+REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$REPO_DIR"
 
-# 1) create folders
-mkdir -p ./letsencrypt
-mkdir -p ./app
-mkdir -p ./db_data
+# UID used by web container (adjust if needed)
+APP_UID=${APP_UID:-1000}
+APP_GID=${APP_GID:-1000}
 
-# 2) ensure acme.json exists and has correct perms (traefik requires 600)
-ACME="./letsencrypt/acme.json"
-if [ ! -f "$ACME" ]; then
-  echo "{}" > "$ACME"
-  chmod 600 "$ACME" || true
-  echo "Created $ACME with 600 perms"
-else
-  chmod 600 "$ACME" || true
-  echo "$ACME exists"
-fi
-
-# 3) copy .env from example if missing (do NOT override a real .env)
+echo "1) Ensure ./app/.env exists (created from .env.example if necessary)"
 if [ ! -f ./app/.env ]; then
-  if [ -f ./app/.env.example ]; then
-    cp -p ./app/.env.example ./app/.env
-    echo "Copied ./app/.env from example"
+  if [ -f ./.env.example ]; then
+    echo " - Creating ./app/.env from .env.example"
+    # create .env as root then chown to container uid
+    cp ./.env.example ./app/.env
+    docker run --rm -v "$REPO_DIR":/work -w /work alpine:3.18 /bin/sh -c "chown ${APP_UID}:${APP_GID} app/.env && chmod 0644 app/.env"
   else
-    echo "WARNING: ./app/.env missing and no example found — create it before deploy"
+    echo " - No .env.example in repo, creating empty app/.env"
+    touch ./app/.env
+    docker run --rm -v "$REPO_DIR":/work -w /work alpine:3.18 /bin/sh -c "chown ${APP_UID}:${APP_GID} app/.env && chmod 0644 app/.env"
   fi
 else
-  echo "./app/.env present — not overwriting"
+  echo " - app/.env already exists; ensuring ownership and perms"
+  docker run --rm -v "$REPO_DIR":/work -w /work alpine:3.18 /bin/sh -c "chown ${APP_UID}:${APP_GID} app/.env && chmod 0644 app/.env"
 fi
 
-# 4) Pull images (fast check)
-echo "Pulling images..."
-docker compose pull --quiet
+echo "2) Ensure app code ownership + perms (scripts/fix-perms.sh)"
+chmod +x ./scripts/fix-perms.sh
+./scripts/fix-perms.sh
 
-# 5) Start required core services first (db + traefik) to reduce races
-docker compose up -d krayin-mysql traefik || true
+echo "3) Make sure your docker-compose has a bind for app/.env mounted read-only (see instructions)."
 
-# 6) Ensure ownership on ./app is set to uid 1000 (container's expected uid).
-#    We avoid doing host 'sudo chown' by using a short-lived Alpine container run as root which chowns the bind mount.
-#    This requires docker is available on host and the user can run docker.
-echo "Setting ownership of ./app to uid:1000 (via transient container)..."
-docker run --rm \
-  -v "$ROOT_DIR/app":/app \
-  --workdir /app \
-  --entrypoint sh \
-  alpine:3.18 -c "chown -R 1000:1000 /app || true; chmod -R u+rwX /app || true" || true
+echo "4) Bring down and up docker-compose cleanly (networks/volumes removed)"
+docker compose down -v --remove-orphans || true
 
-# 7) Start remaining services
-docker compose up -d krayin phpmyadmin || true
+# Remove stale networks created by older runs (harmless if not present)
+docker network rm krayin-traefik_web krayin-traefik_internal 2>/dev/null || true
 
-# 8) Run initial app commands inside krayin (artisan caches, key gen if missing)
-if docker compose ps krayin >/dev/null 2>&1; then
-  echo "Running artisan maintenance commands..."
-  docker compose exec krayin bash -lc "cd /var/www/html && \
-    if [ -f artisan ]; then \
-      php artisan config:clear || true; \
-      php artisan cache:clear || true; \
-      php artisan config:cache || true; \
-      php artisan route:clear || true; \
-      php artisan route:cache || true; \
-      if [ -z \"\$(php -r \"echo getenv('APP_KEY') ?: '';\")\" ]; then php artisan key:generate --force || true; fi; \
-    fi"
-fi
+docker compose up -d --remove-orphans
 
-echo "=== setup.sh: Done ($(date)) ==="
-echo "Check logs: docker compose logs --tail 200 traefik krayin krayin-mysql"
+echo "Waiting a few seconds for services..."
+sleep 4
+
+echo "Docker containers:"
+docker compose ps
+
+echo "Tail logs for the key services (traefik, krayin, krayin-mysql):"
+docker compose logs --tail 100 traefik krayin krayin-mysql || true
+
+echo "Done. Verify: curl -vk --resolve crm.agenticone.in:443:127.0.0.1 https://crm.agenticone.in/"

@@ -98,5 +98,7 @@ networks:
     driver: bridge
 
 volumes:
-  db_data:
-  # letsencrypt directory will be a bind-mount to ./letsencrypt on host
+  - ./app:/var/www/html:cached
+  - ./app/.env:/var/www/html/.env:ro           # <-- read-only mount to prevent container overwriting
+  - ./apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf:ro
+
