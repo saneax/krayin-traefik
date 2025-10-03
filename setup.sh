@@ -64,7 +64,7 @@ else
   echo " -> app/laravel-crm directory already populated with Krayin source."
 fi
 
-# 5) Ensure scripts are executable and fix permissions (Docker-based, portable)
+# 5) Ensure all scripts are executable and fix permissions
 chmod +x scripts/*
 echo " -> scripts/ made executable"
 
@@ -72,33 +72,26 @@ echo " -> scripts/ made executable"
 ./scripts/fix-perms.sh
 ./scripts/fix-files-perms.sh
 
-# 4) Create and configure app/laravel-crm/.env if it doesn't exist or APP_KEY is missing
-if [ ! -f app/laravel-crm/.env ] || ! grep -q "APP_KEY=." app/laravel-crm/.env; then
-  if [ ! -f app/laravel-crm/.env ]; then
-    echo " -> app/laravel-crm/.env not found. Creating a new one..."
-    # Create a comprehensive .env file
-    sudo tee app/laravel-crm/.env > /dev/null <<'EOF'
+# 4) Create/overwrite app/laravel-crm/.env to ensure correct settings
+echo " -> Ensuring app/laravel-crm/.env has correct settings..."
+sudo tee app/laravel-crm/.env > /dev/null <<'EOF'
 APP_NAME=KrayinCRM
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
 APP_URL=https://crm.agenticone.in
-
 LOG_CHANNEL=stack
-
 DB_CONNECTION=mysql
 DB_HOST=krayin-mysql
 DB_PORT=3306
 DB_DATABASE=krayin_db
 DB_USERNAME=krayin_user
 DB_PASSWORD=TwoVision!23
-
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
 QUEUE_CONNECTION=sync
 SESSION_DRIVER=file
 SESSION_LIFETIME=120
-
 MAIL_MAILER=smtp
 MAIL_HOST=sandbox.smtp.mailtrap.io
 MAIL_PORT=2525
@@ -108,22 +101,15 @@ MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS="tech@agenticone.in"
 MAIL_FROM_NAME="${APP_NAME}"
 EOF
-    echo " -> app/laravel-crm/.env created with default values."
-    # Ensure the newly created .env file has correct ownership before key:generate
-    echo " -> Fixing ownership of app/laravel-crm/.env..."
-    ./scripts/fix-perms.sh # This script operates on APP_DIR which is app/laravel-crm
-  fi
+echo " -> app/laravel-crm/.env configured."
 
-  # Generate the Laravel APP_KEY if it's missing. This is critical.
-  if ! grep -q "APP_KEY=." app/laravel-crm/.env; then
-    echo " -> APP_KEY is missing or empty. Generating APP_KEY..."
-    docker compose run --rm --no-deps -w /var/www/html/laravel-crm krayin php artisan key:generate
-  else
-    echo " -> APP_KEY already present."
-  fi
-else
-  echo "app/laravel-crm/.env already present"
-fi
+# Ensure the .env file has correct ownership before key:generate
+echo " -> Fixing ownership of app/laravel-crm/.env..."
+./scripts/fix-perms.sh
+
+# Generate the Laravel APP_KEY. This is critical.
+echo " -> Generating APP_KEY..."
+docker compose run --rm --no-deps -w /var/www/html/laravel-crm krayin php artisan key:generate
 
 # 6) Validate docker-compose file and start stack
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
