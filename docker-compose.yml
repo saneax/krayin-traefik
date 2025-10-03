@@ -32,6 +32,8 @@ services:
       - krayin-mysql
     environment:
       # basic DB env for the app. The app may use ./app/.env — keep that in sync.
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_GROUP: www-data
       DB_HOST: krayin-mysql
       DB_DATABASE: "${MYSQL_DATABASE}"
       DB_USERNAME: "${MYSQL_USER}"
@@ -40,6 +42,7 @@ services:
       APP_DEBUG: "false"
     volumes:
       - ./app:/var/www/html:rw
+      - ./apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf:ro
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=krayin-traefik_web"
