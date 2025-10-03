@@ -5,7 +5,7 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
 cd "$REPO_ROOT"
 
-APP_DIR="./app"
+APP_DIR="./app/laravel-crm"
 
 if [ ! -d "$APP_DIR" ]; then
   echo "ERROR: $APP_DIR not found in $REPO_ROOT"

@@ -40,12 +40,12 @@ chmod 600 traefik/acme.json
 echo " -> traefik/acme.json ready (600)"
 
 # 3) Ensure app/ dir exists and is populated with Krayin source
-mkdir -p app
-echo " -> app/ exists at $ROOT/app"
+mkdir -p app/laravel-crm
+echo " -> app/laravel-crm exists at $ROOT/app/laravel-crm"
 
 # Check if app/ is empty or not populated with Krayin files (e.g., public/index.php)
-if [ ! -f app/public/index.php ]; then
-  echo " -> app/ directory is empty or not populated. Copying Krayin source from image..."
+if [ ! -f app/laravel-crm/public/index.php ]; then
+  echo " -> app/laravel-crm directory is empty or not populated. Copying Krayin source from image..."
   TEMP_CONTAINER_NAME="krayin-source-extractor-$(date +%s)"
   # Use a temporary directory for docker cp to avoid host permission issues,
   # then move contents to app/ using host user's permissions.
@@ -53,16 +53,15 @@ if [ ! -f app/public/index.php ]; then
   mkdir -p "$TEMP_HOST_DIR" # Ensure temp dir exists and is owned by host user
   
   docker create --name "$TEMP_CONTAINER_NAME" webkul/krayin:2.0.1
-  docker cp "$TEMP_CONTAINER_NAME":/var/www/html/. "$TEMP_HOST_DIR"
+  docker cp "$TEMP_CONTAINER_NAME":/var/www/html/laravel-crm/. "$TEMP_HOST_DIR" # Copy from /laravel-crm
   docker rm "$TEMP_CONTAINER_NAME"
 
   # Copy contents from temp dir to app/ preserving attributes, then clean up temp.
-  cp -a "$TEMP_HOST_DIR"/. "$ROOT/app/"
+  cp -a "$TEMP_HOST_DIR"/. "$ROOT/app/laravel-crm/" # Copy to app/laravel-crm
   rm -rf "$TEMP_HOST_DIR" # Clean up temp dir
-
-  echo " -> Krayin source moved to $ROOT/app"
+  echo " -> Krayin source moved to $ROOT/app/laravel-crm"
 else
-  echo " -> app/ directory already populated with Krayin source."
+  echo " -> app/laravel-crm directory already populated with Krayin source."
 fi
 
 # 5) Ensure scripts are executable and fix permissions (Docker-based, portable)
@@ -72,26 +71,58 @@ echo " -> scripts/ made executable"
 # Run fix-perms.sh first to set ownership, then fix-files-perms.sh to set desired file permissions.
 ./scripts/fix-perms.sh
 ./scripts/fix-files-perms.sh
-# 4) Create app/.env if it doesn't exist
-if [ ! -f app/.env ]; then
-  if [ -f app/.env.example ]; then
-    sudo cp app/.env.example app/.env
-    echo " -> app/.env created from app/.env.example"
-  else
-    # Use sudo tee to create the file even if app/ is owned by another user (e.g., root)
-    sudo tee app/.env > /dev/null <<'EOF'
+
+# 4) Create and configure app/laravel-crm/.env if it doesn't exist or APP_KEY is missing
+if [ ! -f app/laravel-crm/.env ] || ! grep -q "APP_KEY=." app/laravel-crm/.env; then
+  if [ ! -f app/laravel-crm/.env ]; then
+    echo " -> app/laravel-crm/.env not found. Creating a new one..."
+    # Create a comprehensive .env file
+    sudo tee app/laravel-crm/.env > /dev/null <<'EOF'
+APP_NAME=KrayinCRM
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
 APP_URL=https://crm.agenticone.in
+
+LOG_CHANNEL=stack
+
 DB_CONNECTION=mysql
 DB_HOST=krayin-mysql
 DB_PORT=3306
 DB_DATABASE=krayin_db
 DB_USERNAME=krayin_user
 DB_PASSWORD=TwoVision!23
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="tech@agenticone.in"
+MAIL_FROM_NAME="${APP_NAME}"
 EOF
-    echo " -> app/.env created with default values."
+    echo " -> app/laravel-crm/.env created with default values."
+    # Ensure the newly created .env file has correct ownership before key:generate
+    echo " -> Fixing ownership of app/laravel-crm/.env..."
+    ./scripts/fix-perms.sh # This script operates on APP_DIR which is app/laravel-crm
+  fi
+
+  # Generate the Laravel APP_KEY if it's missing. This is critical.
+  if ! grep -q "APP_KEY=." app/laravel-crm/.env; then
+    echo " -> APP_KEY is missing or empty. Generating APP_KEY..."
+    docker compose run --rm --no-deps -w /var/www/html/laravel-crm krayin php artisan key:generate
+  else
+    echo " -> APP_KEY already present."
   fi
 else
-  echo "app/.env already present"
+  echo "app/laravel-crm/.env already present"
 fi
 
 # 6) Validate docker-compose file and start stack
