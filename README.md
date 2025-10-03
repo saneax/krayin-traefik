@@ -52,5 +52,8 @@ This repository provides a minimal, production-like local orchestration for the 
 - `app/`: Laravel CRM codebase (mounted)
 - `letsencrypt/`: Traefik ACME certs (auto-generated)
 
+## For setting password initially -
+docker compose exec -w /var/www/html/laravel-crm krayin php artisan tinker --execute="Webkul\User\Models\User::firstOrCreate(['email' => 'tech@agenticone.in'], ['name' => 'Admin', 'password' => Illuminate\Support\Facades\Hash::make('YourSecurePasswordHere')]);"
+
 ---
 For more details, see `.github/copilot-instructions.md` or inspect the scripts and compose file.

@@ -25,8 +25,8 @@ docker run --rm \
   --entrypoint sh \
   alpine:3.18 -c '
     echo "Applying base permissions..."
-    find . -type d -exec chmod 755 {} +
-    find . -type f -exec chmod 644 {} +
+    find . -type d -exec chmod 775 {} +
+    find . -type f -exec chmod 664 {} +
     echo "Permissions applied successfully."
   '
 

@@ -103,15 +103,36 @@ MAIL_FROM_NAME="${APP_NAME}"
 EOF
 echo " -> app/laravel-crm/.env configured."
 
-# Ensure the .env file has correct ownership before key:generate
-echo " -> Fixing ownership of app/laravel-crm/.env..."
+# 5) Create TrustProxies middleware to handle reverse proxy requests
+TRUST_PROXIES_FILE="$ROOT/app/laravel-crm/app/Http/Middleware/TrustProxies.php"
+if [ ! -f "$TRUST_PROXIES_FILE" ]; then
+  echo " -> Creating TrustProxies middleware for Traefik compatibility..."
+  mkdir -p "$(dirname "$TRUST_PROXIES_FILE")"
+  sudo tee "$TRUST_PROXIES_FILE" > /dev/null <<'EOF'
+<?php
+
+namespace App\Http\Middleware;
+
+use Illuminate\Http\Middleware\TrustProxies as Middleware;
+use Illuminate\Http\Request;
+
+class TrustProxies extends Middleware
+{
+    protected $proxies = '*';
+    protected $headers = Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_HOST | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO | Request::HEADER_X_FORWARDED_AWS_ELB;
+}
+EOF
+fi
+
+# 6) Final permission fix after creating config files
+echo " -> Fixing final ownership of config files..."
 ./scripts/fix-perms.sh
 
-# Generate the Laravel APP_KEY. This is critical.
+# 7) Generate the Laravel APP_KEY. This is critical.
 echo " -> Generating APP_KEY..."
 docker compose run --rm --no-deps -w /var/www/html/laravel-crm krayin php artisan key:generate
 
-# 6) Validate docker-compose file and start stack
+# 8) Validate docker-compose file and start stack
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
   echo "ERROR: no docker-compose.yml found in $ROOT"
   exit 1
