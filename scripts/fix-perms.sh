@@ -1,22 +1,36 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Make sure this script runs from repo root
-REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$REPO_DIR"
+# Run from repo root (scripts/)
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd -P)"
+cd "$REPO_ROOT"
 
-# UID / GID used by the web container for the app files. 
-# Most images use uid 1000; adjust if your krayin container runs a different uid.
-APP_UID=${APP_UID:-1000}
-APP_GID=${APP_GID:-1000}
+APP_DIR="./app"
 
-echo "Fixing ownership of ./app to ${APP_UID}:${APP_GID} using a short ephemeral container..."
+if [ ! -d "$APP_DIR" ]; then
+  echo "ERROR: $APP_DIR not found in $REPO_ROOT"
+  exit 1
+fi
 
-# Use alpine to chown and set secure permissions
-docker run --rm -v "$REPO_DIR":/work -w /work alpine:3.18 /bin/sh -c \
-"chown -R ${APP_UID}:${APP_GID} app || true; \
- find app -type d -exec chmod 2755 {} \; ; \
- find app -type f -exec chmod 0644 {} \; ; \
- chmod 0664 app/.env 2>/dev/null || true"
+echo "Attempting to set owner uid:gid 1000:1000 on $APP_DIR using ephemeral container..."
 
-echo "Done. Files under ./app are now owned by ${APP_UID}:${APP_GID} and perms tightened."
+# Prefer docker ephemeral container approach (avoids requiring sudo for many hosts)
+if command -v docker >/dev/null 2>&1; then
+  docker run --rm \
+    -v "$PWD/$APP_DIR":/target:rw \
+    --workdir /target \
+    --entrypoint sh \
+    alpine:3.18 -c "chown -R 1000:1000 /target && chmod -R u+rwX,g+rX,o-rX /target || true"
+  echo "Ownership changed to 1000:1000 (via docker)."
+else
+  echo "docker not found. Trying sudo chown on host (requires password)..."
+  sudo chown -R 1000:1000 "$PWD/$APP_DIR"
+  sudo chmod -R u+rwX,g+rX,o-rX "$PWD/$APP_DIR" || true
+  echo "Ownership changed to 1000:1000 (via sudo)."
+fi
+
+# Ensure storage and cache writable by owner+group
+chmod -R 775 "$PWD/$APP_DIR/storage" 2>/dev/null || true
+chmod -R 775 "$PWD/$APP_DIR/bootstrap/cache" 2>/dev/null || true
+
+echo "Done."

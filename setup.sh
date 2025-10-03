@@ -1,31 +1,56 @@
 #!/usr/bin/env bash
 set -euo pipefail
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# Resolve absolute path to this script (follow symlinks)
+SOURCE="${BASH_SOURCE[0]}"
+while [ -L "$SOURCE" ]; do
+  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+ROOT="$SCRIPT_DIR"
+
 cd "$ROOT"
 
-echo "1) Ensure .env (project) exists"
-if [ ! -f .env ]; then
-  echo "LETSENCRYPT_EMAIL=tech@agenticone.in" > .env
-  echo "DOMAIN=crm.agenticone.in" >> .env
-  echo "MYSQL_ROOT_PASSWORD=OneVision!12" >> .env
-  echo "MYSQL_DATABASE=krayin_db" >> .env
-  echo "MYSQL_USER=krayin_user" >> .env
-  echo "MYSQL_PASSWORD=TwoVision!23" >> .env
-  echo ".env created. Edit if necessary."
+echo "Repo root: $ROOT"
+
+# 1) Ensure project .env exists (repo root .env)
+if [ ! -f "$ROOT/.env" ]; then
+  cat > "$ROOT/.env" <<EOF
+# project settings (edit if needed)
+DOMAIN=crm.agenticone.in
+LETSENCRYPT_EMAIL=tech@agenticone.in
+
+# mysql defaults (change if needed)
+MYSQL_ROOT_PASSWORD=OneVision!12
+MYSQL_DATABASE=krayin_db
+MYSQL_USER=krayin_user
+MYSQL_PASSWORD=TwoVision!23
+EOF
+  echo ".env created at $ROOT/.env — please edit if values differ."
+else
+  echo "project .env already present"
 fi
 
-echo "2) Create traefik/acme.json and set permissions"
+# 2) traefik acme.json
 mkdir -p traefik
 touch traefik/acme.json
 chmod 600 traefik/acme.json
+echo " -> traefik/acme.json ready (600)"
 
-echo "3) Ensure app/.env exists and backup if present"
+# 3) Ensure app/ dir exists
+mkdir -p app
+echo " -> app/ exists at $ROOT/app"
+
+# 4) Backup existing app/.env
 if [ -f app/.env ]; then
-  cp -v app/.env app/.env.backup.$(date +%s)
+  echo "Backing up app/.env -> app/.env.backup.$(date +%s)"
+  sudo cp -av app/.env app/.env.backup.$(date +%s)
 fi
 
-# create minimal app/.env if missing. DO NOT overwrite secrets if present.
-cat > app/.env <<'EOF'
+# 5) Write app/.env (use sudo so it works even if app is root-owned)
+sudo tee app/.env > /dev/null <<'EOF'
 APP_URL=https://crm.agenticone.in
 DB_CONNECTION=mysql
 DB_HOST=krayin-mysql
@@ -34,14 +59,27 @@ DB_DATABASE=krayin_db
 DB_USERNAME=krayin_user
 DB_PASSWORD=TwoVision!23
 EOF
-echo "app/.env written/overwritten. If you want different DB credentials, edit app/.env now."
+echo " -> app/.env written"
 
-echo "4) Fix permissions so container user 1000 can read/write app (and host user can edit)"
+# 6) Fix ownership: container uses uid 1000. Also let your user edit files:
+#    We set owner to 1000:1000 (container user) and give group write so you can add your user to group if needed.
 sudo chown -R 1000:1000 app || true
 sudo chmod -R u+rwX,g+rwX,o-rwx app || true
+echo " -> changed app/ ownership to 1000:1000 and tightened perms"
 
-echo "5) Bring stack down and up cleanly"
-docker compose down -v || true
+# 7) Validate docker-compose file and start stack
+if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
+  echo "ERROR: no docker-compose.yml found in $ROOT"
+  exit 1
+fi
+
+echo "Validating docker compose config..."
+docker compose config >/dev/null
+
+echo "Bringing stack down (keeps volumes by default) and up"
+docker compose down || true
 docker compose up -d --remove-orphans
 
-echo "Done. Run: docker compose logs -f traefik krayin krayin-mysql phpmyadmin"
+echo "Done. Useful checks:"
+echo "  docker compose ps"
+echo "  docker compose logs -f traefik krayin krayin-mysql phpmyadmin"
