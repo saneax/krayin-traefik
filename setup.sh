@@ -51,12 +51,19 @@ if [ ! -f app/public/index.php ]; then
   docker cp "$TEMP_CONTAINER_NAME":/var/www/html/. "$ROOT/app"
   docker rm "$TEMP_CONTAINER_NAME"
   echo " -> Krayin source copied to $ROOT/app"
+
+  # Fix permissions immediately after copying, as docker cp may create files as root.
+  echo " -> Fixing permissions on newly copied source..."
+  chmod +x scripts/*
+  ./scripts/fix-perms.sh
+  ./scripts/fix-files-perms.sh
+  echo " -> Permissions fixed."
 else
   echo " -> app/ directory already populated with Krayin source."
 fi
 
 
-# 4) Backup existing app/.env
+# 4) Create app/.env if it doesn't exist
 if [ ! -f app/.env ]; then
   if [ -f app/.env.example ]; then
     sudo cp app/.env.example app/.env
@@ -77,14 +84,6 @@ EOF
 else
   echo "app/.env already present"
 fi
-
-# 5) Ensure scripts are executable and fix permissions (Docker-based, portable)
-chmod +x scripts/*
-echo " -> scripts/ made executable"
-
-#    Run fix-perms.sh first to set ownership, then fix-files-perms.sh to set desired file permissions.
-./scripts/fix-perms.sh
-./scripts/fix-files-perms.sh
 
 # 7) Validate docker-compose file and start stack
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
