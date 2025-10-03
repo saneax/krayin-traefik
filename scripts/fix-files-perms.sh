@@ -11,24 +11,26 @@ if [ ! -d "$APP_DIR" ]; then
   exit 1
 fi
 
-echo "Setting directory perms to 755 and file perms to 644 under $APP_DIR..."
-# Directories 755
-find "$APP_DIR" -type d -print0 | xargs -0 -r chmod 755
+echo "Setting directory perms to 755 and file perms to 644 under $APP_DIR (via Docker)..."
 
-# Files 644
-find "$APP_DIR" -type f -print0 | xargs -0 -r chmod 644
-
-# Make storage and bootstrap/cache writable by owner & group
-if [ -d "$APP_DIR/storage" ]; then
-  chmod -R 775 "$APP_DIR/storage"
-fi
-if [ -d "$APP_DIR/bootstrap/cache" ]; then
-  chmod -R 775 "$APP_DIR/bootstrap/cache"
+if ! command -v docker >/dev/null 2>&1; then
+  echo "ERROR: docker command not found. This script requires Docker to set permissions correctly."
+  exit 1
 fi
 
-# Keep app/.env readable
-if [ -f "$APP_DIR/.env" ]; then
-  chmod 644 "$APP_DIR/.env"
-fi
+# Use an ephemeral container to run chmod commands as root, avoiding host permission issues.
+docker run --rm \
+  -v "$PWD/$APP_DIR":/target:rw \
+  --workdir /target \
+  --entrypoint sh \
+  alpine:3.18 -c '
+    echo "Applying base permissions..."
+    find . -type d -exec chmod 755 {} +
+    find . -type f -exec chmod 644 {} +
+    echo "Applying Laravel-specific permissions..."
+    if [ -d "./storage" ]; then chmod -R 775 ./storage; fi
+    if [ -d "./bootstrap/cache" ]; then chmod -R 775 ./bootstrap/cache; fi
+    echo "Permissions applied successfully."
+  '
 
-echo "Permissions applied. If Apache user is not owner, ensure files are owned by uid 1000 (use ./scripts/fix-perms.sh)."
+echo "Done."
