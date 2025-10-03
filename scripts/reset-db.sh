@@ -16,8 +16,10 @@ fi
 echo "Ensuring stack is running..."
 docker compose up -d krayin
 
-echo "Resetting database (dropping all tables and re-seeding)..."
-docker compose exec -w /var/www/html/laravel-crm krayin php artisan migrate:fresh --seed
+echo "Resetting database by dropping it and recreating..."
+docker compose exec -T krayin-mysql mysql -u root -p"${MYSQL_ROOT_PASSWORD}" -e "DROP DATABASE IF EXISTS ${MYSQL_DATABASE}; CREATE DATABASE ${MYSQL_DATABASE};"
 
-echo "Database has been reset."
-echo "You may now need to go through the web installation wizard again to create an admin user."
+echo "Running Krayin installer to set up the fresh database..."
+docker compose exec -w /var/www/html/laravel-crm krayin php artisan krayin:install
+
+echo "Database reset and re-installation complete."

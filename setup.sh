@@ -128,11 +128,27 @@ fi
 echo " -> Fixing final ownership of config files..."
 ./scripts/fix-perms.sh
 
-# 7) Generate the Laravel APP_KEY. This is critical.
-echo " -> Generating APP_KEY..."
-docker compose run --rm --no-deps -w /var/www/html/laravel-crm krayin php artisan key:generate
+# 7) Run Krayin installer if not already installed
+echo " -> Bringing up services to check installation status..."
+docker compose up -d krayin krayin-mysql
 
-# 8) Validate docker-compose file and start stack
+# Give mysql a moment to start
+sleep 10
+
+# Check if the 'users' table exists. If not, the app is not installed.
+INSTALL_CHECK=$(docker compose exec -T krayin-mysql mysql -u"${MYSQL_USER}" -p"${MYSQL_PASSWORD}" "${MYSQL_DATABASE}" -e "SHOW TABLES LIKE 'users';" | grep users || true)
+
+if [ -z "$INSTALL_CHECK" ]; then
+  echo " -> Krayin not installed. Running installer..."
+  # The installer will handle migrations, seeding, and .env updates.
+  docker compose exec -w /var/www/html/laravel-crm krayin php artisan krayin:install
+  echo " -> Krayin installation complete."
+else
+  echo " -> Krayin already installed, skipping installer."
+  echo " -> To reset, use scripts/reset-db.sh"
+fi
+
+# 8) Validate docker-compose file and restart stack cleanly
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
   echo "ERROR: no docker-compose.yml found in $ROOT"
   exit 1
@@ -141,7 +157,7 @@ fi
 echo "Validating docker compose config..."
 docker compose config >/dev/null
 
-echo "Bringing stack down (keeps volumes by default) and up"
+echo "Restarting stack to ensure all services are up..."
 docker compose down || true
 docker compose up -d --remove-orphans
 
