@@ -78,7 +78,7 @@ sudo tee app/laravel-crm/.env > /dev/null <<'EOF'
 APP_NAME=KrayinCRM
 APP_ENV=local
 APP_KEY=
-APP_DEBUG=true
+APP_DEBUG=false
 APP_URL=https://crm.agenticone.in
 LOG_CHANNEL=stack
 DB_CONNECTION=mysql
@@ -102,27 +102,6 @@ MAIL_FROM_ADDRESS="tech@agenticone.in"
 MAIL_FROM_NAME="${APP_NAME}"
 EOF
 echo " -> app/laravel-crm/.env configured."
-
-# 5) Create TrustProxies middleware to handle reverse proxy requests
-TRUST_PROXIES_FILE="$ROOT/app/laravel-crm/app/Http/Middleware/TrustProxies.php"
-if [ ! -f "$TRUST_PROXIES_FILE" ]; then
-  echo " -> Creating TrustProxies middleware for Traefik compatibility..."
-  mkdir -p "$(dirname "$TRUST_PROXIES_FILE")"
-  sudo tee "$TRUST_PROXIES_FILE" > /dev/null <<'EOF'
-<?php
-
-namespace App\Http\Middleware;
-
-use Illuminate\Http\Middleware\TrustProxies as Middleware;
-use Illuminate\Http\Request;
-
-class TrustProxies extends Middleware
-{
-    protected $proxies = '*';
-    protected $headers = Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_HOST | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO | Request::HEADER_X_FORWARDED_AWS_ELB;
-}
-EOF
-fi
 
 # 6) Final permission fix after creating config files
 echo " -> Fixing final ownership of config files..."
@@ -148,7 +127,28 @@ else
   echo " -> To reset, use scripts/reset-db.sh"
 fi
 
-# 8) Validate docker-compose file and restart stack cleanly
+# 8) Forcefully create correct TrustProxies middleware for Traefik
+echo " -> Ensuring TrustProxies middleware is configured for Traefik..."
+TRUST_PROXIES_FILE="$ROOT/app/laravel-crm/app/Http/Middleware/TrustProxies.php"
+mkdir -p "$(dirname "$TRUST_PROXIES_FILE")"
+sudo tee "$TRUST_PROXIES_FILE" > /dev/null <<'EOF'
+<?php
+
+namespace App\Http\Middleware;
+
+use Illuminate\Http\Middleware\TrustProxies as Middleware;
+use Illuminate\Http\Request;
+
+class TrustProxies extends Middleware
+{
+    protected $proxies = '*';
+    protected $headers = Request::HEADER_X_FORWARDED_FOR | Request::HEADER_X_FORWARDED_HOST | Request::HEADER_X_FORWARDED_PORT | Request::HEADER_X_FORWARDED_PROTO | Request::HEADER_X_FORWARDED_AWS_ELB;
+}
+EOF
+./scripts/fix-perms.sh # Fix perms on the newly created/overwritten file
+docker compose exec -w /var/www/html/laravel-crm krayin php artisan config:cache
+
+# 9) Validate docker-compose file and restart stack cleanly
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
   echo "ERROR: no docker-compose.yml found in $ROOT"
   exit 1
