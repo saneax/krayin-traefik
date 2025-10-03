@@ -47,11 +47,6 @@ echo " -> app/ exists at $ROOT/app"
 if [ ! -f app/public/index.php ]; then
   echo " -> app/ directory is empty or not populated. Copying Krayin source from image..."
   TEMP_CONTAINER_NAME="krayin-source-extractor-$(date +%s)"
-  docker create --name "$TEMP_CONTAINER_NAME" webkul/krayin:2.0.1
-  docker cp "$TEMP_CONTAINER_NAME":/var/www/html/. "$ROOT/app"
-  docker rm "$TEMP_CONTAINER_NAME"
-  echo " -> Krayin source copied to $ROOT/app"
-
   # Use a temporary directory for docker cp to avoid host permission issues,
   # then move contents to app/ using host user's permissions.
   TEMP_HOST_DIR="$ROOT/app_temp_copy" # Temporary directory on host
@@ -70,6 +65,13 @@ else
   echo " -> app/ directory already populated with Krayin source."
 fi
 
+# 5) Ensure scripts are executable and fix permissions (Docker-based, portable)
+chmod +x scripts/*
+echo " -> scripts/ made executable"
+
+# Run fix-perms.sh first to set ownership, then fix-files-perms.sh to set desired file permissions.
+./scripts/fix-perms.sh
+./scripts/fix-files-perms.sh
 # 4) Create app/.env if it doesn't exist
 if [ ! -f app/.env ]; then
   if [ -f app/.env.example ]; then
@@ -92,7 +94,7 @@ else
   echo "app/.env already present"
 fi
 
-# 7) Validate docker-compose file and start stack
+# 6) Validate docker-compose file and start stack
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then
   echo "ERROR: no docker-compose.yml found in $ROOT"
   exit 1
