@@ -28,8 +28,8 @@ docker run --rm \
     find . -type d -exec chmod 755 {} +
     find . -type f -exec chmod 644 {} +
     echo "Applying Laravel-specific permissions..."
-    if [ -d "./storage" ]; then chmod -R 775 ./storage; fi
-    if [ -d "./bootstrap/cache" ]; then chmod -R 775 ./bootstrap/cache; fi
+    if [ -d "./storage" ]; then chmod -R 777 ./storage; fi
+    if [ -d "./bootstrap/cache" ]; then chmod -R 777 ./bootstrap/cache; fi
     echo "Permissions applied successfully."
   '
 
