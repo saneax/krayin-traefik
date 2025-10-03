@@ -65,9 +65,14 @@ else
   echo "app/.env already present"
 fi
 
-# 5) Fix permissions using scripts (Docker-based, portable)
-./scripts/fix-perms.sh
+# 5) Ensure scripts are executable
+chmod +x scripts/*
+echo " -> scripts/ made executable"
+
+# 6) Fix permissions using scripts (Docker-based, portable)
+#    Run fix-files-perms.sh first to set desired file permissions, then fix-perms.sh to set ownership.
 ./scripts/fix-files-perms.sh
+./scripts/fix-perms.sh
 
 # 7) Validate docker-compose file and start stack
 if [ ! -f docker-compose.yml ] && [ ! -f docker-compose.yaml ]; then

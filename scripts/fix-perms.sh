@@ -19,18 +19,13 @@ if command -v docker >/dev/null 2>&1; then
   docker run --rm \
     -v "$PWD/$APP_DIR":/target:rw \
     --workdir /target \
-    --entrypoint sh \
-    alpine:3.18 -c "chown -R 1000:1000 /target && chmod -R u+rwX,g+rX,o-rX /target || true"
+    --entrypoint chown \
+    alpine:3.18 -R 1000:1000 /target
   echo "Ownership changed to 1000:1000 (via docker)."
 else
   echo "docker not found. Trying sudo chown on host (requires password)..."
   sudo chown -R 1000:1000 "$PWD/$APP_DIR"
-  sudo chmod -R u+rwX,g+rX,o-rX "$PWD/$APP_DIR" || true
   echo "Ownership changed to 1000:1000 (via sudo)."
 fi
-
-# Ensure storage and cache writable by owner+group
-chmod -R 775 "$PWD/$APP_DIR/storage" 2>/dev/null || true
-chmod -R 775 "$PWD/$APP_DIR/bootstrap/cache" 2>/dev/null || true
 
 echo "Done."
