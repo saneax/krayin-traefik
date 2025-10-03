@@ -90,8 +90,10 @@ services:
 
 networks:
   krayin-traefik_web:
+    name: krayin-traefik_web
     driver: bridge
   krayin-traefik_internal:
+    name: krayin-traefik_internal
     driver: bridge
 
 volumes:
