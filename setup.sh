@@ -52,16 +52,23 @@ if [ ! -f app/public/index.php ]; then
   docker rm "$TEMP_CONTAINER_NAME"
   echo " -> Krayin source copied to $ROOT/app"
 
-  # Fix permissions immediately after copying, as docker cp may create files as root.
-  echo " -> Fixing permissions on newly copied source..."
-  chmod +x scripts/*
-  ./scripts/fix-perms.sh
-  ./scripts/fix-files-perms.sh
-  echo " -> Permissions fixed."
+  # Use a temporary directory for docker cp to avoid host permission issues,
+  # then move contents to app/ using host user's permissions.
+  TEMP_HOST_DIR="$ROOT/app_temp_copy" # Temporary directory on host
+  mkdir -p "$TEMP_HOST_DIR" # Ensure temp dir exists and is owned by host user
+  
+  docker create --name "$TEMP_CONTAINER_NAME" webkul/krayin:2.0.1
+  docker cp "$TEMP_CONTAINER_NAME":/var/www/html/. "$TEMP_HOST_DIR"
+  docker rm "$TEMP_CONTAINER_NAME"
+
+  # Copy contents from temp dir to app/ preserving attributes, then clean up temp.
+  cp -a "$TEMP_HOST_DIR"/. "$ROOT/app/"
+  rm -rf "$TEMP_HOST_DIR" # Clean up temp dir
+
+  echo " -> Krayin source moved to $ROOT/app"
 else
   echo " -> app/ directory already populated with Krayin source."
 fi
-
 
 # 4) Create app/.env if it doesn't exist
 if [ ! -f app/.env ]; then
