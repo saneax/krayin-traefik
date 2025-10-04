@@ -18,15 +18,17 @@ echo "Repo root: $ROOT"
 # 1) Ensure project .env exists (repo root .env)
 if [ ! -f "$ROOT/.env" ]; then
   cat > "$ROOT/.env" <<EOF
-# project settings (edit if needed)
-DOMAIN=crm.agenticone.in
-LETSENCRYPT_EMAIL=tech@agenticone.in
+# --- Project Settings ---
+# IMPORTANT: Replace all placeholder values below.
+DOMAIN=your-domain.com
+LETSENCRYPT_EMAIL=your-email@your-domain.com
 
-# mysql defaults (change if needed)
-MYSQL_ROOT_PASSWORD=OneVision!12
+# --- Database Credentials ---
+# Use strong, unique passwords.
+MYSQL_ROOT_PASSWORD=changeme_root_password
 MYSQL_DATABASE=krayin_db
 MYSQL_USER=krayin_user
-MYSQL_PASSWORD=TwoVision!23
+MYSQL_PASSWORD=changeme_user_password
 EOF
   echo ".env created at $ROOT/.env — please edit if values differ."
 else
@@ -74,31 +76,31 @@ echo " -> scripts/ made executable"
 
 # 4) Create/overwrite app/laravel-crm/.env to ensure correct settings
 echo " -> Ensuring app/laravel-crm/.env has correct settings..."
-sudo tee app/laravel-crm/.env > /dev/null <<'EOF'
+# Source the root .env file to use its variables
+set -o allexport
+# shellcheck source=/dev/null
+source "$ROOT/.env"
+set +o allexport
+
+sudo tee app/laravel-crm/.env > /dev/null <<EOF
 APP_NAME=KrayinCRM
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=false
-APP_URL=https://crm.agenticone.in
+APP_URL=https://${DOMAIN}
 LOG_CHANNEL=stack
 DB_CONNECTION=mysql
 DB_HOST=krayin-mysql
 DB_PORT=3306
-DB_DATABASE=krayin_db
-DB_USERNAME=krayin_user
-DB_PASSWORD=TwoVision!23
+DB_DATABASE=${MYSQL_DATABASE}
+DB_USERNAME=${MYSQL_USER}
+DB_PASSWORD=${MYSQL_PASSWORD}
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
 QUEUE_CONNECTION=sync
 SESSION_DRIVER=file
 SESSION_LIFETIME=120
-MAIL_MAILER=smtp
-MAIL_HOST=sandbox.smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="tech@agenticone.in"
+MAIL_FROM_ADDRESS="${LETSENCRYPT_EMAIL}"
 MAIL_FROM_NAME="${APP_NAME}"
 EOF
 echo " -> app/laravel-crm/.env configured."

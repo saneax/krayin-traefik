@@ -41,7 +41,7 @@ services:
       - "traefik.enable=true"
 
       # HTTP router: redirect to HTTPS via middleware (created below)
-      - "traefik.http.routers.krayin-http.rule=Host(`crm.agenticone.in`)"
+      - "traefik.http.routers.krayin-http.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.krayin-http.entrypoints=web"
       - "traefik.http.routers.krayin-http.middlewares=redirect-to-https"
 
@@ -49,7 +49,7 @@ services:
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
       # HTTPS router (real service)
-      - "traefik.http.routers.krayin.rule=Host(`crm.agenticone.in`)"
+      - "traefik.http.routers.krayin.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.krayin.entrypoints=websecure"
       - "traefik.http.routers.krayin.tls=true"
       - "traefik.http.routers.krayin.tls.certresolver=le"
