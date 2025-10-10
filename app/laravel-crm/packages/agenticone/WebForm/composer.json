@@ -1,0 +1,25 @@
+{
+    "name": "krayin/laravel-webform",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jitendra Singh",
+            "email": "jitendra@agenticone.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "agenticone\\WebForm\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "agenticone\\WebForm\\Providers\\WebFormServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}

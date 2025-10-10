@@ -1,0 +1,28 @@
+{
+    "name": "krayin/laravel-email",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jitendra Singh",
+            "email": "jitendra@agenticone.com"
+        }
+    ],
+    "require": {
+        "krayin/laravel-contact": "^1.0",
+        "krayin/laravel-core": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "agenticone\\Email\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "agenticone\\Email\\Providers\\EmailServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
