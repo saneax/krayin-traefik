@@ -74,5 +74,13 @@
                 {!! view_render_event('admin.sessions.forgor_password.form_controls.after') !!}
             </div>
         </div>
+
+        <!-- Powered By -->
+        <!-- <div class="text-sm font-normal">
+            @lang('admin::app.components.layouts.powered-by.description', [
+                'krayin' => '<a class="text-brandColor hover:underline " href="https://agenticone.com/">Krayin</a>',
+                'agenticone' => '<a class="text-brandColor hover:underline " href="https://agenticone.com/">agenticone</a>',
+            ]) 
+        </div> -->
     </div>
 </x-admin::layouts.anonymous>
