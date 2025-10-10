@@ -78,8 +78,8 @@
         <!-- Powered By -->
         <!-- <div class="text-sm font-normal">
             @lang('admin::app.components.layouts.powered-by.description', [
-                'agenticone' => '<a class="text-brandColor hover:underline " href="https://agenticone.com/">Agenticone</a>',
-                'agenticone' => '<a class="text-brandColor hover:underline " href="https://agenticone.com/">agenticone</a>',
+                'agenticone' => '<a class="text-brandColor hover:underline " href="https://crm.agenticone.in/">Agenticone</a>',
+                'agenticone' => '<a class="text-brandColor hover:underline " href="https://crm.agenticone.in/">agenticone</a>',
             ]) 
         </div> -->
     </div>
