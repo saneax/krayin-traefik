@@ -57,6 +57,7 @@
                             @onRemoveProduct="removeProduct($event)"
                         ></v-product-item>
                     </x-admin::table.tbody>
+
                     {!! view_render_event('admin.leads.view.products.table.table_body.after', ['lead' => $lead]) !!}
                 </x-admin::table>
             </div>
@@ -113,30 +114,26 @@
         id="v-product-item-template"
     >
         <x-admin::table.tbody.tr class="border-b border-gray-200 align-top dark:border-gray-800">
-            <!-- Product Name -->
+            <!-- Product Name (changed to dynamic dropdown) -->
             <x-admin::table.td class="!px-4">
                 <v-form v-slot="{ errors }" @keydown.enter.prevent>
                     <x-admin::form.control-group class="!mb-0">
-                        <x-admin::lookup
-                            ::key="product.product_id"
-                            ::src="src"
-                            name="name"
-                            ::params="params"
-                            :placeholder="trans('admin::app.leads.view.products.product-name')"
-                            @on-selected="(product) => addProduct(product)"
-                            ::value="{ id: product.product_id, name: product.name }"
-                        />
-
-                        <x-admin::form.control-group.control
-                            type="hidden"
-                            name="product_id"
+                        <select
                             v-model="product.product_id"
-                            rules="required"
-                            :label="trans('admin::app.leads.view.products.product-name')"
-                            :placeholder="trans('admin::app.leads.view.products.product-name')"
-                            ::url="url(product)"
-                        />
-
+                            @change="onProductSelect"
+                            class="w-full rounded border border-gray-300 p-2 dark:bg-gray-800 dark:text-white"
+                        >
+                            <option value="" disabled selected>
+                                @lang('admin::app.leads.view.products.select-product')
+                            </option>
+                            <option
+                                v-for="item in allProducts"
+                                :key="item.id"
+                                :value="item.id"
+                            >
+                                @{{ item.name }}
+                            </option>
+                        </select>
                         <x-admin::form.control-group.error ::name="`${inputName}[product_id]`" />
                     </x-admin::form.control-group>
                 </v-form>
@@ -206,11 +203,17 @@
                 </v-form>
             </x-admin::table.td>
 
-            <!-- Action -->
+            <!-- Action (added View icon) -->
             <x-admin::table.td class="ltr:text-right rtl:text-left">
-                <template v-if="product.is_new">
-                    <x-admin::form.control-group class="!mb-0">
-                        <div class="flex items-center justify-center gap-4">
+                <x-admin::form.control-group class="!mb-0">
+                    <div class="flex items-center justify-center gap-4">
+
+                        <template v-if="product.is_new">
+                           <i
+                            @click="viewProduct(product)"
+                            class="icon-eye cursor-pointer text-2xl text-blue-500 hover:text-blue-700"
+                            title="View Product"
+                        ></i>
                             <i
                                 @click="attachProduct(product)"
                                 class="icon-enter cursor-pointer text-2xl text-black"
@@ -220,18 +223,21 @@
                                 @click="removeProduct"
                                 class="icon-cross-large cursor-pointer text-2xl text-black"
                             ></i>
-                        </div>
-                    </x-admin::form.control-group>
-                </template>
+                        </template>
 
-                <template v-else>
-                    <x-admin::form.control-group class="!mb-0">
-                        <i
-                            @click="removeProduct"
-                            class="icon-delete cursor-pointer text-2xl"
+                        <template v-else>
+                          <i
+                            @click="viewProduct(product)"
+                            class="icon-eye cursor-pointer text-2xl text-blue-500 hover:text-blue-700"
+                            title="View Product"
                         ></i>
-                    </x-admin::form.control-group>
-                </template>
+                            <i
+                                @click="removeProduct"
+                                class="icon-delete cursor-pointer text-2xl"
+                            ></i>
+                        </template>
+                    </div>
+                </x-admin::form.control-group>
             </x-admin::table.td>
         </x-admin::table.tbody.tr>
     </script>
@@ -275,8 +281,12 @@
 
             data() {
                 return {
-                    products: [],
+                    allProducts: [],
                 }
+            },
+
+            mounted() {
+                this.fetchProducts();
             },
 
             computed: {
@@ -287,43 +297,29 @@
 
                     return "products[product_" + this.index + "]";
                 },
-
-                src() {
-                    return '{{ route('admin.products.search') }}';
-                },
-
-                params() {
-                    return {
-                        params: {
-                            query: this.product.name
-                        },
-                    };
-                },
             },
 
             methods: {
-                /**
-                 * Add the product.
-                 *
-                 * @param {Object} result
-                 *
-                 * @return {void}
-                 */
-                addProduct(result) {
-                    this.product.product_id = result.id;
-
-                    this.product.name = result.name;
-
-                    this.product.price = result.price;
-
-                    this.product.quantity = result.quantity ?? 0;
+                fetchProducts() {
+                    this.$axios.get('{{ route('admin.products.search') }}')
+                        .then(response => {
+                            this.allProducts = response.data.data ?? response.data;
+                        })
+                        .catch(() => {
+                            this.allProducts = [];
+                        });
                 },
 
-                /**
-                 * Attach Product.
-                 *
-                 * @return {void}
-                 */
+                onProductSelect() {
+                    const selected = this.allProducts.find(p => p.id === this.product.product_id);
+                    if (selected) {
+                        this.product.product_id = selected.id;
+                        this.product.name = selected.name;
+                        this.product.price = selected.price ?? 0;
+                        this.product.quantity = 1;
+                    }
+                },
+
                 attachProduct(product) {
                     this.$axios.post('{{ route('admin.leads.product.add', $lead->id) }}', {
                         _method: 'PUT',
@@ -331,17 +327,11 @@
                     })
                         .then(response => {
                             this.product.is_new = false;
-
                             this.$emitter.emit('add-flash', { type: 'success', message: response.data.message });
                         })
                         .catch(error => {});
                 },
 
-                /**
-                 * Remove the product.
-                 *
-                 * @return {void}
-                 */
                 removeProduct() {
                     this.$emitter.emit('open-confirm-modal', {
                         agree: () => {
@@ -351,7 +341,6 @@
                             })
                                 .then(response => {
                                     this.$emit('onRemoveProduct', this.product);
-
                                     this.$emitter.emit('add-flash', { type: 'success', message: response.data.message });
                                 })
                                 .catch(error => {});
@@ -359,13 +348,12 @@
                     });
                 },
 
-                /**
-                 * Get the product URL.
-                 *
-                 * @param {Object} product
-                 *
-                 * @return {String}
-                 */
+                viewProduct(product) {
+                    if (product.product_id) {
+                        window.open(`/admin/products/view/${product.product_id}`, '_blank');
+                    }
+                },
+
                 url(product) {
                     if (product.is_new) {
                         return;
