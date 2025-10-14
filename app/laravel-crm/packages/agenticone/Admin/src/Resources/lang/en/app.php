@@ -2023,6 +2023,7 @@ return [
 
             'products' => [
                 'product-name' => 'Product Name',
+                'select-product' => 'Select Product',
                 'quantity'     => 'Quantity',
                 'price'        => 'Price',
                 'amount'       => 'Amount',
@@ -2065,6 +2066,7 @@ return [
 
             'products' => [
                 'product-name' => 'Product Name',
+                'select-product' => 'Select Product',
                 'quantity'     => 'Quantity',
                 'price'        => 'Price',
                 'amount'       => 'Amount',
