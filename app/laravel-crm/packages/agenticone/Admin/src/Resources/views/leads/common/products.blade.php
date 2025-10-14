@@ -4,11 +4,9 @@
 
 {!! view_render_event('admin.leads.create.products.form_controls.after') !!}
 
-@pushOnce('scripts')
-    <script
-        type="text/x-template"
-        id="v-product-list-template"
-    >
+@push('scripts')
+    {{-- Product List Template --}}
+    <script type="text/x-template" id="v-product-list-template">
         <div class="flex flex-col gap-4">
             {!! view_render_event('admin.leads.create.products.form_controls.table.before') !!}
 
@@ -52,10 +50,10 @@
 
                         <!-- Product Item Vue Component -->
                         <v-product-item
-                            v-for='(product, index) in products'
-                            :product="product"
+                            v-for="(product, index) in products"
                             :key="index"
                             :index="index"
+                            :product="product"
                             @onRemoveProduct="removeProduct($event)"
                         ></v-product-item>
 
@@ -75,28 +73,37 @@
                 @click="addProduct"
             >
                 <i class="icon-add text-md !text-brandColor"></i>
-
                 @lang('admin::app.leads.common.products.add-more')
             </button>
         </div>
     </script>
 
-    <script
-        type="text/x-template"
-        id="v-product-item-template"
-    >
+    {{-- Product Item Template --}}
+    <script type="text/x-template" id="v-product-item-template">
         <x-admin::table.thead.tr>
             <!-- Product Name -->
             <x-admin::table.td>
                 <x-admin::form.control-group class="!mb-0">
-                    <x-admin::lookup
-                        ::src="src"
-                        ::name="`${inputName}[name]`"
-                        ::params="params"
-                        :placeholder="trans('admin::app.leads.common.products.product-name')"
-                        @on-selected="(product) => addProduct(product)"
-                        ::value="{ id: product.product_id, name: product.name }"
-                    />
+                    <select
+                        class="form-control !mb-2"
+                        :name="`${inputName}[product_id]`"
+                        v-model="product.product_id"
+                        @change="onProductSelect"
+                    >
+                        <option value="" disabled selected>
+                            @lang('admin::app.leads.common.products.select-product')
+                        </option>
+
+                        <option
+                            v-for="item in allProducts"
+                            :key="item.id"
+                            :value="item.id"
+                        >
+                            @{{ item.name }}
+                        </option>
+                    </select>
+
+                    <input type="hidden" :name="`${inputName}[name]`" v-model="product.name" />
 
                     <x-admin::form.control-group.control
                         type="hidden"
@@ -104,14 +111,13 @@
                         v-model="product.product_id"
                         rules="required"
                         :label="trans('admin::app.leads.common.products.product-name')"
-                        :placeholder="trans('admin::app.leads.common.products.product-name')"
                     />
 
                     <x-admin::form.control-group.error ::name="`${inputName}[product_id]`" />
                 </x-admin::form.control-group>
             </x-admin::table.td>
 
-            <!-- Product Quantity -->
+            <!-- Quantity -->
             <x-admin::table.td class="text-right">
                 <x-admin::form.control-group>
                     <x-admin::form.control-group.control
@@ -120,7 +126,6 @@
                         ::value="product.quantity"
                         rules="required|decimal:4"
                         :label="trans('admin::app.leads.common.products.quantity')"
-                        :placeholder="trans('admin::app.leads.common.products.quantity')"
                         @on-change="(event) => product.quantity = event.value"
                         position="center"
                     />
@@ -136,7 +141,6 @@
                         ::value="product.price"
                         rules="required|decimal:4"
                         :label="trans('admin::app.leads.common.products.price')"
-                        :placeholder="trans('admin::app.leads.common.products.price')"
                         @on-change="(event) => product.price = event.value"
                         ::value-label="$admin.formatPrice(product.price)"
                         position="center"
@@ -153,7 +157,6 @@
                         ::value="product.price * product.quantity"
                         rules="required|decimal:4"
                         :label="trans('admin::app.leads.common.products.total')"
-                        :placeholder="trans('admin::app.leads.common.products.total')"
                         ::value-label="$admin.formatPrice(product.price * product.quantity)"
                         :allowEdit="false"
                         position="center"
@@ -162,27 +165,40 @@
             </x-admin::table.td>
 
             <!-- Action -->
-            <x-admin::table.td class="text-right">
-                <x-admin::form.control-group >
+            <x-admin::table.td class="text-right flex justify-end gap-3">
+                <x-admin::form.control-group class="flex items-center gap-2">
+                    <!-- View Icon -->
+                    <a
+                        v-if="product.product_id"
+                        :href="`{{ url('admin/products/view/') }}/${product.product_id}`"
+                        target="_blank"
+                        title="View Product"
+                    >
+                        <i class="icon-eye cursor-pointer text-2xl text-blue-500 hover:text-blue-700"></i>
+                    </a>
+
+                    <!-- Delete Icon -->
                     <i
                         @click="removeProduct"
-                        class="icon-delete cursor-pointer text-2xl"
+                        class="icon-delete cursor-pointer text-2xl text-red-500 hover:text-red-700"
+                        title="Delete Product"
                     ></i>
                 </x-admin::form.control-group>
             </x-admin::table.td>
         </x-admin::table.thead.tr>
     </script>
 
+    {{-- Vue Components --}}
     <script type="module">
         app.component('v-product-list', {
             template: '#v-product-list-template',
 
             props: ['data'],
 
-            data: function () {
+            data() {
                 return {
                     products: this.data ? this.data : [],
-                }
+                };
             },
 
             methods: {
@@ -194,12 +210,14 @@
                         quantity: 1,
                         price: 0,
                         amount: null,
-                    })
+                    });
                 },
 
-                removeProduct (product) {
+                removeProduct(product) {
                     const index = this.products.indexOf(product);
-                    this.products.splice(index, 1);
+                    if (index > -1) {
+                        this.products.splice(index, 1);
+                    }
                 },
             },
         });
@@ -211,59 +229,59 @@
 
             data() {
                 return {
-                    products: [],
-                }
+                    allProducts: [],
+                    loading: false,
+                };
             },
 
             computed: {
                 inputName() {
-                    if (this.product.id) {
-                        return "products[" + this.product.id + "]";
-                    }
-
-                    return "products[product_" + this.index + "]";
-                },
-
-                src() {
-                    return '{{ route('admin.products.search') }}';
-                },
-
-                params() {
-                    return {
-                        params: {
-                            query: this.product.name,
-                        },
-                    };
+                    return this.product.id
+                        ? `products[${this.product.id}]`
+                        : `products[product_${this.index}]`;
                 },
             },
 
+            mounted() {
+                this.fetchProducts();
+            },
+
             methods: {
-                /**
-                 * Add the product.
-                 *
-                 * @param {Object} result
-                 *
-                 * @return {void}
-                 */
-                addProduct(result) {
-                    this.product.product_id = result.id;
-
-                    this.product.name = result.name;
-
-                    this.product.price = result.price;
-
-                    this.product.quantity = result.quantity ?? 1;
+                async fetchProducts() {
+                    this.loading = true;
+                    try {
+                        const response = await fetch('{{ route('admin.products.search') }}');
+                        const result = await response.json();
+                        this.allProducts = result.data ?? result;
+                    } catch (error) {
+                        console.error('Error fetching products:', error);
+                    } finally {
+                        this.loading = false;
+                    }
                 },
 
-                /**
-                 * Remove the product.
-                 *
-                 * @return {void}
-                 */
-                removeProduct () {
-                    this.$emit('onRemoveProduct', this.product)
-                }
-            }
+                onProductSelect(event) {
+                    const selectedId = event.target.value;
+                    const selectedProduct = this.allProducts.find(p => p.id == selectedId);
+
+                    if (selectedProduct) {
+                        this.product.product_id = selectedProduct.id;
+                        this.product.name = selectedProduct.name;
+                        this.product.price = selectedProduct.price ?? 0;
+                        this.product.quantity = 1;
+                    }
+                },
+
+                removeProduct() {
+                    this.$emit('onRemoveProduct', this.product);
+                },
+            },
         });
     </script>
-@endPushOnce
+
+    <style>
+        .icon-eye, .icon-delete {
+            transition: color 0.2s ease;
+        }
+    </style>
+@endpush
