@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
 use Illuminate\Support\Facades\DB;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Lead\Repositories\StageRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Lead\Repositories\StageRepository;
 
 class Lead extends AbstractReporting
 {

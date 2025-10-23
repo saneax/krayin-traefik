@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\WebForm\Repositories;
+namespace agenticone\WebForm\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class WebFormRepository extends Repository
 {
@@ -27,13 +27,13 @@ class WebFormRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\WebForm\Contracts\WebForm';
+        return 'agenticone\WebForm\Contracts\WebForm';
     }
 
     /**
      * Create Web Form.
      *
-     * @return \Webkul\WebForm\Contracts\WebForm
+     * @return \agenticone\WebForm\Contracts\WebForm
      */
     public function create(array $data)
     {
@@ -55,7 +55,7 @@ class WebFormRepository extends Repository
      *
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\WebForm\Contracts\WebForm
+     * @return \agenticone\WebForm\Contracts\WebForm
      */
     public function update(array $data, $id, $attribute = 'id')
     {

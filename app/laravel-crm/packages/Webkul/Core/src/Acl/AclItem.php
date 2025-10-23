@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Acl;
+namespace agenticone\Core\Acl;
 
 use Illuminate\Support\Collection;
 

@@ -1,5 +1,5 @@
 @php
-    $lookUpEntity = app('Webkul\Attribute\Repositories\AttributeRepository')->getLookUpEntity($attribute->lookup_type, $value);
+    $lookUpEntity = app('agenticone\Attribute\Repositories\AttributeRepository')->getLookUpEntity($attribute->lookup_type, $value);
 @endphp
 
 <x-admin::form.control-group.controls.inline.lookup 

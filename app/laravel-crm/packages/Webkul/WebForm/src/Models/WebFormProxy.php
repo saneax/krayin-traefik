@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\WebForm\Models;
+namespace agenticone\WebForm\Models;
 
 use Konekt\Concord\Proxies\ModelProxy;
 

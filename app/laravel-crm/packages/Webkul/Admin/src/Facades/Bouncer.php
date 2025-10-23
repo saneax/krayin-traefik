@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Facades;
+namespace agenticone\Admin\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

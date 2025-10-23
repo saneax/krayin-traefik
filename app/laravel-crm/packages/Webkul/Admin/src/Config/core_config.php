@@ -23,7 +23,7 @@ return [
                 'title'   => 'admin::app.configuration.index.general.general.locale-settings.title',
                 'type'    => 'select',
                 'default' => 'en',
-                'options' => 'Webkul\Core\Core@locales',
+                'options' => 'agenticone\Core\Core@locales',
             ],
         ],
     ],

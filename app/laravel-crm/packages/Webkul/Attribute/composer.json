@@ -12,13 +12,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkul\\Attribute\\": "src/"
+            "agenticone\\Attribute\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Attribute\\Providers\\AttributeServiceProvider"
+                "agenticone\\Attribute\\Providers\\AttributeServiceProvider"
             ],
             "aliases": {}
         }

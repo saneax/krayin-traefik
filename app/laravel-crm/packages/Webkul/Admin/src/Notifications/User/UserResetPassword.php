@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Notifications\User;
+namespace agenticone\Admin\Notifications\User;
 
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Notifications\Messages\MailMessage;

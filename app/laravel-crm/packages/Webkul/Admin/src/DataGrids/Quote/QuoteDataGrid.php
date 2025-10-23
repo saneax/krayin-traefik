@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\DataGrids\Quote;
+namespace agenticone\Admin\DataGrids\Quote;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
+use agenticone\DataGrid\DataGrid;
 
 class QuoteDataGrid extends DataGrid
 {
@@ -74,7 +74,7 @@ class QuoteDataGrid extends DataGrid
             'filterable'         => true,
             'filterable_type'    => 'searchable_dropdown',
             'filterable_options' => [
-                'repository' => \Webkul\User\Repositories\UserRepository::class,
+                'repository' => \agenticone\User\Repositories\UserRepository::class,
                 'column'     => [
                     'label' => 'name',
                     'value' => 'name',
@@ -98,7 +98,7 @@ class QuoteDataGrid extends DataGrid
             'filterable'         => true,
             'filterable_type'    => 'searchable_dropdown',
             'filterable_options' => [
-                'repository' => \Webkul\Contact\Repositories\PersonRepository::class,
+                'repository' => \agenticone\Contact\Repositories\PersonRepository::class,
                 'column'     => [
                     'label' => 'name',
                     'value' => 'name',

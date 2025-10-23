@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings\Warehouse;
+namespace agenticone\Admin\Http\Controllers\Settings\Warehouse;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\DataGrids\Product\ProductDataGrid;
-use Webkul\Admin\DataGrids\Settings\WarehouseDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Warehouse\Repositories\WarehouseRepository;
+use agenticone\Admin\DataGrids\Product\ProductDataGrid;
+use agenticone\Admin\DataGrids\Settings\WarehouseDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Warehouse\Repositories\WarehouseRepository;
 
 class WarehouseController extends Controller
 {

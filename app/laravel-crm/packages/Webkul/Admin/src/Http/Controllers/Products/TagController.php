@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Products;
+namespace agenticone\Admin\Http\Controllers\Products;
 
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Product\Repositories\ProductRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Product\Repositories\ProductRepository;
 
 class TagController extends Controller
 {

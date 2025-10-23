@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\EmailTemplate\Contracts;
+namespace agenticone\EmailTemplate\Contracts;
 
 interface EmailTemplate {}

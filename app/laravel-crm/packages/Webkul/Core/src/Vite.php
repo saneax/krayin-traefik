@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core;
+namespace agenticone\Core;
 
 use Illuminate\Support\Facades\Vite as BaseVite;
-use Webkul\Core\Exceptions\ViterNotFound;
+use agenticone\Core\Exceptions\ViterNotFound;
 
 class Vite
 {

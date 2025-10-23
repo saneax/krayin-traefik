@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Activity\Repositories;
+namespace agenticone\Activity\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class FileRepository extends Repository
 {
@@ -13,6 +13,6 @@ class FileRepository extends Repository
      */
     public function model()
     {
-        return \Webkul\Activity\Contracts\File::class;
+        return \agenticone\Activity\Contracts\File::class;
     }
 }

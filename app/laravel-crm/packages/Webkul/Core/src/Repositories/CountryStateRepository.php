@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core\Repositories;
+namespace agenticone\Core\Repositories;
 
 use Prettus\Repository\Traits\CacheableRepository;
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class CountryStateRepository extends Repository
 {
@@ -16,6 +16,6 @@ class CountryStateRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Core\Contracts\CountryState';
+        return 'agenticone\Core\Contracts\CountryState';
     }
 }

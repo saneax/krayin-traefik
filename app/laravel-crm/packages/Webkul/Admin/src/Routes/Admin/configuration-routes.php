@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Configuration\ConfigurationController;
+use agenticone\Admin\Http\Controllers\Configuration\ConfigurationController;
 
 Route::controller(ConfigurationController::class)->prefix('configuration')->group(function () {
     Route::get('search', 'search')->name('admin.configuration.search');

@@ -59,7 +59,7 @@
                         {!! view_render_event('admin.settings.warehouses.edit.left.form_controls.before', ['warehouse' => $warehouse]) !!}
 
                         <x-admin::attributes
-                            :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                            :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                 ['code', 'NOTIN', ['name', 'description']],
                                 'entity_type' => 'warehouses',
                             ])->sortBy('sort_order')"
@@ -85,7 +85,7 @@
                             {!! view_render_event('admin.settings.warehouses.edit.right.form_controls.before', ['warehouse' => $warehouse]) !!}
 
                             <x-admin::attributes
-                                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                     ['code', 'IN', ['name', 'description']],
                                     'entity_type' => 'warehouses',
                                 ])->sortBy('sort_order')"

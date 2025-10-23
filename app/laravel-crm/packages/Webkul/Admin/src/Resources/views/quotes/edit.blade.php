@@ -86,7 +86,7 @@
 
                         <div class="w-1/2">
                             <x-admin::attributes
-                                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                     'entity_type' => 'quotes',
                                     ['code', 'IN', ['subject']],
                                 ])"
@@ -102,7 +102,7 @@
                         
 
                             <x-admin::attributes
-                                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                         'entity_type' => 'quotes',
                                         ['code', 'IN', ['description']],
                                     ])"
@@ -118,7 +118,7 @@
 
                             <div class="flex gap-4">
                                 <x-admin::attributes
-                                    :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                    :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                         'entity_type' => 'quotes',
                                         ['code', 'IN', ['expired_at', 'user_id']],
                                     ])->sortBy('sort_order')"
@@ -135,7 +135,7 @@
 
                             <div class="flex gap-4">
                                 <x-admin::attributes
-                                    :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                    :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                         'entity_type' => 'quotes',
                                         ['code', 'IN', ['person_id']],
                                     ])->sortBy('sort_order')"
@@ -154,7 +154,7 @@
                                 @php
                                     $leadId = old('lead-id') ?? optional($quote->leads->first())->id;
 
-                                    $lookUpEntityData = app('Webkul\Attribute\Repositories\AttributeRepository')->getLookUpEntity('leads', $leadId);
+                                    $lookUpEntityData = app('agenticone\Attribute\Repositories\AttributeRepository')->getLookUpEntity('leads', $leadId);
                                 @endphp
 
                                 <x-admin::form.control-group class="w-full">
@@ -192,7 +192,7 @@
 
                         <div class="w-1/2">
                             <x-admin::attributes
-                                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                         'entity_type' => 'quotes',
                                         ['code', 'IN', ['billing_address', 'shipping_address']],
                                     ])"

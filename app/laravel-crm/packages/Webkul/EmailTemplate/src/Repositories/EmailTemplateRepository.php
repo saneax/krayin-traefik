@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\EmailTemplate\Repositories;
+namespace agenticone\EmailTemplate\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class EmailTemplateRepository extends Repository
 {
@@ -13,6 +13,6 @@ class EmailTemplateRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\EmailTemplate\Contracts\EmailTemplate';
+        return 'agenticone\EmailTemplate\Contracts\EmailTemplate';
     }
 }

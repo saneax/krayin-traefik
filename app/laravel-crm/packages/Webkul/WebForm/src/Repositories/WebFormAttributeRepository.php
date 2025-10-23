@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\WebForm\Repositories;
+namespace agenticone\WebForm\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class WebFormAttributeRepository extends Repository
 {
@@ -13,6 +13,6 @@ class WebFormAttributeRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\WebForm\Contracts\WebFormAttribute';
+        return 'agenticone\WebForm\Contracts\WebFormAttribute';
     }
 }

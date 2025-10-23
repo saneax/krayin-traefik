@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Tag\Models;
+namespace agenticone\Tag\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Tag\Contracts\Tag as TagContract;
-use Webkul\User\Models\UserProxy;
+use agenticone\Tag\Contracts\Tag as TagContract;
+use agenticone\User\Models\UserProxy;
 
 class Tag extends Model implements TagContract
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Email\Models;
+namespace agenticone\Email\Models;
 
 use Konekt\Concord\Proxies\ModelProxy;
 

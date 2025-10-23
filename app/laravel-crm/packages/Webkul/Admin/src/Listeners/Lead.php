@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Listeners;
+namespace agenticone\Admin\Listeners;
 
-use Webkul\Email\Repositories\EmailRepository;
+use agenticone\Email\Repositories\EmailRepository;
 
 class Lead
 {
@@ -14,7 +14,7 @@ class Lead
     public function __construct(protected EmailRepository $emailRepository) {}
 
     /**
-     * @param  \Webkul\Lead\Models\Lead  $lead
+     * @param  \agenticone\Lead\Models\Lead  $lead
      * @return void
      */
     public function linkToEmail($lead)

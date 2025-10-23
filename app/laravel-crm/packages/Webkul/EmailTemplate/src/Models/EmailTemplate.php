@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\EmailTemplate\Models;
+namespace agenticone\EmailTemplate\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\EmailTemplate\Contracts\EmailTemplate as EmailTemplateContract;
+use agenticone\EmailTemplate\Contracts\EmailTemplate as EmailTemplateContract;
 
 class EmailTemplate extends Model implements EmailTemplateContract
 {

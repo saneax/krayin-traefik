@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Lead\Models;
+namespace agenticone\Lead\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Contracts\Product as ProductContract;
-use Webkul\Product\Models\ProductProxy;
+use agenticone\Lead\Contracts\Product as ProductContract;
+use agenticone\Product\Models\ProductProxy;
 
 class Product extends Model implements ProductContract
 {

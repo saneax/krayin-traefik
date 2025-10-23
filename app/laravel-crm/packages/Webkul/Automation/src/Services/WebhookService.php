@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Automation\Services;
+namespace agenticone\Automation\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Message;
-use Webkul\Contact\Repositories\PersonRepository;
+use agenticone\Contact\Repositories\PersonRepository;
 
 class WebhookService
 {

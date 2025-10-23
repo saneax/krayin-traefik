@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\DataGrids\Contact;
+namespace agenticone\Admin\DataGrids\Contact;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Webkul\Contact\Repositories\OrganizationRepository;
-use Webkul\DataGrid\DataGrid;
+use agenticone\Contact\Repositories\OrganizationRepository;
+use agenticone\DataGrid\DataGrid;
 
 class PersonDataGrid extends DataGrid
 {

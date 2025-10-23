@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Webkul\Contact\Repositories\OrganizationRepository;
+use agenticone\Contact\Repositories\OrganizationRepository;
 
 class Organization extends AbstractReporting
 {

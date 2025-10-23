@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Automation\Models;
+namespace agenticone\Automation\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Automation\Contracts\Webhook as ContractsWebhook;
+use agenticone\Automation\Contracts\Webhook as ContractsWebhook;
 
 class Webhook extends Model implements ContractsWebhook
 {

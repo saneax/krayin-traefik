@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Automation\Helpers;
+namespace agenticone\Automation\Helpers;
 
 class Validator
 {
     /**
      * Validate workflow for condition
      *
-     * @param  \Webkul\Automation\Contracts\Workflow  $workflow
+     * @param  \agenticone\Automation\Contracts\Workflow  $workflow
      * @param  mixed  $entity
      * @return bool
      */

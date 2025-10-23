@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Automation\Repositories;
+namespace agenticone\Automation\Repositories;
 
-use Webkul\Automation\Contracts\Workflow;
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Automation\Contracts\Workflow;
+use agenticone\Core\Eloquent\Repository;
 
 class WorkflowRepository extends Repository
 {

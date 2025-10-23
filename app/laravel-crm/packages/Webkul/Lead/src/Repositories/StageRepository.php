@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Lead\Repositories;
+namespace agenticone\Lead\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class StageRepository extends Repository
 {
@@ -13,6 +13,6 @@ class StageRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Lead\Contracts\Stage';
+        return 'agenticone\Lead\Contracts\Stage';
     }
 }

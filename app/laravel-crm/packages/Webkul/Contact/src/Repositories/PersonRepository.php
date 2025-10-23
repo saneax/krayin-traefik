@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Contact\Repositories;
+namespace agenticone\Contact\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Contact\Contracts\Person;
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Contact\Contracts\Person;
+use agenticone\Core\Eloquent\Repository;
 
 class PersonRepository extends Repository
 {
@@ -50,7 +50,7 @@ class PersonRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Contact\Contracts\Person
+     * @return \agenticone\Contact\Contracts\Person
      */
     public function create(array $data)
     {
@@ -70,7 +70,7 @@ class PersonRepository extends Repository
     /**
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Contact\Contracts\Person
+     * @return \agenticone\Contact\Contracts\Person
      */
     public function update(array $data, $id, $attributes = [])
     {

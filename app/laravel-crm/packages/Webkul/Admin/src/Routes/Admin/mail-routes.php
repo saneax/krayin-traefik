@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Mail\EmailController;
-use Webkul\Admin\Http\Controllers\Mail\TagController;
+use agenticone\Admin\Http\Controllers\Mail\EmailController;
+use agenticone\Admin\Http\Controllers\Mail\TagController;
 
 Route::prefix('mail')->group(function () {
     Route::controller(EmailController::class)->group(function () {

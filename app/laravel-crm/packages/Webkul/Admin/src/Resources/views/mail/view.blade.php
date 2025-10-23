@@ -895,7 +895,7 @@
 
                         <x-slot:content>
                             <x-admin::attributes
-                                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                     'entity_type' => 'persons',
                                 ])"
                             />
@@ -965,7 +965,7 @@
                                             <div class="flex gap-4 max-sm:flex-wrap">
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['title']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -975,7 +975,7 @@
 
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['lead_value']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -987,7 +987,7 @@
                                             <div class="flex w-full gap-4 max-sm:flex-wrap">
                                                 <!-- Description -->
                                                 <x-admin::attributes
-                                                    :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                    :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                         ['code', 'IN', ['description']],
                                                         'entity_type' => 'leads',
                                                         'quick_add'   => 1
@@ -999,7 +999,7 @@
                                             <div class="flex gap-4 max-sm:flex-wrap">
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['lead_pipeline_id']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -1009,7 +1009,7 @@
 
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['lead_pipeline_stage_id']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -1021,7 +1021,7 @@
                                             <div class="flex gap-4 max-sm:flex-wrap">
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['lead_type_id']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -1031,7 +1031,7 @@
 
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['lead_source_id']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -1043,7 +1043,7 @@
                                             <div class="flex gap-4 max-sm:flex-wrap">
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['user_id']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1
@@ -1053,7 +1053,7 @@
                                                 
                                                 <div class="w-1/2">
                                                     <x-admin::attributes
-                                                        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                                        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                                             ['code', 'IN', ['expected_close_date']],
                                                             'entity_type' => 'leads',
                                                             'quick_add'   => 1

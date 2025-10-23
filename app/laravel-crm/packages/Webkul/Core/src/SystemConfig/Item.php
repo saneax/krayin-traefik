@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\SystemConfig;
+namespace agenticone\Core\SystemConfig;
 
 use Illuminate\Support\Collection;
 

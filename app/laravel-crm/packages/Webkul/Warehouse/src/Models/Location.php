@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Warehouse\Models;
+namespace agenticone\Warehouse\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Warehouse\Contracts\Location as LocationContract;
+use agenticone\Warehouse\Contracts\Location as LocationContract;
 
 class Location extends Model implements LocationContract
 {

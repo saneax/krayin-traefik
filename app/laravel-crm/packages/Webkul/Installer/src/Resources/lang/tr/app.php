@@ -274,7 +274,7 @@ return [
             'arabic'                   => 'Arapça',
             'back'                     => 'Geri',
             'krayin'                   => 'Krayin',
-            'krayin-info'              => 'Webkul tarafından geliştirilen bir Topluluk Projesi',
+            'krayin-info'              => 'agenticone tarafından geliştirilen bir Topluluk Projesi',
             'krayin-logo'              => 'Krayin Logosu',
             'bengali'                  => 'Bengalce',
             'chinese'                  => 'Çince',
@@ -299,7 +299,7 @@ return [
             'title'                    => 'Krayin Kurulum Sihirbazı',
             'turkish'                  => 'Türkçe',
             'ukrainian'                => 'Ukraynaca',
-            'webkul'                   => 'Webkul',
+            'webkul'                   => 'agenticone',
         ],
     ],
 ];

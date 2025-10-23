@@ -1,6 +1,6 @@
 @if (isset($attribute))
     @php
-        $lookUpEntityData = app('Webkul\Attribute\Repositories\AttributeRepository')
+        $lookUpEntityData = app('agenticone\Attribute\Repositories\AttributeRepository')
             ->getLookUpEntity($attribute->lookup_type, old($attribute->code) ?: $value);
     @endphp
 

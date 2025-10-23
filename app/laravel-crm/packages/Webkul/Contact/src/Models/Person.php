@@ -1,16 +1,16 @@
 <?php
 
-namespace Webkul\Contact\Models;
+namespace agenticone\Contact\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Activity\Models\ActivityProxy;
-use Webkul\Activity\Traits\LogsActivity;
-use Webkul\Attribute\Traits\CustomAttribute;
-use Webkul\Contact\Contracts\Person as PersonContract;
-use Webkul\Contact\Database\Factories\PersonFactory;
-use Webkul\Tag\Models\TagProxy;
-use Webkul\User\Models\UserProxy;
+use agenticone\Activity\Models\ActivityProxy;
+use agenticone\Activity\Traits\LogsActivity;
+use agenticone\Attribute\Traits\CustomAttribute;
+use agenticone\Contact\Contracts\Person as PersonContract;
+use agenticone\Contact\Database\Factories\PersonFactory;
+use agenticone\Tag\Models\TagProxy;
+use agenticone\User\Models\UserProxy;
 
 class Person extends Model implements PersonContract
 {

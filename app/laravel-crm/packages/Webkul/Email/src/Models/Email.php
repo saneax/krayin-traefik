@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Email\Models;
+namespace agenticone\Email\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Contact\Models\PersonProxy;
-use Webkul\Email\Contracts\Email as EmailContract;
-use Webkul\Lead\Models\LeadProxy;
-use Webkul\Tag\Models\TagProxy;
+use agenticone\Contact\Models\PersonProxy;
+use agenticone\Email\Contracts\Email as EmailContract;
+use agenticone\Lead\Models\LeadProxy;
+use agenticone\Tag\Models\TagProxy;
 
 class Email extends Model implements EmailContract
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
-use Webkul\Quote\Repositories\QuoteRepository;
+use agenticone\Quote\Repositories\QuoteRepository;
 
 class Quote extends AbstractReporting
 {

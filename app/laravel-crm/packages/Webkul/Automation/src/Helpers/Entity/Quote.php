@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\Automation\Helpers\Entity;
+namespace agenticone\Automation\Helpers\Entity;
 
 use Illuminate\Support\Facades\Mail;
-use Webkul\Admin\Notifications\Common;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Automation\Repositories\WebhookRepository;
-use Webkul\Automation\Services\WebhookService;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\EmailTemplate\Repositories\EmailTemplateRepository;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Quote\Contracts\Quote as ContractsQuote;
-use Webkul\Quote\Repositories\QuoteRepository;
+use agenticone\Admin\Notifications\Common;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Automation\Repositories\WebhookRepository;
+use agenticone\Automation\Services\WebhookService;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\EmailTemplate\Repositories\EmailTemplateRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Quote\Contracts\Quote as ContractsQuote;
+use agenticone\Quote\Repositories\QuoteRepository;
 
 class Quote extends AbstractEntity
 {

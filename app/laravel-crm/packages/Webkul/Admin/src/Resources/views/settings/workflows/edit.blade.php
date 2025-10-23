@@ -815,7 +815,7 @@
 
                 data() {
                     return {
-                        events: @json(app('\Webkul\Automation\Helpers\Entity')->getEvents()),
+                        events: @json(app('\agenticone\Automation\Helpers\Entity')->getEvents()),
 
                         event: '{{ $workflow->event }}',
 
@@ -953,7 +953,7 @@
                 
                 data() {
                     return {
-                        conditions: @json(app('\Webkul\Automation\Helpers\Entity')->getConditions()),
+                        conditions: @json(app('\agenticone\Automation\Helpers\Entity')->getConditions()),
 
                         conditionOperators: {
                             'price': [{
@@ -1180,7 +1180,7 @@
 
                 data() {
                     return {
-                        actions: @json(app('\Webkul\Automation\Helpers\Entity')->getActions()),
+                        actions: @json(app('\agenticone\Automation\Helpers\Entity')->getActions()),
                     };
                 },
 

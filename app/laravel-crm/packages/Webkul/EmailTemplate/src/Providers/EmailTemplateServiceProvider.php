@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\EmailTemplate\Providers;
+namespace agenticone\EmailTemplate\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

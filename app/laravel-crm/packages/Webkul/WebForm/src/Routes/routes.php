@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\WebForm\Http\Controllers\WebFormController;
+use agenticone\WebForm\Http\Controllers\WebFormController;
 
 Route::controller(WebFormController::class)->middleware(['web', 'admin_locale'])->prefix('web-forms')->group(function () {
     Route::get('forms/{id}/form.js', 'formJS')->name('admin.settings.web_forms.form_js');

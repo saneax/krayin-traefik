@@ -1,11 +1,11 @@
 <?php
 
-use Webkul\Core\Acl;
-use Webkul\Core\Core;
-use Webkul\Core\Menu;
-use Webkul\Core\SystemConfig;
-use Webkul\Core\ViewRenderEventManager;
-use Webkul\Core\Vite;
+use agenticone\Core\Acl;
+use agenticone\Core\Core;
+use agenticone\Core\Menu;
+use agenticone\Core\SystemConfig;
+use agenticone\Core\ViewRenderEventManager;
+use agenticone\Core\Vite;
 
 if (! function_exists('core')) {
     /**

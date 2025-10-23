@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Contact\OrganizationController;
-use Webkul\Admin\Http\Controllers\Contact\Persons\ActivityController;
-use Webkul\Admin\Http\Controllers\Contact\Persons\PersonController;
-use Webkul\Admin\Http\Controllers\Contact\Persons\TagController;
+use agenticone\Admin\Http\Controllers\Contact\OrganizationController;
+use agenticone\Admin\Http\Controllers\Contact\Persons\ActivityController;
+use agenticone\Admin\Http\Controllers\Contact\Persons\PersonController;
+use agenticone\Admin\Http\Controllers\Contact\Persons\TagController;
 
 Route::prefix('contacts')->group(function () {
     /**

@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Quote\Providers;
+namespace agenticone\Quote\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Quote\Models\Quote::class,
-        \Webkul\Quote\Models\QuoteItem::class,
+        \agenticone\Quote\Models\Quote::class,
+        \agenticone\Quote\Models\QuoteItem::class,
     ];
 }

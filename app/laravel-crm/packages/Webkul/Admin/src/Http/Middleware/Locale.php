@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Middleware;
+namespace agenticone\Admin\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Application;

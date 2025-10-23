@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Contracts\Validations;
+namespace agenticone\Core\Contracts\Validations;
 
 use Illuminate\Contracts\Validation\Rule;
 

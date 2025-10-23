@@ -1,7 +1,7 @@
 <?php
 
-use Webkul\DataGrid\DataGrid;
-use Webkul\DataGrid\Exceptions\InvalidDataGridException;
+use agenticone\DataGrid\DataGrid;
+use agenticone\DataGrid\Exceptions\InvalidDataGridException;
 
 if (! function_exists('datagrid')) {
     /**

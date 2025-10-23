@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Webkul\Contact\Repositories\PersonRepository;
+use agenticone\Contact\Repositories\PersonRepository;
 
 class Person extends AbstractReporting
 {

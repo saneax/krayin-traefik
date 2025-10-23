@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Providers;
+namespace agenticone\Admin\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -13,19 +13,19 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'contacts.person.create.after' => [
-            'Webkul\Admin\Listeners\Person@linkToEmail',
+            'agenticone\Admin\Listeners\Person@linkToEmail',
         ],
 
         'lead.create.after' => [
-            'Webkul\Admin\Listeners\Lead@linkToEmail',
+            'agenticone\Admin\Listeners\Lead@linkToEmail',
         ],
 
         'activity.create.after' => [
-            'Webkul\Admin\Listeners\Activity@afterUpdateOrCreate',
+            'agenticone\Admin\Listeners\Activity@afterUpdateOrCreate',
         ],
 
         'activity.update.after' => [
-            'Webkul\Admin\Listeners\Activity@afterUpdateOrCreate',
+            'agenticone\Admin\Listeners\Activity@afterUpdateOrCreate',
         ],
     ];
 }

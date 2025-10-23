@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers;
+namespace agenticone\Admin\Http\Controllers;
 
-use Webkul\Admin\Helpers\Dashboard;
+use agenticone\Admin\Helpers\Dashboard;
 
 class DashboardController extends Controller
 {

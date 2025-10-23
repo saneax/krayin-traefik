@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Quote;
+namespace agenticone\Admin\Http\Controllers\Quote;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Webkul\Admin\DataGrids\Quote\QuoteDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Resources\QuoteResource;
-use Webkul\Core\Traits\PDFHandler;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Quote\Repositories\QuoteRepository;
+use agenticone\Admin\DataGrids\Quote\QuoteDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Admin\Http\Resources\QuoteResource;
+use agenticone\Core\Traits\PDFHandler;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Quote\Repositories\QuoteRepository;
 
 class QuoteController extends Controller
 {

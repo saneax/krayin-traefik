@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Http\Controllers;
+namespace agenticone\Installer\Http\Controllers;
 
 use Illuminate\Http\Response as IlluminateResponse;
 use Illuminate\Support\Facades\Cache;

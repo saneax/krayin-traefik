@@ -1,15 +1,15 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
-use Webkul\Admin\DataGrids\Settings\WebhookDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Requests\WebhookRequest;
-use Webkul\Automation\Repositories\WebhookRepository;
+use agenticone\Admin\DataGrids\Settings\WebhookDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Requests\WebhookRequest;
+use agenticone\Automation\Repositories\WebhookRepository;
 
 class WebhookController extends Controller
 {

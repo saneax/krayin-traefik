@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Requests;
+namespace agenticone\Admin\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Decimal;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Core\Contracts\Validations\Decimal;
 
 class LeadForm extends FormRequest
 {

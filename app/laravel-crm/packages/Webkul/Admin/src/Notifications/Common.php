@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Notifications;
+namespace agenticone\Admin\Notifications;
 
 use Illuminate\Mail\Mailable;
 

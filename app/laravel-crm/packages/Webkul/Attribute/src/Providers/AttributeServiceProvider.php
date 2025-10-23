@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Attribute\Providers;
+namespace agenticone\Attribute\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;

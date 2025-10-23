@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Http\Controllers;
+namespace agenticone\Installer\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

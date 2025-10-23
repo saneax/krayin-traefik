@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\DataGrid\Models;
+namespace agenticone\DataGrid\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Webkul\DataGrid\Contracts\SavedFilter as SavedFilterContract;
+use agenticone\DataGrid\Contracts\SavedFilter as SavedFilterContract;
 
 class SavedFilter extends Model implements SavedFilterContract
 {

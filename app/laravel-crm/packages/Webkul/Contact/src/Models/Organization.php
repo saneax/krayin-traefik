@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Contact\Models;
+namespace agenticone\Contact\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Attribute\Traits\CustomAttribute;
-use Webkul\Contact\Contracts\Organization as OrganizationContract;
-use Webkul\User\Models\UserProxy;
+use agenticone\Attribute\Traits\CustomAttribute;
+use agenticone\Contact\Contracts\Organization as OrganizationContract;
+use agenticone\User\Models\UserProxy;
 
 class Organization extends Model implements OrganizationContract
 {

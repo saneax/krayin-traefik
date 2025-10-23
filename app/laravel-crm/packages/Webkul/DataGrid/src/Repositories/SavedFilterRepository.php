@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\DataGrid\Repositories;
+namespace agenticone\DataGrid\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
-use Webkul\DataGrid\Contracts\SavedFilter;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\DataGrid\Contracts\SavedFilter;
 
 class SavedFilterRepository extends Repository
 {

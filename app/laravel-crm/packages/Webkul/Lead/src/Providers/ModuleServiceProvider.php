@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\Lead\Providers;
+namespace agenticone\Lead\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Lead\Models\Lead::class,
-        \Webkul\Lead\Models\Pipeline::class,
-        \Webkul\Lead\Models\Product::class,
-        \Webkul\Lead\Models\Source::class,
-        \Webkul\Lead\Models\Stage::class,
-        \Webkul\Lead\Models\Type::class,
+        \agenticone\Lead\Models\Lead::class,
+        \agenticone\Lead\Models\Pipeline::class,
+        \agenticone\Lead\Models\Product::class,
+        \agenticone\Lead\Models\Source::class,
+        \agenticone\Lead\Models\Stage::class,
+        \agenticone\Lead\Models\Type::class,
     ];
 }

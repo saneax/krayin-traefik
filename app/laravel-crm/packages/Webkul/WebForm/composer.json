@@ -10,13 +10,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Webkul\\WebForm\\": "src/"
+            "agenticone\\WebForm\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\WebForm\\Providers\\WebFormServiceProvider"
+                "agenticone\\WebForm\\Providers\\WebFormServiceProvider"
             ],
             "aliases": {}
         }

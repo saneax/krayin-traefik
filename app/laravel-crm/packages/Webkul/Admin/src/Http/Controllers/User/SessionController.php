@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\User;
+namespace agenticone\Admin\Http\Controllers\User;
 
-use Webkul\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Controllers\Controller;
 
 class SessionController extends Controller
 {

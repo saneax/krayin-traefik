@@ -1,4 +1,4 @@
-@php($placeholders = app('\Webkul\Automation\Helpers\Entity')->getEmailTemplatePlaceholders())
+@php($placeholders = app('\agenticone\Automation\Helpers\Entity')->getEmailTemplatePlaceholders())
 
 <x-admin::layouts>
     <!-- Page Title -->
@@ -309,7 +309,7 @@
                                     :label="trans('admin::app.settings.webhooks.create.entity-type')"
                                     :placeholder="trans('admin::app.settings.webhooks.create.entity-type')"
                                 >
-                                    @foreach (app('\Webkul\Automation\Helpers\Entity')->getEvents() as $item)
+                                    @foreach (app('\agenticone\Automation\Helpers\Entity')->getEvents() as $item)
                                         <option value="{{ $item['id'] }}">
                                             {{ $item['name'] }}
                                         </option>

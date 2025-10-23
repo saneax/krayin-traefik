@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Warehouse\Models;
+namespace agenticone\Warehouse\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Activity\Models\ActivityProxy;
-use Webkul\Activity\Traits\LogsActivity;
-use Webkul\Attribute\Traits\CustomAttribute;
-use Webkul\Tag\Models\TagProxy;
-use Webkul\Warehouse\Contracts\Warehouse as WarehouseContract;
+use agenticone\Activity\Models\ActivityProxy;
+use agenticone\Activity\Traits\LogsActivity;
+use agenticone\Attribute\Traits\CustomAttribute;
+use agenticone\Tag\Models\TagProxy;
+use agenticone\Warehouse\Contracts\Warehouse as WarehouseContract;
 
 class Warehouse extends Model implements WarehouseContract
 {

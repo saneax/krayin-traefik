@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\WebForm\Http\Controllers;
+namespace agenticone\WebForm\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

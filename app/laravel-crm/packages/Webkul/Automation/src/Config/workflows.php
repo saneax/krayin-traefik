@@ -5,7 +5,7 @@ return [
 
         'leads' => [
             'name'   => 'Leads',
-            'class'  => 'Webkul\Automation\Helpers\Entity\Lead',
+            'class'  => 'agenticone\Automation\Helpers\Entity\Lead',
             'events' => [
                 [
                     'event' => 'lead.create.after',
@@ -22,7 +22,7 @@ return [
 
         'activities' => [
             'name'   => 'Activities',
-            'class'  => 'Webkul\Automation\Helpers\Entity\Activity',
+            'class'  => 'agenticone\Automation\Helpers\Entity\Activity',
             'events' => [
                 [
                     'event' => 'activity.create.after',
@@ -39,7 +39,7 @@ return [
 
         'persons' => [
             'name'   => 'Persons',
-            'class'  => 'Webkul\Automation\Helpers\Entity\Person',
+            'class'  => 'agenticone\Automation\Helpers\Entity\Person',
             'events' => [
                 [
                     'event' => 'contacts.person.create.after',
@@ -56,7 +56,7 @@ return [
 
         'quotes' => [
             'name'   => 'Quotes',
-            'class'  => 'Webkul\Automation\Helpers\Entity\Quote',
+            'class'  => 'agenticone\Automation\Helpers\Entity\Quote',
             'events' => [
                 [
                     'event' => 'quote.create.after',

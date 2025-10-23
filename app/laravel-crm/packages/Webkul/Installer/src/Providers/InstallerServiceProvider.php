@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Installer\Providers;
+namespace agenticone\Installer\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
-use Webkul\Installer\Console\Commands\Installer as InstallerCommand;
-use Webkul\Installer\Http\Middleware\CanInstall;
-use Webkul\Installer\Http\Middleware\Locale;
+use agenticone\Installer\Console\Commands\Installer as InstallerCommand;
+use agenticone\Installer\Http\Middleware\CanInstall;
+use agenticone\Installer\Http\Middleware\Locale;
 
 class InstallerServiceProvider extends ServiceProvider
 {
@@ -35,7 +35,7 @@ class InstallerServiceProvider extends ServiceProvider
 
         $router->aliasMiddleware('installer_locale', Locale::class);
 
-        Event::listen('krayin.installed', 'Webkul\Installer\Listeners\Installer@installed');
+        Event::listen('krayin.installed', 'agenticone\Installer\Listeners\Installer@installed');
 
         $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', 'installer');
 
@@ -43,7 +43,7 @@ class InstallerServiceProvider extends ServiceProvider
          * Route to access template applied image file
          */
         $this->app['router']->get('cache/{filename}', [
-            'uses' => 'Webkul\Installer\Http\Controllers\ImageCacheController@getImage',
+            'uses' => 'agenticone\Installer\Http\Controllers\ImageCacheController@getImage',
             'as'   => 'image_cache',
         ])->where(['filename' => '[ \w\\.\\/\\-\\@\(\)\=]+']);
     }

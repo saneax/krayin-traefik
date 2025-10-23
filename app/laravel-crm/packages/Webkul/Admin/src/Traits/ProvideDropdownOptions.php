@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Traits;
+namespace agenticone\Admin\Traits;
 
 /**
  * Single place for all dropdown options. Sets of sorted dropdown
@@ -97,7 +97,7 @@ trait ProvideDropdownOptions
      */
     public function getUserDropdownOptions(): array
     {
-        $options = app(\Webkul\User\Repositories\UserRepository::class)
+        $options = app(\agenticone\User\Repositories\UserRepository::class)
             ->get(['id as value', 'name as label'])
             ->map(function ($item, $key) {
                 $item->disabled = false;
@@ -124,7 +124,7 @@ trait ProvideDropdownOptions
      */
     public function getLeadSourcesOptions(): array
     {
-        $options = app(\Webkul\Lead\Repositories\SourceRepository::class)
+        $options = app(\agenticone\Lead\Repositories\SourceRepository::class)
             ->get(['id as value', 'name as label'])
             ->map(function ($item, $key) {
                 $item->disabled = false;
@@ -151,7 +151,7 @@ trait ProvideDropdownOptions
      */
     public function getOrganizationDropdownOptions(): array
     {
-        $options = app(\Webkul\Contact\Repositories\OrganizationRepository::class)
+        $options = app(\agenticone\Contact\Repositories\OrganizationRepository::class)
             ->get(['id as value', 'name as label'])
             ->map(function ($item, $key) {
                 $item->disabled = false;
@@ -255,7 +255,7 @@ trait ProvideDropdownOptions
      */
     public function getWarehouseDropdownOptions(): array
     {
-        $options = app(\Webkul\Warehouse\Repositories\WarehouseRepository::class)
+        $options = app(\agenticone\Warehouse\Repositories\WarehouseRepository::class)
             ->get(['id as value', 'name as label'])
             ->map(function ($item, $key) {
                 $item->disabled = false;

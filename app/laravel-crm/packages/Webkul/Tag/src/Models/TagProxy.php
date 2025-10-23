@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Tag\Models;
+namespace agenticone\Tag\Models;
 
 use Konekt\Concord\Proxies\ModelProxy;
 

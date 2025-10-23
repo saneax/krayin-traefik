@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Contact\Contracts;
+namespace agenticone\Contact\Contracts;
 
 interface Person {}

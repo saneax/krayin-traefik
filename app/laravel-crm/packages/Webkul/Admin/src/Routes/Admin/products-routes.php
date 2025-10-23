@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Products\ActivityController;
-use Webkul\Admin\Http\Controllers\Products\ProductController;
-use Webkul\Admin\Http\Controllers\Products\TagController;
+use agenticone\Admin\Http\Controllers\Products\ActivityController;
+use agenticone\Admin\Http\Controllers\Products\ProductController;
+use agenticone\Admin\Http\Controllers\Products\TagController;
 
 Route::group(['middleware' => ['user'], 'prefix' => config('app.admin_path')], function () {
     Route::controller(ProductController::class)->prefix('products')->group(function () {

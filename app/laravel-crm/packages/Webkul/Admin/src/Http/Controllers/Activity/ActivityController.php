@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Activity;
+namespace agenticone\Admin\Http\Controllers\Activity;
 
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Webkul\Activity\Repositories\ActivityRepository;
-use Webkul\Activity\Repositories\FileRepository;
-use Webkul\Admin\DataGrids\Activity\ActivityDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\MassUpdateRequest;
-use Webkul\Admin\Http\Resources\ActivityResource;
-use Webkul\Attribute\Repositories\AttributeRepository;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Activity\Repositories\FileRepository;
+use agenticone\Admin\DataGrids\Activity\ActivityDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\MassUpdateRequest;
+use agenticone\Admin\Http\Resources\ActivityResource;
+use agenticone\Attribute\Repositories\AttributeRepository;
 
 class ActivityController extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Lead\Repositories;
+namespace agenticone\Lead\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class TypeRepository extends Repository
 {
@@ -13,6 +13,6 @@ class TypeRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Lead\Contracts\Type';
+        return 'agenticone\Lead\Contracts\Type';
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\User\Models;
+namespace agenticone\User\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\User\Contracts\Role as RoleContract;
+use agenticone\User\Contracts\Role as RoleContract;
 
 class Role extends Model implements RoleContract
 {

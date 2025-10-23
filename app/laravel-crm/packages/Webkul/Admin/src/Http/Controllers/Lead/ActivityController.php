@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Lead;
+namespace agenticone\Admin\Http\Controllers\Lead;
 
 use Illuminate\Support\Facades\DB;
-use Webkul\Activity\Repositories\ActivityRepository;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Resources\ActivityResource;
-use Webkul\Email\Repositories\AttachmentRepository;
-use Webkul\Email\Repositories\EmailRepository;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Resources\ActivityResource;
+use agenticone\Email\Repositories\AttachmentRepository;
+use agenticone\Email\Repositories\EmailRepository;
 
 class ActivityController extends Controller
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Core;
+namespace agenticone\Core;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Config;
-use Webkul\Core\Repositories\CoreConfigRepository;
-use Webkul\Core\SystemConfig\Item;
+use agenticone\Core\Repositories\CoreConfigRepository;
+use agenticone\Core\SystemConfig\Item;
 
 class SystemConfig
 {

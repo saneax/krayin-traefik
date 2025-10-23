@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Database\Seeders\EmailTemplate;
+namespace agenticone\Installer\Database\Seeders\EmailTemplate;
 
 use Illuminate\Database\Seeder;
 

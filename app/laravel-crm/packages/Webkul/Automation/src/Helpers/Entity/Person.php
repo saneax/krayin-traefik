@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\Automation\Helpers\Entity;
+namespace agenticone\Automation\Helpers\Entity;
 
 use Illuminate\Support\Facades\Mail;
-use Webkul\Admin\Notifications\Common;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Automation\Contracts\Workflow;
-use Webkul\Automation\Repositories\WebhookRepository;
-use Webkul\Automation\Services\WebhookService;
-use Webkul\Contact\Contracts\Person as PersonContract;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\EmailTemplate\Repositories\EmailTemplateRepository;
-use Webkul\Lead\Repositories\LeadRepository;
+use agenticone\Admin\Notifications\Common;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Automation\Contracts\Workflow;
+use agenticone\Automation\Repositories\WebhookRepository;
+use agenticone\Automation\Services\WebhookService;
+use agenticone\Contact\Contracts\Person as PersonContract;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\EmailTemplate\Repositories\EmailTemplateRepository;
+use agenticone\Lead\Repositories\LeadRepository;
 
 class Person extends AbstractEntity
 {

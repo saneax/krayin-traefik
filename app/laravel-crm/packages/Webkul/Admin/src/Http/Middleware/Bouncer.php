@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Middleware;
+namespace agenticone\Admin\Http\Middleware;
 
 use Illuminate\Support\Facades\Route;
 

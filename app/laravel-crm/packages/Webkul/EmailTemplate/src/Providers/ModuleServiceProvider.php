@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\EmailTemplate\Providers;
+namespace agenticone\EmailTemplate\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\EmailTemplate\Models\EmailTemplate::class,
+        \agenticone\EmailTemplate\Models\EmailTemplate::class,
     ];
 }

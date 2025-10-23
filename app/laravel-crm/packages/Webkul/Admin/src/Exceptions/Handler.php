@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Exceptions;
+namespace agenticone\Admin\Exceptions;
 
 use App\Exceptions\Handler as AppExceptionHandler;
 use Illuminate\Auth\AuthenticationException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\DataGrid\Providers;
+namespace agenticone\DataGrid\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

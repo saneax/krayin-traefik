@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Requests;
+namespace agenticone\Admin\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Factory as ValidationFactory;

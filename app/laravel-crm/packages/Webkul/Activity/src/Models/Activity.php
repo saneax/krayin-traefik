@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Activity\Models;
+namespace agenticone\Activity\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Activity\Contracts\Activity as ActivityContract;
-use Webkul\Contact\Models\PersonProxy;
-use Webkul\Lead\Models\LeadProxy;
-use Webkul\Product\Models\ProductProxy;
-use Webkul\User\Models\UserProxy;
-use Webkul\Warehouse\Models\WarehouseProxy;
+use agenticone\Activity\Contracts\Activity as ActivityContract;
+use agenticone\Contact\Models\PersonProxy;
+use agenticone\Lead\Models\LeadProxy;
+use agenticone\Product\Models\ProductProxy;
+use agenticone\User\Models\UserProxy;
+use agenticone\Warehouse\Models\WarehouseProxy;
 
 class Activity extends Model implements ActivityContract
 {

@@ -1,6 +1,6 @@
 @php
     $options = $attribute->lookup_type
-        ? app('Webkul\Attribute\Repositories\AttributeRepository')->getLookUpOptions($attribute->lookup_type)
+        ? app('agenticone\Attribute\Repositories\AttributeRepository')->getLookUpOptions($attribute->lookup_type)
         : $attribute->options()->orderBy('sort_order')->get();
 @endphp
 

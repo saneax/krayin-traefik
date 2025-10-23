@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\User\Repositories;
+namespace agenticone\User\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class UserRepository extends Repository
 {
@@ -24,7 +24,7 @@ class UserRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\User\Contracts\User';
+        return 'agenticone\User\Contracts\User';
     }
 
     /**

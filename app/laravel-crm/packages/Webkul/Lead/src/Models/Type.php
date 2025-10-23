@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Lead\Models;
+namespace agenticone\Lead\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Contracts\Type as TypeContract;
+use agenticone\Lead\Contracts\Type as TypeContract;
 
 class Type extends Model implements TypeContract
 {

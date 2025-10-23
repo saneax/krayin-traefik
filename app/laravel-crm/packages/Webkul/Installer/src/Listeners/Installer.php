@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Installer\Listeners;
+namespace agenticone\Installer\Listeners;
 
 use GuzzleHttp\Client;
-use Webkul\User\Repositories\UserRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class Installer
 {

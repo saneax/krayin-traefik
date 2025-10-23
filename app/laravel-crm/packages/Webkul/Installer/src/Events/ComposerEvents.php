@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Events;
+namespace agenticone\Installer\Events;
 
 use Symfony\Component\Console\Output\ConsoleOutput;
 

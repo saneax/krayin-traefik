@@ -301,7 +301,7 @@ return [
             'title'                    => 'Krayin Installer',
             'turkish'                  => 'Turkish',
             'ukrainian'                => 'Ukrainian',
-            'webkul'                   => 'Webkul',
+            'webkul'                   => 'agenticone',
         ],
     ],
 ];

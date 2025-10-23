@@ -69,7 +69,7 @@
             </x-admin::form.control-group.label>
             
             @php
-                $organizationAttribute = app('Webkul\Attribute\Repositories\AttributeRepository')->findOneWhere([
+                $organizationAttribute = app('agenticone\Attribute\Repositories\AttributeRepository')->findOneWhere([
                     'entity_type' => 'persons',
                     'code'        => 'organization_id'
                 ]);

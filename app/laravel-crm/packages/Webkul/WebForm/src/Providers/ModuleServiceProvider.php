@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\WebForm\Providers;
+namespace agenticone\WebForm\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\WebForm\Models\WebForm::class,
-        \Webkul\WebForm\Models\WebFormAttribute::class,
+        \agenticone\WebForm\Models\WebForm::class,
+        \agenticone\WebForm\Models\WebFormAttribute::class,
     ];
 }

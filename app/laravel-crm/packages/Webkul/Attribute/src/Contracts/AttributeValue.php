@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Attribute\Contracts;
+namespace agenticone\Attribute\Contracts;
 
 interface AttributeValue {}

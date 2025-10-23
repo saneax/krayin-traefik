@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Email\Providers;
+namespace agenticone\Email\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;

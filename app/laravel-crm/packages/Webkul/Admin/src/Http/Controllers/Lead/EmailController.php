@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Lead;
+namespace agenticone\Admin\Http\Controllers\Lead;
 
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Controllers\Mail\EmailController as BaseEmailController;
-use Webkul\Admin\Http\Resources\ActivityResource;
+use agenticone\Admin\Http\Controllers\Mail\EmailController as BaseEmailController;
+use agenticone\Admin\Http\Resources\ActivityResource;
 
 class EmailController extends BaseEmailController
 {
@@ -50,7 +50,7 @@ class EmailController extends BaseEmailController
      * Transform the email data to activity resource.
      *
      * @param  array  $data
-     * @return \Webkul\Admin\Http\Resources\ActivityResource
+     * @return \agenticone\Admin\Http\Resources\ActivityResource
      */
     public function transformToActivity($data)
     {

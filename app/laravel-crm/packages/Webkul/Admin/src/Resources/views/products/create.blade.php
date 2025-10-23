@@ -56,7 +56,7 @@
                         </p>
 
                         <x-admin::attributes
-                            :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                            :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                 'entity_type' => 'products',
                                 ['code', 'NOTIN', ['price']],
                                 ['code' , '!=', 'quantity']
@@ -78,7 +78,7 @@
 
                         <x-slot:content>
                             <x-admin::attributes
-                                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                                     'entity_type' => 'products',
                                     ['code', 'IN', ['price']],
                                     ['code' , '!=', 'quantity']

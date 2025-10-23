@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Requests;
+namespace agenticone\Admin\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
 use Carbon\CarbonPeriod;
 use Illuminate\Support\Carbon;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\WebForm\Models;
+namespace agenticone\WebForm\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\WebForm\Contracts\WebForm as WebFormContract;
+use agenticone\WebForm\Contracts\WebForm as WebFormContract;
 
 class WebForm extends Model implements WebFormContract
 {

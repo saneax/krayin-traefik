@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\WebForm\DataGrids;
+namespace agenticone\WebForm\DataGrids;
 
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
+use agenticone\DataGrid\DataGrid;
 
 class WebFormDataGrid extends DataGrid
 {

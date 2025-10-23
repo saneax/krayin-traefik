@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Mail;
+namespace agenticone\Admin\Http\Controllers\Mail;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Webkul\Admin\DataGrids\Mail\EmailDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Requests\MassUpdateRequest;
-use Webkul\Admin\Http\Resources\EmailResource;
-use Webkul\Email\Mails\Email;
-use Webkul\Email\Repositories\AttachmentRepository;
-use Webkul\Email\Repositories\EmailRepository;
-use Webkul\Lead\Repositories\LeadRepository;
+use agenticone\Admin\DataGrids\Mail\EmailDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Admin\Http\Requests\MassUpdateRequest;
+use agenticone\Admin\Http\Resources\EmailResource;
+use agenticone\Email\Mails\Email;
+use agenticone\Email\Repositories\AttachmentRepository;
+use agenticone\Email\Repositories\EmailRepository;
+use agenticone\Lead\Repositories\LeadRepository;
 
 class EmailController extends Controller
 {

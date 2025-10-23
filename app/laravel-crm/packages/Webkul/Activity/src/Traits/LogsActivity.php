@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Activity\Traits;
+namespace agenticone\Activity\Traits;
 
-use Webkul\Activity\Repositories\ActivityRepository;
-use Webkul\Attribute\Contracts\AttributeValue;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Attribute\Contracts\AttributeValue;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
 
 trait LogsActivity
 {

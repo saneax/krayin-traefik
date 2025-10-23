@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\DataGrid;
+namespace agenticone\DataGrid;
 
-use Webkul\DataGrid\Enums\ColumnTypeEnum;
-use Webkul\DataGrid\Exceptions\InvalidColumnException;
+use agenticone\DataGrid\Enums\ColumnTypeEnum;
+use agenticone\DataGrid\Exceptions\InvalidColumnException;
 
 class Column
 {

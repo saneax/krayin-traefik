@@ -1,19 +1,19 @@
 <?php
 
-namespace Webkul\WebForm\Http\Controllers;
+namespace agenticone\WebForm\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Lead\Repositories\PipelineRepository;
-use Webkul\Lead\Repositories\SourceRepository;
-use Webkul\Lead\Repositories\TypeRepository;
-use Webkul\WebForm\Http\Requests\WebForm;
-use Webkul\WebForm\Repositories\WebFormRepository;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Lead\Repositories\PipelineRepository;
+use agenticone\Lead\Repositories\SourceRepository;
+use agenticone\Lead\Repositories\TypeRepository;
+use agenticone\WebForm\Http\Requests\WebForm;
+use agenticone\WebForm\Repositories\WebFormRepository;
 
 class WebFormController extends Controller
 {

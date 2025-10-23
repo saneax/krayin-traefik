@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Installer\Http\Middleware;
+namespace agenticone\Installer\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
-use Webkul\Installer\Helpers\DatabaseManager;
+use agenticone\Installer\Helpers\DatabaseManager;
 
 class CanInstall
 {

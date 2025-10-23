@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\User;
+namespace agenticone\Admin\Http\Controllers\User;
 
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Password;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Notifications\User\UserResetPassword;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Notifications\User\UserResetPassword;
 
 class ForgotPasswordController extends Controller
 {

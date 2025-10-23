@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\DashboardController;
-use Webkul\Admin\Http\Controllers\DataGrid\SavedFilterController;
-use Webkul\Admin\Http\Controllers\DataGridController;
-use Webkul\Admin\Http\Controllers\TinyMCEController;
-use Webkul\Admin\Http\Controllers\User\AccountController;
+use agenticone\Admin\Http\Controllers\DashboardController;
+use agenticone\Admin\Http\Controllers\DataGrid\SavedFilterController;
+use agenticone\Admin\Http\Controllers\DataGridController;
+use agenticone\Admin\Http\Controllers\TinyMCEController;
+use agenticone\Admin\Http\Controllers\User\AccountController;
 
 /**
  * Dashboard routes.

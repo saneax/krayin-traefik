@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\WebForm\Rules;
+namespace agenticone\WebForm\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 

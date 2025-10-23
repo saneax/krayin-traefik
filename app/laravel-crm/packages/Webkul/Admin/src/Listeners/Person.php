@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Listeners;
+namespace agenticone\Admin\Listeners;
 
-use Webkul\Email\Repositories\EmailRepository;
+use agenticone\Email\Repositories\EmailRepository;
 
 class Person
 {
@@ -14,7 +14,7 @@ class Person
     public function __construct(protected EmailRepository $emailRepository) {}
 
     /**
-     * @param  \Webkul\Contact\Models\Person  $person
+     * @param  \agenticone\Contact\Models\Person  $person
      * @return void
      */
     public function linkToEmail($person)

@@ -11,13 +11,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Webkul\\Installer\\": "src/"
+            "agenticone\\Installer\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Installer\\Providers\\InstallerServiceProvider"
+                "agenticone\\Installer\\Providers\\InstallerServiceProvider"
             ],
             "aliases": {}
         }

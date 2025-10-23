@@ -6,7 +6,7 @@
     </h4>
 
     <x-admin::attributes.view
-        :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+        :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
             'entity_type' => 'products',
             ['code', 'IN', ['SKU', 'price', 'quantity', 'status']]
         ])->sortBy('sort_order')"

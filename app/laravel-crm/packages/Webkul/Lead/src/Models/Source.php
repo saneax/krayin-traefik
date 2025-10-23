@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Lead\Models;
+namespace agenticone\Lead\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Contracts\Source as SourceContract;
+use agenticone\Lead\Contracts\Source as SourceContract;
 
 class Source extends Model implements SourceContract
 {

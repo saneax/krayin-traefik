@@ -1,18 +1,18 @@
 <?php
 
-namespace Webkul\Lead\Models;
+namespace agenticone\Lead\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Activity\Models\ActivityProxy;
-use Webkul\Activity\Traits\LogsActivity;
-use Webkul\Attribute\Traits\CustomAttribute;
-use Webkul\Contact\Models\PersonProxy;
-use Webkul\Email\Models\EmailProxy;
-use Webkul\Lead\Contracts\Lead as LeadContract;
-use Webkul\Quote\Models\QuoteProxy;
-use Webkul\Tag\Models\TagProxy;
-use Webkul\User\Models\UserProxy;
+use agenticone\Activity\Models\ActivityProxy;
+use agenticone\Activity\Traits\LogsActivity;
+use agenticone\Attribute\Traits\CustomAttribute;
+use agenticone\Contact\Models\PersonProxy;
+use agenticone\Email\Models\EmailProxy;
+use agenticone\Lead\Contracts\Lead as LeadContract;
+use agenticone\Quote\Models\QuoteProxy;
+use agenticone\Tag\Models\TagProxy;
+use agenticone\User\Models\UserProxy;
 
 class Lead extends Model implements LeadContract
 {

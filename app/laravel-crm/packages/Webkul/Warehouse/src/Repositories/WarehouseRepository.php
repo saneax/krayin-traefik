@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Warehouse\Repositories;
+namespace agenticone\Warehouse\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Warehouse\Contracts\Warehouse;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\Warehouse\Contracts\Warehouse;
 
 class WarehouseRepository extends Repository
 {
@@ -47,7 +47,7 @@ class WarehouseRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Warehouse\Contracts\Warehouse
+     * @return \agenticone\Warehouse\Contracts\Warehouse
      */
     public function create(array $data)
     {
@@ -65,7 +65,7 @@ class WarehouseRepository extends Repository
      *
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Warehouse\Contracts\Warehouse
+     * @return \agenticone\Warehouse\Contracts\Warehouse
      */
     public function update(array $data, $id, $attributes = [])
     {

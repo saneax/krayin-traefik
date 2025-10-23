@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\DataGrid;
+namespace agenticone\DataGrid;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
-use Webkul\Admin\Exports\DataGridExport;
-use Webkul\DataGrid\Enums\ColumnTypeEnum;
+use agenticone\Admin\Exports\DataGridExport;
+use agenticone\DataGrid\Enums\ColumnTypeEnum;
 
 abstract class DataGrid
 {

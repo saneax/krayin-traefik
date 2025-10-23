@@ -24,7 +24,7 @@
             </div>
             
             <!-- Pipeline Links -->
-            @foreach (app('Webkul\Lead\Repositories\PipelineRepository')->all() as $tempPipeline)
+            @foreach (app('agenticone\Lead\Repositories\PipelineRepository')->all() as $tempPipeline)
                 <a
                     href="{{ route('admin.leads.index', [
                         'pipeline_id' => $tempPipeline->id,

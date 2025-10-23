@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core;
+namespace agenticone\Core;
 
 use Illuminate\Support\Facades\Event;
 

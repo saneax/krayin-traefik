@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Attribute\Models;
+namespace agenticone\Attribute\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Attribute\Contracts\AttributeOption as AttributeOptionContract;
+use agenticone\Attribute\Contracts\AttributeOption as AttributeOptionContract;
 
 class AttributeOption extends Model implements AttributeOptionContract
 {

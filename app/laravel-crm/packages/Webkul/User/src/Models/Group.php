@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\User\Models;
+namespace agenticone\User\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\User\Contracts\Group as GroupContract;
+use agenticone\User\Contracts\Group as GroupContract;
 
 class Group extends Model implements GroupContract
 {

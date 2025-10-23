@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Lead\ActivityController;
-use Webkul\Admin\Http\Controllers\Lead\EmailController;
-use Webkul\Admin\Http\Controllers\Lead\LeadController;
-use Webkul\Admin\Http\Controllers\Lead\QuoteController;
-use Webkul\Admin\Http\Controllers\Lead\TagController;
+use agenticone\Admin\Http\Controllers\Lead\ActivityController;
+use agenticone\Admin\Http\Controllers\Lead\EmailController;
+use agenticone\Admin\Http\Controllers\Lead\LeadController;
+use agenticone\Admin\Http\Controllers\Lead\QuoteController;
+use agenticone\Admin\Http\Controllers\Lead\TagController;
 
 Route::controller(LeadController::class)->prefix('leads')->group(function () {
     Route::get('', 'index')->name('admin.leads.index');

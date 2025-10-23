@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Http\Middleware;
+namespace agenticone\Installer\Http\Middleware;
 
 use Closure;
 

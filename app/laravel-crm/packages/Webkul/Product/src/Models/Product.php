@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\Product\Models;
+namespace agenticone\Product\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Webkul\Activity\Models\ActivityProxy;
-use Webkul\Activity\Traits\LogsActivity;
-use Webkul\Attribute\Traits\CustomAttribute;
-use Webkul\Product\Contracts\Product as ProductContract;
-use Webkul\Tag\Models\TagProxy;
-use Webkul\Warehouse\Models\LocationProxy;
-use Webkul\Warehouse\Models\WarehouseProxy;
+use agenticone\Activity\Models\ActivityProxy;
+use agenticone\Activity\Traits\LogsActivity;
+use agenticone\Attribute\Traits\CustomAttribute;
+use agenticone\Product\Contracts\Product as ProductContract;
+use agenticone\Tag\Models\TagProxy;
+use agenticone\Warehouse\Models\LocationProxy;
+use agenticone\Warehouse\Models\WarehouseProxy;
 
 class Product extends Model implements ProductContract
 {
