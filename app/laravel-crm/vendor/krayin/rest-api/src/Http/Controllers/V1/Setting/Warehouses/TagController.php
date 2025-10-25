@@ -3,8 +3,8 @@
 namespace agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses;
 
 use Illuminate\Support\Facades\Event;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\Warehouse\Repositories\WarehouseRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\Warehouse\Repositories\WarehouseRepository;
 
 class TagController extends Controller
 {

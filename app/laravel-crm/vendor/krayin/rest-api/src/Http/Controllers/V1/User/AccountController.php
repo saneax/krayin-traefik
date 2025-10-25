@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
 
 class AccountController extends Controller
 {

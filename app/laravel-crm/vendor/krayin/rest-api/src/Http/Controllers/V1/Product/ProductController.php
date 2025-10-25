@@ -6,11 +6,11 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-agenticone\Admin\Http\Requests\AttributeForm;
-agenticone\Product\Repositories\ProductRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Resources\V1\Product\ProductResource;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Product\Repositories\ProductRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Product\ProductResource;
 
 class ProductController extends Controller
 {

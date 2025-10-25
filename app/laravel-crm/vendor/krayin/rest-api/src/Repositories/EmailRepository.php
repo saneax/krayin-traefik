@@ -3,9 +3,9 @@
 namespace agenticone\Email\Repositories;
 
 use Illuminate\Container\Container;
-agenticone\Core\Eloquent\Repository;
-agenticone\Email\Helpers\HtmlFilter;
-agenticone\Email\Helpers\Parser;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\Email\Helpers\HtmlFilter;
+use agenticone\Email\Helpers\Parser;
 
 class EmailRepository extends Repository
 {

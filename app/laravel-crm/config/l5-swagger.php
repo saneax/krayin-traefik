@@ -5,7 +5,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'AgenticOne Rest API Documentation',
+                'title' => 'Agenticone Rest API Documentation',
             ],
 
             'routes' => [

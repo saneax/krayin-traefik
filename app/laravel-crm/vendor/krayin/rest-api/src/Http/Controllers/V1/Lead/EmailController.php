@@ -4,8 +4,8 @@ namespace agenticone\RestApi\Http\Controllers\V1\Lead;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
-agenticone\RestApi\Http\Controllers\V1\Mail\EmailController as BaseEmailController;
-agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\RestApi\Http\Controllers\V1\Mail\EmailController as BaseEmailController;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class EmailController extends BaseEmailController
 {

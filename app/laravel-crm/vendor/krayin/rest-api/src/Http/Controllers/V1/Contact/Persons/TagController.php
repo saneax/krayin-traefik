@@ -4,8 +4,8 @@ namespace agenticone\RestApi\Http\Controllers\V1\Contact\Persons;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
-agenticone\Contact\Repositories\PersonRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
 
 class TagController extends Controller
 {

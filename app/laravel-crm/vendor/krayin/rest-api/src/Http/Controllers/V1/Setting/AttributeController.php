@@ -7,11 +7,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-agenticone\Attribute\Repositories\AttributeRepository;
-agenticone\Core\Contracts\Validations\Code;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Resources\V1\Setting\AttributeResource;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Core\Contracts\Validations\Code;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Setting\AttributeResource;
 
 class AttributeController extends Controller
 {

@@ -2,10 +2,10 @@
 
 namespace agenticone\RestApi\Http\Controllers\V1\Contact\Persons;
 
-agenticone\Activity\Repositories\ActivityRepository;
-agenticone\Email\Repositories\EmailRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Email\Repositories\EmailRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class ActivityController extends Controller
 {

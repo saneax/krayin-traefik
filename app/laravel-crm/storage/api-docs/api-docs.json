@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Agenticone Rest API Documentation",
-        "description": "Agenticone Rest API Documentation",
+        "title": "Krayin Rest API Documentation",
+        "description": "Krayin Rest API Documentation",
         "contact": {
             "email": "admin@example.com"
         },
@@ -11,7 +11,7 @@
     "servers": [
         {
             "url": "http://127.0.0.1:8000",
-            "description": "Agenticone Rest API."
+            "description": "Krayin Rest API."
         }
     ],
     "paths": {
@@ -4910,7 +4910,7 @@
                                     "subject": {
                                         "description": "Subject of the quote",
                                         "type": "string",
-                                        "example": "Webkul"
+                                        "example": "agenticone"
                                     },
                                     "user_id": {
                                         "description": "ID of the user",
@@ -5088,7 +5088,7 @@
                     "Quotes"
                 ],
                 "summary": "search the quotes",
-                "description": "search the quotes heres the webkul is the search keyword",
+                "description": "search the quotes heres the agenticone is the search keyword",
                 "operationId": "searchQuotes",
                 "parameters": [
                     {
@@ -5097,7 +5097,7 @@
                         "required": false,
                         "schema": {
                             "type": "string",
-                            "example": "subject:webkul;description:webkul;user.name:webkul;person.name:webkul;"
+                            "example": "subject:agenticone;description:agenticone;user.name:agenticone;person.name:agenticone;"
                         }
                     },
                     {
@@ -5232,7 +5232,7 @@
                                     "subject": {
                                         "description": "Subject of the quote",
                                         "type": "string",
-                                        "example": "Webkul"
+                                        "example": "agenticone"
                                     },
                                     "user_id": {
                                         "description": "ID of the user",

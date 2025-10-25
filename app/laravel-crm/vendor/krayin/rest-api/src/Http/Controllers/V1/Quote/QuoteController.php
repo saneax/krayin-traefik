@@ -6,12 +6,12 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-agenticone\Admin\Http\Requests\AttributeForm;
-agenticone\Lead\Repositories\LeadRepository;
-agenticone\Quote\Repositories\QuoteRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Resources\V1\Quote\QuoteResource;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Quote\Repositories\QuoteRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Quote\QuoteResource;
 
 class QuoteController extends Controller
 {

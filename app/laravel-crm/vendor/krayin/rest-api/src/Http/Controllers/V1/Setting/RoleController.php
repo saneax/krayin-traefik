@@ -4,9 +4,9 @@ namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Setting\RoleResource;
-agenticone\User\Repositories\RoleRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Setting\RoleResource;
+use agenticone\User\Repositories\RoleRepository;
 
 class RoleController extends Controller
 {

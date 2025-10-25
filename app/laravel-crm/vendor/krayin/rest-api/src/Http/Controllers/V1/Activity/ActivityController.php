@@ -5,13 +5,13 @@ namespace agenticone\RestApi\Http\Controllers\V1\Activity;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
-agenticone\Activity\Repositories\ActivityRepository;
-agenticone\Activity\Repositories\FileRepository;
-agenticone\Lead\Repositories\LeadRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Request\MassUpdateRequest;
-agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Activity\Repositories\FileRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Request\MassUpdateRequest;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class ActivityController extends Controller
 {

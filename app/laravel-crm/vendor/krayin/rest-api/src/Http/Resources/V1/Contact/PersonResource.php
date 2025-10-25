@@ -3,7 +3,7 @@
 namespace agenticone\RestApi\Http\Resources\V1\Contact;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
+use agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
 
 class PersonResource extends JsonResource
 {

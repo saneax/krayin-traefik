@@ -6,14 +6,14 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 use Prettus\Repository\Criteria\RequestCriteria;
-agenticone\Admin\Notifications\User\Create;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Request\MassUpdateRequest;
-agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
-agenticone\User\Repositories\GroupRepository;
-agenticone\User\Repositories\RoleRepository;
-agenticone\User\Repositories\UserRepository;
+use agenticone\Admin\Notifications\User\Create;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Request\MassUpdateRequest;
+use agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
+use agenticone\User\Repositories\GroupRepository;
+use agenticone\User\Repositories\RoleRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class UserController extends Controller
 {

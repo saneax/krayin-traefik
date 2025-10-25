@@ -4,10 +4,10 @@ namespace agenticone\RestApi\Http\Controllers\V1\Setting\Marketing;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-agenticone\Marketing\Repositories\EventRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Resources\V1\Setting\EventResource;
+use agenticone\Marketing\Repositories\EventRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Setting\EventResource;
 
 class EventController extends Controller
 {

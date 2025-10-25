@@ -2,8 +2,8 @@
 
 namespace agenticone\RestApi\Http\Controllers\V1;
 
-agenticone\Core\Eloquent\Repository;
-agenticone\RestApi\Http\Controllers\RestApiController;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\RestApi\Http\Controllers\RestApiController;
 
 class Controller extends RestApiController
 {

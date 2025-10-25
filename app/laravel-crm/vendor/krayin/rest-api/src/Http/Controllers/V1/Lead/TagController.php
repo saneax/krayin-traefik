@@ -4,8 +4,8 @@ namespace agenticone\RestApi\Http\Controllers\V1\Lead;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-agenticone\Lead\Repositories\LeadRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
 
 class TagController extends Controller
 {

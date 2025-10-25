@@ -4,12 +4,12 @@ namespace agenticone\RestApi\Http\Controllers\V1\Setting\Marketing;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-agenticone\EmailTemplate\Repositories\EmailTemplateRepository;
-agenticone\Marketing\Repositories\CampaignRepository;
-agenticone\Marketing\Repositories\EventRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Resources\V1\Setting\CampaignResource;
+use agenticone\EmailTemplate\Repositories\EmailTemplateRepository;
+use agenticone\Marketing\Repositories\CampaignRepository;
+use agenticone\Marketing\Repositories\EventRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Setting\CampaignResource;
 
 class CampaignController extends Controller
 {

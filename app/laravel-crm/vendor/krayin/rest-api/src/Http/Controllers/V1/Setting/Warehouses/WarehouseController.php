@@ -6,10 +6,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-agenticone\Admin\Http\Requests\AttributeForm;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Setting\WarehouseResource;
-agenticone\Warehouse\Repositories\WarehouseRepository;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Setting\WarehouseResource;
+use agenticone\Warehouse\Repositories\WarehouseRepository;
 
 class WarehouseController extends Controller
 {

@@ -3,9 +3,9 @@
 namespace agenticone\RestApi\Http\Resources\V1\Email;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-agenticone\Admin\Http\Resources\EmailAttachmentResource;
-agenticone\RestApi\Http\Resources\V1\Contact\PersonResource;
-agenticone\RestApi\Http\Resources\V1\Lead\LeadResource;
+use agenticone\Admin\Http\Resources\EmailAttachmentResource;
+use agenticone\RestApi\Http\Resources\V1\Contact\PersonResource;
+use agenticone\RestApi\Http\Resources\V1\Lead\LeadResource;
 
 class EmailResource extends JsonResource
 {

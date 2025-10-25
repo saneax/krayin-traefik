@@ -3,8 +3,8 @@
 namespace agenticone\RestApi\Http\Resources\V1\Activity;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-agenticone\RestApi\Http\Resources\V1\Contact\PersonResource;
-agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
+use agenticone\RestApi\Http\Resources\V1\Contact\PersonResource;
+use agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
 
 class ActivityParticipantResource extends JsonResource
 {

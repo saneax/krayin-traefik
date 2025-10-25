@@ -3,7 +3,7 @@
 namespace agenticone\RestApi\Http\Resources\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class WarehouseResource extends JsonResource
 {

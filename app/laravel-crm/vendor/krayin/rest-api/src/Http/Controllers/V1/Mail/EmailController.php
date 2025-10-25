@@ -7,15 +7,15 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-agenticone\Attribute\Repositories\AttributeRepository;
-agenticone\Email\Mails\Email;
-agenticone\Email\Repositories\AttachmentRepository;
-agenticone\Email\Repositories\EmailRepository;
-agenticone\Lead\Repositories\LeadRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Request\MassDestroyRequest;
-agenticone\RestApi\Http\Request\MassUpdateRequest;
-agenticone\RestApi\Http\Resources\V1\Email\EmailResource;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Email\Mails\Email;
+use agenticone\Email\Repositories\AttachmentRepository;
+use agenticone\Email\Repositories\EmailRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Request\MassUpdateRequest;
+use agenticone\RestApi\Http\Resources\V1\Email\EmailResource;
 
 class EmailController extends Controller
 {

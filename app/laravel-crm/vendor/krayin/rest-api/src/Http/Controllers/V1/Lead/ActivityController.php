@@ -3,11 +3,11 @@
 namespace agenticone\RestApi\Http\Controllers\V1\Lead;
 
 use Illuminate\Support\Facades\DB;
-agenticone\Activity\Repositories\ActivityRepository;
-agenticone\Email\Repositories\AttachmentRepository;
-agenticone\Email\Repositories\EmailRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Email\Repositories\AttachmentRepository;
+use agenticone\Email\Repositories\EmailRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class ActivityController extends Controller
 {

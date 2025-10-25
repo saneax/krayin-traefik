@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
-agenticone\Admin\Notifications\User\UserResetPassword;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
-agenticone\User\Repositories\UserRepository;
+use agenticone\Admin\Notifications\User\UserResetPassword;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
+use agenticone\User\Repositories\UserRepository;
 
 class AuthController extends Controller
 {

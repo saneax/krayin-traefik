@@ -4,10 +4,10 @@ namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-agenticone\Admin\Http\Requests\PipelineForm;
-agenticone\Lead\Repositories\PipelineRepository;
-agenticone\RestApi\Http\Controllers\V1\Controller;
-agenticone\RestApi\Http\Resources\V1\Setting\PipelineResource;
+use agenticone\Admin\Http\Requests\PipelineForm;
+use agenticone\Lead\Repositories\PipelineRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Setting\PipelineResource;
 
 class PipelineController extends Controller
 {
