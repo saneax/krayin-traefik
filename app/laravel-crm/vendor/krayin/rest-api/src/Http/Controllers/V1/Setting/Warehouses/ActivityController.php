@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting\Warehouses;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Webkul\Activity\Repositories\ActivityRepository;
-use Webkul\Email\Repositories\EmailRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Activity\ActivityResource;
+agenticone\Activity\Repositories\ActivityRepository;
+agenticone\Email\Repositories\EmailRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class ActivityController extends Controller
 {

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\RestApi\Http\Controllers\V1\Activity\ActivityController;
+use agenticone\RestApi\Http\Controllers\V1\Activity\ActivityController;
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::controller(ActivityController::class)->prefix('activities')->group(function () {

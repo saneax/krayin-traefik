@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Http\Request;
+namespace agenticone\RestApi\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 

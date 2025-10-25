@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Exceptions;
+namespace agenticone\RestApi\Exceptions;
 
 use App\Exceptions\Handler as AppExceptionHandler;
 use Illuminate\Auth\AuthenticationException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Models\Settings;
+namespace agenticone\RestApi\Docs\Models\Settings;
 
 /**
  * @OA\Schema(
@@ -52,7 +52,7 @@ class Tag
      *     description="User ID",
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Settings\User
+     * @var \agenticone\RestApi\Docs\Models\Settings\User
      */
     private $user_id;
 

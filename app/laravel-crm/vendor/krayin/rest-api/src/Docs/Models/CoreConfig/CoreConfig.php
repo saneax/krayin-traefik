@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Models\CoreConfig;
+namespace agenticone\RestApi\Docs\Models\CoreConfig;
 
 /**
  * @OA\Schema(

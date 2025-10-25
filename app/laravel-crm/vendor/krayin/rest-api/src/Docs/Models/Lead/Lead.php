@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Models\Lead;
+namespace agenticone\RestApi\Docs\Models\Lead;
 
 /**
  * @OA\Schema(
@@ -110,7 +110,7 @@ class Lead
      *     description="Person Id",
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Contact\Person
+     * @var \agenticone\RestApi\Docs\Models\Contact\Person
      */
     private $person;
 
@@ -120,7 +120,7 @@ class Lead
      *     description="User ID",
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Settings\User
+     * @var \agenticone\RestApi\Docs\Models\Settings\User
      */
     private $user;
 
@@ -136,7 +136,7 @@ class Lead
      *     )
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Lead\LeadProduct[]
+     * @var \agenticone\RestApi\Docs\Models\Lead\LeadProduct[]
      */
     private $lead_products;
 

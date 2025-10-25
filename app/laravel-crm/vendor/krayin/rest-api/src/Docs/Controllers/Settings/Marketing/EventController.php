@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Settings\Marketing;
+namespace agenticone\RestApi\Docs\Controllers\Settings\Marketing;
 
 class EventController
 {

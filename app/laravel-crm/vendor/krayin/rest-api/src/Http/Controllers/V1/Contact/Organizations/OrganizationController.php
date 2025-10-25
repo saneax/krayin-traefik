@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Contact\Organizations;
+namespace agenticone\RestApi\Http\Controllers\V1\Contact\Organizations;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Contact\Repositories\OrganizationRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Resources\V1\Contact\OrganizationResource;
+agenticone\Admin\Http\Requests\AttributeForm;
+agenticone\Contact\Repositories\OrganizationRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Request\MassDestroyRequest;
+agenticone\RestApi\Http\Resources\V1\Contact\OrganizationResource;
 
 class OrganizationController extends Controller
 {

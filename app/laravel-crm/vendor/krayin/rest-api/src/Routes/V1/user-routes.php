@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\RestApi\Http\Controllers\V1\User\AccountController;
-use Webkul\RestApi\Http\Controllers\V1\User\AuthController;
+use agenticone\RestApi\Http\Controllers\V1\User\AccountController;
+use agenticone\RestApi\Http\Controllers\V1\User\AuthController;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');

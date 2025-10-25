@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Quote;
+namespace agenticone\RestApi\Http\Controllers\V1\Quote;
 
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Quote\Repositories\QuoteRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Resources\V1\Quote\QuoteResource;
+agenticone\Admin\Http\Requests\AttributeForm;
+agenticone\Lead\Repositories\LeadRepository;
+agenticone\Quote\Repositories\QuoteRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Request\MassDestroyRequest;
+agenticone\RestApi\Http\Resources\V1\Quote\QuoteResource;
 
 class QuoteController extends Controller
 {

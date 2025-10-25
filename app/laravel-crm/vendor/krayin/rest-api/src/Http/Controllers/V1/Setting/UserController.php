@@ -1,19 +1,19 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Notifications\User\Create;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Request\MassUpdateRequest;
-use Webkul\RestApi\Http\Resources\V1\Setting\UserResource;
-use Webkul\User\Repositories\GroupRepository;
-use Webkul\User\Repositories\RoleRepository;
-use Webkul\User\Repositories\UserRepository;
+agenticone\Admin\Notifications\User\Create;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Request\MassDestroyRequest;
+agenticone\RestApi\Http\Request\MassUpdateRequest;
+agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
+agenticone\User\Repositories\GroupRepository;
+agenticone\User\Repositories\RoleRepository;
+agenticone\User\Repositories\UserRepository;
 
 class UserController extends Controller
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\Automation\Repositories\WorkflowRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\WorkflowResource;
+agenticone\Automation\Repositories\WorkflowRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Setting\WorkflowResource;
 
 class WorkflowController extends Controller
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting\Warehouses;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\WarehouseResource;
-use Webkul\Warehouse\Repositories\WarehouseRepository;
+agenticone\Admin\Http\Requests\AttributeForm;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Setting\WarehouseResource;
+agenticone\Warehouse\Repositories\WarehouseRepository;
 
 class WarehouseController extends Controller
 {

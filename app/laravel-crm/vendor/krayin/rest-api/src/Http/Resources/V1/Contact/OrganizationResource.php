@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Http\Resources\V1\Contact;
+namespace agenticone\RestApi\Http\Resources\V1\Contact;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

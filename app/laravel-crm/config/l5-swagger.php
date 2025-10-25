@@ -5,7 +5,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'Krayin Rest API Documentation',
+                'title' => 'AgenticOne Rest API Documentation',
             ],
 
             'routes' => [

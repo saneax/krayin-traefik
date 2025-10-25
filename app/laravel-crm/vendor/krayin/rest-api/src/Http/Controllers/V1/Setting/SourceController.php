@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\Lead\Repositories\SourceRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\SourceResource;
+agenticone\Lead\Repositories\SourceRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Setting\SourceResource;
 
 class SourceController extends Controller
 {

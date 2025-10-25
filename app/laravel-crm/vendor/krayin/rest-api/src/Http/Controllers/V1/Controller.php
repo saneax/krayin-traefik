@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1;
+namespace agenticone\RestApi\Http\Controllers\V1;
 
-use Webkul\Core\Eloquent\Repository;
-use Webkul\RestApi\Http\Controllers\RestApiController;
+agenticone\Core\Eloquent\Repository;
+agenticone\RestApi\Http\Controllers\RestApiController;
 
 class Controller extends RestApiController
 {

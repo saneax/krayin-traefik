@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\RestApi\Http\Controllers\V1\Contact\Organizations\OrganizationController;
-use Webkul\RestApi\Http\Controllers\V1\Contact\Persons\ActivityController;
-use Webkul\RestApi\Http\Controllers\V1\Contact\Persons\PersonController;
-use Webkul\RestApi\Http\Controllers\V1\Contact\Persons\TagController;
+use agenticone\RestApi\Http\Controllers\V1\Contact\Organizations\OrganizationController;
+use agenticone\RestApi\Http\Controllers\V1\Contact\Persons\ActivityController;
+use agenticone\RestApi\Http\Controllers\V1\Contact\Persons\PersonController;
+use agenticone\RestApi\Http\Controllers\V1\Contact\Persons\TagController;
 
 Route::group([
     'prefix'     => 'contacts',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Settings\Warehouses;
+namespace agenticone\RestApi\Docs\Controllers\Settings\Warehouses;
 
 class WarehouseController
 {

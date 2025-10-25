@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Requests\WebhookRequest;
-use Webkul\Automation\Repositories\WebhookRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\WebhookResource;
+agenticone\Admin\Requests\WebhookRequest;
+agenticone\Automation\Repositories\WebhookRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Setting\WebhookResource;
 
 class WebhookController extends Controller
 {

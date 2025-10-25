@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Models\Settings;
+namespace agenticone\RestApi\Docs\Models\Settings;
 
 /**
  * @OA\Schema(
@@ -62,7 +62,7 @@ class Campaign
      *     description="Admin user's role"
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Settings\EmailTemplate
+     * @var \agenticone\RestApi\Docs\Models\Settings\EmailTemplate
      */
     private $marketing_email_template;
 
@@ -72,7 +72,7 @@ class Campaign
      *     description="Admin user's role"
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Settings\Event
+     * @var \agenticone\RestApi\Docs\Models\Settings\Event
      */
     private $marketing_event;
 

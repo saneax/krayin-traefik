@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Contact\Persons;
+namespace agenticone\RestApi\Docs\Controllers\Contact\Persons;
 
 class PersonController
 {

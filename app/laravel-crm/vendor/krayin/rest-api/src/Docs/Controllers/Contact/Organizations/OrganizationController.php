@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Contact\Organizations;
+namespace agenticone\RestApi\Docs\Controllers\Contact\Organizations;
 
 class OrganizationController
 {

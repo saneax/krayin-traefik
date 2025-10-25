@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\User;
+namespace agenticone\RestApi\Http\Controllers\V1\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\UserResource;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Setting\UserResource;
 
 class AccountController extends Controller
 {

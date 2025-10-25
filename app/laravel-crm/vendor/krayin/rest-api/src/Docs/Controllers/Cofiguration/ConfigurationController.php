@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Cofiguration;
+namespace agenticone\RestApi\Docs\Controllers\Cofiguration;
 
 class ConfigurationController
 {

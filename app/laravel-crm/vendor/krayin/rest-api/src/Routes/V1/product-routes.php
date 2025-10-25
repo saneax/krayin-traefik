@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\RestApi\Http\Controllers\V1\Product\ProductController;
+use agenticone\RestApi\Http\Controllers\V1\Product\ProductController;
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::controller(ProductController::class)->prefix('products')->group(function () {

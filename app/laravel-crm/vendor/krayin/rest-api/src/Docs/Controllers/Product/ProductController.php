@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Product;
+namespace agenticone\RestApi\Docs\Controllers\Product;
 
 class ProductController
 {

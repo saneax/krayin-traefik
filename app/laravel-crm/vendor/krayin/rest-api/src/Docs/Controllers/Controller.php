@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers;
+namespace agenticone\RestApi\Docs\Controllers;
 
 /**
  * @OA\Info(

@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\Warehouse\Repositories\LocationRepository;
+agenticone\Admin\Http\Requests\AttributeForm;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\Warehouse\Repositories\LocationRepository;
 
 class LocationController extends Controller
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Email\Repositories;
+namespace agenticone\Email\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Email\Helpers\HtmlFilter;
-use Webkul\Email\Helpers\Parser;
+agenticone\Core\Eloquent\Repository;
+agenticone\Email\Helpers\HtmlFilter;
+agenticone\Email\Helpers\Parser;
 
 class EmailRepository extends Repository
 {
@@ -30,11 +30,11 @@ class EmailRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Email\Contracts\Email';
+        return 'agenticone\Email\Contracts\Email';
     }
 
     /**
-     * @return \Webkul\Email\Contracts\Email
+     * @return \agenticone\Email\Contracts\Email
      */
     public function create(array $data)
     {
@@ -72,7 +72,7 @@ class EmailRepository extends Repository
     /**
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Email\Contracts\Email
+     * @return \agenticone\Email\Contracts\Email
      */
     public function update(array $data, $id, $attribute = 'id')
     {

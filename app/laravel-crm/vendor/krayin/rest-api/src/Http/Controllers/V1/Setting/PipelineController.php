@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Requests\PipelineForm;
-use Webkul\Lead\Repositories\PipelineRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\PipelineResource;
+agenticone\Admin\Http\Requests\PipelineForm;
+agenticone\Lead\Repositories\PipelineRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Resources\V1\Setting\PipelineResource;
 
 class PipelineController extends Controller
 {

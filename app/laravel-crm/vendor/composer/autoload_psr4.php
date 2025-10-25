@@ -33,7 +33,7 @@ return array(
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
-    'Webkul\\RestApi\\' => array($vendorDir . '/krayin/rest-api/src'),
+    'agenticone\\RestApi\\' => array($vendorDir . '/krayin/rest-api/src'),
     'Webklex\\PHPIMAP\\' => array($vendorDir . '/webklex/php-imap/src'),
     'Webklex\\IMAP\\' => array($vendorDir . '/webklex/laravel-imap/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),

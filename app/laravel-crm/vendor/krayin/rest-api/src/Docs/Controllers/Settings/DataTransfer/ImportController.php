@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Settings\DataTransfer;
+namespace agenticone\RestApi\Docs\Controllers\Settings\DataTransfer;
 
 class ImportController
 {

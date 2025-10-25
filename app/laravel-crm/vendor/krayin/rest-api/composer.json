@@ -4,12 +4,12 @@
     "authors": [
         {
             "name": "Devansh Bawari",
-            "email": "devansh.bawari419@webkul.com"
+            "email": "devansh.bawari419@agenticone.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Webkul\\RestApi\\": "src/"
+            "agenticone\\RestApi\\": "src/"
         }
     },
     "require": {
@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\RestApi\\Providers\\RestApiServiceProvider"
+                "agenticone\\RestApi\\Providers\\RestApiServiceProvider"
             ]
         }
     },

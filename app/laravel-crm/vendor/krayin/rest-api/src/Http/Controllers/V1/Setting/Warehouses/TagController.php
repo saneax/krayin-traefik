@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting\Warehouses;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses;
 
 use Illuminate\Support\Facades\Event;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\Warehouse\Repositories\WarehouseRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\Warehouse\Repositories\WarehouseRepository;
 
 class TagController extends Controller
 {

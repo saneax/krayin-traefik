@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Contact\Persons;
+namespace agenticone\RestApi\Http\Controllers\V1\Contact\Persons;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Resources\V1\Contact\PersonResource;
-use Webkul\User\Repositories\UserRepository;
+agenticone\Admin\Http\Requests\AttributeForm;
+agenticone\Contact\Repositories\PersonRepository;
+agenticone\RestApi\Http\Controllers\V1\Controller;
+agenticone\RestApi\Http\Request\MassDestroyRequest;
+agenticone\RestApi\Http\Resources\V1\Contact\PersonResource;
+agenticone\User\Repositories\UserRepository;
 
 class PersonController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Mail;
+namespace agenticone\RestApi\Docs\Controllers\Mail;
 
 class TagController
 {
