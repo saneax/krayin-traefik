@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Authentication;
+namespace agenticone\RestApi\Docs\Controllers\Authentication;
 
 class AuthController
 {

@@ -1,25 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\RestApi\Http\Controllers\V1\Setting\AttributeController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\DataTransfer\ImportController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\EmailTemplateController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\GroupController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\LocationController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\Marketing\CampaignController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\Marketing\EventController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\PipelineController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\RoleController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\SourceController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\TagController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\TypeController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\UserController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\Warehouses\ActivityController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\Warehouses\TagController as WarehouseTagController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\Warehouses\WarehouseController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\WebFormController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\WebhookController;
-use Webkul\RestApi\Http\Controllers\V1\Setting\WorkflowController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\AttributeController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\DataTransfer\ImportController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\EmailTemplateController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\GroupController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\LocationController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\Marketing\CampaignController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\Marketing\EventController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\PipelineController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\RoleController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\SourceController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\TagController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\TypeController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\UserController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses\ActivityController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses\TagController as WarehouseTagController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\Warehouses\WarehouseController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\WebFormController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\WebhookController;
+use agenticone\RestApi\Http\Controllers\V1\Setting\WorkflowController;
 
 Route::group([
     'prefix'     => 'settings',

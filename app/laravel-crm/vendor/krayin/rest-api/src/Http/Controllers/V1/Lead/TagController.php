@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Lead;
+namespace agenticone\RestApi\Http\Controllers\V1\Lead;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
 
 class TagController extends Controller
 {

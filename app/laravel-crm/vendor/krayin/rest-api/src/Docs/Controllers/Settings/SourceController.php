@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Settings;
+namespace agenticone\RestApi\Docs\Controllers\Settings;
 
 class SourceController
 {

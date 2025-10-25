@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Resources\V1\Setting\TagResource;
-use Webkul\Tag\Repositories\TagRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Setting\TagResource;
+use agenticone\Tag\Repositories\TagRepository;
 
 class TagController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Lead;
+namespace agenticone\RestApi\Http\Controllers\V1\Lead;
 
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -8,25 +8,25 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Validator;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Http\Requests\LeadForm;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\DataGrid\Enums\DateRangeOptionEnum;
-use Webkul\Lead\Helpers\MagicAI;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Lead\Repositories\PipelineRepository;
-use Webkul\Lead\Repositories\ProductRepository;
-use Webkul\Lead\Repositories\SourceRepository;
-use Webkul\Lead\Repositories\StageRepository;
-use Webkul\Lead\Repositories\TypeRepository;
-use Webkul\Lead\Services\MagicAIService;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Request\MassUpdateRequest;
-use Webkul\RestApi\Http\Resources\V1\Lead\LeadResource;
-use Webkul\RestApi\Http\Resources\V1\Setting\StageResource;
-use Webkul\Tag\Repositories\TagRepository;
-use Webkul\User\Repositories\UserRepository;
+use agenticone\Admin\Http\Requests\LeadForm;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\DataGrid\Enums\DateRangeOptionEnum;
+use agenticone\Lead\Helpers\MagicAI;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Lead\Repositories\PipelineRepository;
+use agenticone\Lead\Repositories\ProductRepository;
+use agenticone\Lead\Repositories\SourceRepository;
+use agenticone\Lead\Repositories\StageRepository;
+use agenticone\Lead\Repositories\TypeRepository;
+use agenticone\Lead\Services\MagicAIService;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Request\MassUpdateRequest;
+use agenticone\RestApi\Http\Resources\V1\Lead\LeadResource;
+use agenticone\RestApi\Http\Resources\V1\Setting\StageResource;
+use agenticone\Tag\Repositories\TagRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class LeadController extends Controller
 {

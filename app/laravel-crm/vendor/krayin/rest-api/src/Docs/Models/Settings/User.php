@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Models\Settings;
+namespace agenticone\RestApi\Docs\Models\Settings;
 
 /**
  * @OA\Schema(
@@ -62,7 +62,7 @@ class User
      *     description="Admin user's role"
      * )
      *
-     * @var \Webkul\RestApi\Docs\Models\Settings\Role
+     * @var \agenticone\RestApi\Docs\Models\Settings\Role
      */
     private $role;
 

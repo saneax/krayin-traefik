@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Setting;
+namespace agenticone\RestApi\Http\Controllers\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Resources\V1\Setting\RoleResource;
-use Webkul\User\Repositories\RoleRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Resources\V1\Setting\RoleResource;
+use agenticone\User\Repositories\RoleRepository;
 
 class RoleController extends Controller
 {

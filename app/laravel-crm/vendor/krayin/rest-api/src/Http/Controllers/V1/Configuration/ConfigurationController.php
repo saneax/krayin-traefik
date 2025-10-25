@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Configuration;
+namespace agenticone\RestApi\Http\Controllers\V1\Configuration;
 
 use Illuminate\Support\Facades\Event;
-use Webkul\Core\Repositories\CoreConfigRepository as ConfigurationRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
+use agenticone\Core\Repositories\CoreConfigRepository as ConfigurationRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
 
 class ConfigurationController extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\RestApi\Http\Controllers\V1\Mail\EmailController;
-use Webkul\RestApi\Http\Controllers\V1\Mail\TagController;
+use agenticone\RestApi\Http\Controllers\V1\Mail\EmailController;
+use agenticone\RestApi\Http\Controllers\V1\Mail\TagController;
 
 Route::group(['middleware' => 'auth:sanctum', 'prefix' => 'mails'], function () {
 

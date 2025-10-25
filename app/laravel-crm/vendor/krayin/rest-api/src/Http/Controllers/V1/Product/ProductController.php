@@ -1,16 +1,16 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Product;
+namespace agenticone\RestApi\Http\Controllers\V1\Product;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Product\Repositories\ProductRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Resources\V1\Product\ProductResource;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Product\Repositories\ProductRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Resources\V1\Product\ProductResource;
 
 class ProductController extends Controller
 {

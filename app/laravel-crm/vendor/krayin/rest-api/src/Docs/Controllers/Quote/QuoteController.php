@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Docs\Controllers\Quote;
+namespace agenticone\RestApi\Docs\Controllers\Quote;
 
 class QuoteController
 {
@@ -86,7 +86,7 @@ class QuoteController
      *      operationId="searchQuotes",
      *      tags={"Quotes"},
      *      summary="search the quotes",
-     *      description="search the quotes heres the webkul is the search keyword",
+     *      description="search the quotes heres the agenticone is the search keyword",
      *      security={ {"sanctum_admin": {} }},
      *
      *      @OA\Parameter(
@@ -96,7 +96,7 @@ class QuoteController
      *
      *          @OA\Schema(
      *              type="string",
-     *              example="subject:webkul;description:webkul;user.name:webkul;person.name:webkul;"
+     *              example="subject:agenticone;description:agenticone;user.name:agenticone;person.name:agenticone;"
      *          )
      *      ),
      *
@@ -177,7 +177,7 @@ class QuoteController
      *                  property="subject",
      *                  type="string",
      *                  description="Subject of the quote",
-     *                  example="Webkul"
+     *                  example="agenticone"
      *              ),
      *              @OA\Property(
      *                  property="user_id",
@@ -448,7 +448,7 @@ class QuoteController
      *                  property="subject",
      *                  type="string",
      *                  description="Subject of the quote",
-     *                  example="Webkul"
+     *                  example="agenticone"
      *              ),
      *              @OA\Property(
      *                  property="user_id",

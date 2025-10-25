@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\RestApi\Http\Resources\V1\Activity;
+namespace agenticone\RestApi\Http\Resources\V1\Activity;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Webkul\Admin\Http\Resources\UserResource;
+use agenticone\Admin\Http\Resources\UserResource;
 
 class ActivityResource extends JsonResource
 {

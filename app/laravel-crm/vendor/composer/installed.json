@@ -2992,14 +2992,14 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Webkul\\RestApi\\Providers\\RestApiServiceProvider"
+                        "agenticone\\RestApi\\Providers\\RestApiServiceProvider"
                     ]
                 }
             },
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Webkul\\RestApi\\": "src/"
+                    "agenticone\\RestApi\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3009,7 +3009,7 @@
             "authors": [
                 {
                     "name": "Devansh Bawari",
-                    "email": "devansh.bawari419@webkul.com"
+                    "email": "devansh.bawari419@agenticone.com"
                 }
             ],
             "support": {

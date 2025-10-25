@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\RestApi\Http\Resources\V1\Setting;
+namespace agenticone\RestApi\Http\Resources\V1\Setting;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Webkul\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class WarehouseResource extends JsonResource
 {

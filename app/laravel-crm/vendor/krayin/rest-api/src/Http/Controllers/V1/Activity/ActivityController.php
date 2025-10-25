@@ -1,17 +1,17 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers\V1\Activity;
+namespace agenticone\RestApi\Http\Controllers\V1\Activity;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
-use Webkul\Activity\Repositories\ActivityRepository;
-use Webkul\Activity\Repositories\FileRepository;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\RestApi\Http\Controllers\V1\Controller;
-use Webkul\RestApi\Http\Request\MassDestroyRequest;
-use Webkul\RestApi\Http\Request\MassUpdateRequest;
-use Webkul\RestApi\Http\Resources\V1\Activity\ActivityResource;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Activity\Repositories\FileRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\RestApi\Http\Controllers\V1\Controller;
+use agenticone\RestApi\Http\Request\MassDestroyRequest;
+use agenticone\RestApi\Http\Request\MassUpdateRequest;
+use agenticone\RestApi\Http\Resources\V1\Activity\ActivityResource;
 
 class ActivityController extends Controller
 {

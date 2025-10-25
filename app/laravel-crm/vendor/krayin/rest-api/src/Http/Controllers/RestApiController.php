@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Http\Controllers;
+namespace agenticone\RestApi\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

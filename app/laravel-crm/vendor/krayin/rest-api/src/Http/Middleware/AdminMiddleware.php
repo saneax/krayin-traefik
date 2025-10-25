@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\RestApi\Http\Middleware;
+namespace agenticone\RestApi\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
