@@ -1,0 +1,27 @@
+{
+    "name": "krayin/krayin-package-generator",
+    "description": "Krayin Package Generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jitendra Singh",
+            "email": "jitendra@agenticone.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "agenticone\\PackageGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "agenticone\\PackageGenerator\\Providers\\PackageGeneratorServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "minimum-stability": "dev"
+}
