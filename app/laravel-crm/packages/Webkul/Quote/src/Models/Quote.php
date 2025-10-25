@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Quote\Models;
+namespace agenticone\Quote\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Attribute\Traits\CustomAttribute;
-use Webkul\Contact\Models\PersonProxy;
-use Webkul\Lead\Models\LeadProxy;
-use Webkul\Quote\Contracts\Quote as QuoteContract;
-use Webkul\User\Models\UserProxy;
+use agenticone\Attribute\Traits\CustomAttribute;
+use agenticone\Contact\Models\PersonProxy;
+use agenticone\Lead\Models\LeadProxy;
+use agenticone\Quote\Contracts\Quote as QuoteContract;
+use agenticone\User\Models\UserProxy;
 
 class Quote extends Model implements QuoteContract
 {

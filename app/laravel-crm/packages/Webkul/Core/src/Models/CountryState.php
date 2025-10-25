@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Core\Models;
+namespace agenticone\Core\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Core\Contracts\CountryState as CountryStateContract;
+use agenticone\Core\Contracts\CountryState as CountryStateContract;
 
 class CountryState extends Model implements CountryStateContract
 {

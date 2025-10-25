@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Webkul\Admin\DataGrids\Settings\AttributeDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Core\Contracts\Validations\Code;
+use agenticone\Admin\DataGrids\Settings\AttributeDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Core\Contracts\Validations\Code;
 
 class AttributeController extends Controller
 {

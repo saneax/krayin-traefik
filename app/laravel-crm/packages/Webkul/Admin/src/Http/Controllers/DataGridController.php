@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers;
+namespace agenticone\Admin\Http\Controllers;
 
 use Illuminate\Support\Facades\Crypt;
 

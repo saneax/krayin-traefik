@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\User;
+namespace agenticone\Admin\Http\Controllers\User;
 
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
-use Webkul\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Controllers\Controller;
 
 class ResetPasswordController extends Controller
 {

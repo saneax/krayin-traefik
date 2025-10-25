@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\WebForm\Http\Requests;
+namespace agenticone\WebForm\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Contracts\Validations\Decimal;
-use Webkul\WebForm\Rules\PhoneNumber;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Core\Contracts\Validations\Decimal;
+use agenticone\WebForm\Rules\PhoneNumber;
 
 class WebForm extends FormRequest
 {

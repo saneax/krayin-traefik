@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Attribute\Models;
+namespace agenticone\Attribute\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Attribute\Contracts\Attribute as AttributeContract;
+use agenticone\Attribute\Contracts\Attribute as AttributeContract;
 
 class Attribute extends Model implements AttributeContract
 {

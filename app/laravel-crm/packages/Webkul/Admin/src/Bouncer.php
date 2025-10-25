@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin;
+namespace agenticone\Admin;
 
-use Webkul\User\Repositories\UserRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class Bouncer
 {

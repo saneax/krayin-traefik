@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Product\Providers;
+namespace agenticone\Product\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Product\Models\Product::class,
-        \Webkul\Product\Models\ProductInventory::class,
+        \agenticone\Product\Models\Product::class,
+        \agenticone\Product\Models\ProductInventory::class,
     ];
 }

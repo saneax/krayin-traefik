@@ -1,16 +1,16 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\DataGrids\Settings\TagDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Resources\TagResource;
-use Webkul\Tag\Repositories\TagRepository;
+use agenticone\Admin\DataGrids\Settings\TagDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Admin\Http\Resources\TagResource;
+use agenticone\Tag\Repositories\TagRepository;
 
 class TagController extends Controller
 {

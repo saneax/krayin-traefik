@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Lead\Contracts;
+namespace agenticone\Lead\Contracts;
 
 interface Product {}

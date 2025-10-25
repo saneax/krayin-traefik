@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Attribute\Traits;
+namespace agenticone\Attribute\Traits;
 
-use Webkul\Attribute\Models\AttributeValueProxy;
-use Webkul\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Models\AttributeValueProxy;
+use agenticone\Attribute\Repositories\AttributeRepository;
 
 trait CustomAttribute
 {

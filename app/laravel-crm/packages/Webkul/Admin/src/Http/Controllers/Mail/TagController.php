@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Mail;
+namespace agenticone\Admin\Http\Controllers\Mail;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Email\Repositories\EmailRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Email\Repositories\EmailRepository;
 
 class TagController extends Controller
 {

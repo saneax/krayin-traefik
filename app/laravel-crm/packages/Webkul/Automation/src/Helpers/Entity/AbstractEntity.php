@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Automation\Helpers\Entity;
+namespace agenticone\Automation\Helpers\Entity;
 
 use Carbon\Carbon;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Automation\Repositories\WebhookRepository;
-use Webkul\Automation\Services\WebhookService;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Automation\Repositories\WebhookRepository;
+use agenticone\Automation\Services\WebhookService;
 
 abstract class AbstractEntity
 {

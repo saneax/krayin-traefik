@@ -1,16 +1,16 @@
 <?php
 
-namespace Webkul\Email\Repositories;
+namespace agenticone\Email\Repositories;
 
 use Illuminate\Support\Facades\Storage;
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class AttachmentRepository extends Repository
 {
     /**
      * Parser object
      *
-     * @var \Webkul\Email\Helpers\Parser
+     * @var \agenticone\Email\Helpers\Parser
      */
     protected $emailParser;
 
@@ -21,11 +21,11 @@ class AttachmentRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Email\Contracts\Attachment';
+        return 'agenticone\Email\Contracts\Attachment';
     }
 
     /**
-     * @param  \Webkul\Email\Helpers\Parser  $emailParser
+     * @param  \agenticone\Email\Helpers\Parser  $emailParser
      * @return self
      */
     public function setEmailParser($emailParser)
@@ -36,7 +36,7 @@ class AttachmentRepository extends Repository
     }
 
     /**
-     * @param  \Webkul\Email\Contracts\Email  $email
+     * @param  \agenticone\Email\Contracts\Email  $email
      * @return void
      */
     public function uploadAttachments($email, array $data)

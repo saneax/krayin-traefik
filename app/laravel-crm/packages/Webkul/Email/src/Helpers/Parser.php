@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Email\Helpers;
+namespace agenticone\Email\Helpers;
 
-use Webkul\Email\Helpers\Contracts\CharsetManager;
+use agenticone\Email\Helpers\Contracts\CharsetManager;
 
 /**
  * Parser of php-mime-mail-parser

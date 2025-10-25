@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\DataGrid;
+namespace agenticone\Admin\Http\Controllers\DataGrid;
 
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\DataGrid\Repositories\SavedFilterRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\DataGrid\Repositories\SavedFilterRepository;
 
 class SavedFilterController extends Controller
 {

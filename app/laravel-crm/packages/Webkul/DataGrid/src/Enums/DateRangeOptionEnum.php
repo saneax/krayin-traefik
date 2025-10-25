@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\DataGrid\Enums;
+namespace agenticone\DataGrid\Enums;
 
 enum DateRangeOptionEnum: string
 {

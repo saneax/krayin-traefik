@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Email\Helpers;
+namespace agenticone\Email\Helpers;
 
 class Htmlfilter
 {

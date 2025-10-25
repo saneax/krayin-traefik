@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Notifications\User;
+namespace agenticone\Admin\Notifications\User;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -13,7 +13,7 @@ class UserUpdatePassword extends Mailable
     /**
      * Create a new admin instance.
      *
-     * @param  \Webkul\User\Contracts\User  $user
+     * @param  \agenticone\User\Contracts\User  $user
      * @return void
      */
     public function __construct(public $user) {}

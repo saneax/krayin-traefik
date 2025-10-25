@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Contact\Persons;
+namespace agenticone\Admin\Http\Controllers\Contact\Persons;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -8,12 +8,12 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\DataGrids\Contact\PersonDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Resources\PersonResource;
-use Webkul\Contact\Repositories\PersonRepository;
+use agenticone\Admin\DataGrids\Contact\PersonDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Admin\Http\Resources\PersonResource;
+use agenticone\Contact\Repositories\PersonRepository;
 
 class PersonController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Automation\Repositories;
+namespace agenticone\Automation\Repositories;
 
-use Webkul\Automation\Contracts\Webhook;
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Automation\Contracts\Webhook;
+use agenticone\Core\Eloquent\Repository;
 
 class WebhookRepository extends Repository
 {

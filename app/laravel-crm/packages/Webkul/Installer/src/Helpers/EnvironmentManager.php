@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Helpers;
+namespace agenticone\Installer\Helpers;
 
 use Exception;
 

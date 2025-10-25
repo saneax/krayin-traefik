@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Contact\Providers;
+namespace agenticone\Contact\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Contact\Models\Person::class,
-        \Webkul\Contact\Models\Organization::class,
+        \agenticone\Contact\Models\Person::class,
+        \agenticone\Contact\Models\Organization::class,
     ];
 }

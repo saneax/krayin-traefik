@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Lead\Models;
+namespace agenticone\Lead\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Contracts\Pipeline as PipelineContract;
+use agenticone\Lead\Contracts\Pipeline as PipelineContract;
 
 class Pipeline extends Model implements PipelineContract
 {

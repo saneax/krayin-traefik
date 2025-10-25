@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Quote\Repositories;
+namespace agenticone\Quote\Repositories;
 
 use Illuminate\Container\Container;
 use Illuminate\Support\Str;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Quote\Contracts\Quote;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\Quote\Contracts\Quote;
 
 class QuoteRepository extends Repository
 {
@@ -50,7 +50,7 @@ class QuoteRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Quote\Contracts\Quote
+     * @return \agenticone\Quote\Contracts\Quote
      */
     public function create(array $data)
     {
@@ -74,7 +74,7 @@ class QuoteRepository extends Repository
      *
      * @param  int  $id
      * @param  array  $attribute
-     * @return \Webkul\Quote\Contracts\Quote
+     * @return \agenticone\Quote\Contracts\Quote
      */
     public function update(array $data, $id, $attributes = [])
     {

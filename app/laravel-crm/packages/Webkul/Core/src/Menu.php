@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Core;
+namespace agenticone\Core;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Webkul\Core\Menu\MenuItem;
+use agenticone\Core\Menu\MenuItem;
 
 class Menu
 {

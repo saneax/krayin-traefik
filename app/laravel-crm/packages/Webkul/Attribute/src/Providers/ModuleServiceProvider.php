@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Attribute\Providers;
+namespace agenticone\Attribute\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Attribute\Models\Attribute::class,
-        \Webkul\Attribute\Models\AttributeOption::class,
-        \Webkul\Attribute\Models\AttributeValue::class,
+        \agenticone\Attribute\Models\Attribute::class,
+        \agenticone\Attribute\Models\AttributeOption::class,
+        \agenticone\Attribute\Models\AttributeValue::class,
     ];
 }

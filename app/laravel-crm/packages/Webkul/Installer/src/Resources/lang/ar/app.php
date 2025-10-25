@@ -299,7 +299,7 @@ return [
             'title'                    => 'مثبت Krayin',
             'turkish'                  => 'التركية',
             'ukrainian'                => 'الأوكرانية',
-            'webkul'                   => 'Webkul',
+            'webkul'                   => 'agenticone',
         ],
     ],
 ];

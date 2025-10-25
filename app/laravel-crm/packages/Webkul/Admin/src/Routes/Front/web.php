@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Controllers\Controller;
 
 /**
  * Home routes.

@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Admin\DataGrids\Mail;
+namespace agenticone\Admin\DataGrids\Mail;
 
 use Carbon\Carbon;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
-use Webkul\Email\Repositories\EmailRepository;
-use Webkul\Tag\Repositories\TagRepository;
+use agenticone\DataGrid\DataGrid;
+use agenticone\Email\Repositories\EmailRepository;
+use agenticone\Tag\Repositories\TagRepository;
 
 class EmailDataGrid extends DataGrid
 {

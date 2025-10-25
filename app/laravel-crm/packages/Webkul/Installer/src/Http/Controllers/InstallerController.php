@@ -1,15 +1,15 @@
 <?php
 
-namespace Webkul\Installer\Http\Controllers;
+namespace agenticone\Installer\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\File;
-use Webkul\Installer\Helpers\DatabaseManager;
-use Webkul\Installer\Helpers\EnvironmentManager;
-use Webkul\Installer\Helpers\ServerRequirements;
+use agenticone\Installer\Helpers\DatabaseManager;
+use agenticone\Installer\Helpers\EnvironmentManager;
+use agenticone\Installer\Helpers\ServerRequirements;
 
 class InstallerController extends Controller
 {

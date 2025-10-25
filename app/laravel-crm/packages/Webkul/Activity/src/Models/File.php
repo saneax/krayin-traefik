@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Activity\Models;
+namespace agenticone\Activity\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
-use Webkul\Activity\Contracts\File as FileContract;
+use agenticone\Activity\Contracts\File as FileContract;
 
 class File extends Model implements FileContract
 {

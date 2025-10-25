@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\DataGrid\Exceptions;
+namespace agenticone\DataGrid\Exceptions;
 
 use Exception;
 

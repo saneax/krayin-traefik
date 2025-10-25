@@ -1,20 +1,20 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Lead\Repositories\PipelineRepository;
-use Webkul\Lead\Repositories\SourceRepository;
-use Webkul\Lead\Repositories\TypeRepository;
-use Webkul\WebForm\DataGrids\WebFormDataGrid;
-use Webkul\WebForm\Repositories\WebFormRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Lead\Repositories\PipelineRepository;
+use agenticone\Lead\Repositories\SourceRepository;
+use agenticone\Lead\Repositories\TypeRepository;
+use agenticone\WebForm\DataGrids\WebFormDataGrid;
+use agenticone\WebForm\Repositories\WebFormRepository;
 
 class WebFormController extends Controller
 {

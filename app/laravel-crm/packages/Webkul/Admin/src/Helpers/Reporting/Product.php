@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Webkul\Lead\Repositories\ProductRepository;
+use agenticone\Lead\Repositories\ProductRepository;
 
 class Product extends AbstractReporting
 {

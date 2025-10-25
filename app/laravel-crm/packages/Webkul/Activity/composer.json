@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkul\\Activity\\": "src/"
+            "agenticone\\Activity\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Activity\\Providers\\ActivityServiceProvider"
+                "agenticone\\Activity\\Providers\\ActivityServiceProvider"
             ],
             "aliases": {}
         }

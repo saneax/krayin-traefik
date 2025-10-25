@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\WebForm\Contracts;
+namespace agenticone\WebForm\Contracts;
 
 interface WebFormAttribute {}

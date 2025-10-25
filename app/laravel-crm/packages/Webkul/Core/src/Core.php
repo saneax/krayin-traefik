@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Core;
+namespace agenticone\Core;
 
 use Carbon\Carbon;
-use Webkul\Core\Repositories\CoreConfigRepository;
-use Webkul\Core\Repositories\CountryRepository;
-use Webkul\Core\Repositories\CountryStateRepository;
+use agenticone\Core\Repositories\CoreConfigRepository;
+use agenticone\Core\Repositories\CountryRepository;
+use agenticone\Core\Repositories\CountryStateRepository;
 
 class Core
 {

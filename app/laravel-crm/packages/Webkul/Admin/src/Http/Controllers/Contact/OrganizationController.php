@@ -1,16 +1,16 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Contact;
+namespace agenticone\Admin\Http\Controllers\Contact;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
-use Webkul\Admin\DataGrids\Contact\OrganizationDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\AttributeForm;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Contact\Repositories\OrganizationRepository;
+use agenticone\Admin\DataGrids\Contact\OrganizationDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\AttributeForm;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Contact\Repositories\OrganizationRepository;
 
 class OrganizationController extends Controller
 {

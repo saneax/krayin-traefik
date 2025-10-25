@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkul\\Email\\": "src/"
+            "agenticone\\Email\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Email\\Providers\\EmailServiceProvider"
+                "agenticone\\Email\\Providers\\EmailServiceProvider"
             ],
             "aliases": {}
         }

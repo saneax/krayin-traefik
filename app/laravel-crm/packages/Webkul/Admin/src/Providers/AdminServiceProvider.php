@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Providers;
+namespace agenticone\Admin\Providers;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -9,9 +9,9 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Webkul\Admin\Exceptions\Handler;
-use Webkul\Admin\Http\Middleware\Bouncer as BouncerMiddleware;
-use Webkul\Admin\Http\Middleware\Locale;
+use agenticone\Admin\Exceptions\Handler;
+use agenticone\Admin\Http\Middleware\Bouncer as BouncerMiddleware;
+use agenticone\Admin\Http\Middleware\Locale;
 
 class AdminServiceProvider extends ServiceProvider
 {
@@ -44,12 +44,12 @@ class AdminServiceProvider extends ServiceProvider
         $this->app->bind(ExceptionHandler::class, Handler::class);
 
         Relation::morphMap([
-            'leads'         => \Webkul\Lead\Models\Lead::class,
-            'organizations' => \Webkul\Contact\Models\Organization::class,
-            'persons'       => \Webkul\Contact\Models\Person::class,
-            'products'      => \Webkul\Product\Models\Product::class,
-            'quotes'        => \Webkul\Quote\Models\Quote::class,
-            'warehouses'    => \Webkul\Warehouse\Models\Warehouse::class,
+            'leads'         => \agenticone\Lead\Models\Lead::class,
+            'organizations' => \agenticone\Contact\Models\Organization::class,
+            'persons'       => \agenticone\Contact\Models\Person::class,
+            'products'      => \agenticone\Product\Models\Product::class,
+            'quotes'        => \agenticone\Quote\Models\Quote::class,
+            'warehouses'    => \agenticone\Warehouse\Models\Warehouse::class,
         ]);
 
         $this->app->register(EventServiceProvider::class);
@@ -74,10 +74,10 @@ class AdminServiceProvider extends ServiceProvider
     {
         $loader = AliasLoader::getInstance();
 
-        $loader->alias('Bouncer', \Webkul\Admin\Facades\Bouncer::class);
+        $loader->alias('Bouncer', \agenticone\Admin\Facades\Bouncer::class);
 
         $this->app->singleton('bouncer', function () {
-            return new \Webkul\Admin\Bouncer;
+            return new \agenticone\Admin\Bouncer;
         });
     }
 

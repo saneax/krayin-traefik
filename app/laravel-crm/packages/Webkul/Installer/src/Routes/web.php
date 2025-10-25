@@ -2,7 +2,7 @@
 
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
-use Webkul\Installer\Http\Controllers\InstallerController;
+use agenticone\Installer\Http\Controllers\InstallerController;
 
 Route::middleware(['web', 'installer_locale'])->group(function () {
     Route::controller(InstallerController::class)->group(function () {

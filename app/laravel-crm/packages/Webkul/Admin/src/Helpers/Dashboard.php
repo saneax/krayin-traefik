@@ -1,15 +1,15 @@
 <?php
 
-namespace Webkul\Admin\Helpers;
+namespace agenticone\Admin\Helpers;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-use Webkul\Admin\Helpers\Reporting\Activity;
-use Webkul\Admin\Helpers\Reporting\Lead;
-use Webkul\Admin\Helpers\Reporting\Organization;
-use Webkul\Admin\Helpers\Reporting\Person;
-use Webkul\Admin\Helpers\Reporting\Product;
-use Webkul\Admin\Helpers\Reporting\Quote;
+use agenticone\Admin\Helpers\Reporting\Activity;
+use agenticone\Admin\Helpers\Reporting\Lead;
+use agenticone\Admin\Helpers\Reporting\Organization;
+use agenticone\Admin\Helpers\Reporting\Person;
+use agenticone\Admin\Helpers\Reporting\Product;
+use agenticone\Admin\Helpers\Reporting\Quote;
 
 class Dashboard
 {

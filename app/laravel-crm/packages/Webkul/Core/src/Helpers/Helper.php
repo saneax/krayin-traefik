@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Helpers;
+namespace agenticone\Core\Helpers;
 
 class Helper
 {

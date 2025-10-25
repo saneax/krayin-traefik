@@ -13,7 +13,7 @@
     >
         <form @submit="handleSubmit($event, () => {})">
             <x-admin::attributes.view
-                :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                     'entity_type' => 'warehouses',
                     ['code', 'IN', ['contact_name', 'contact_emails', 'contact_numbers', 'contact_address']]
                 ])"

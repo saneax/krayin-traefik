@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\DataGrids\Settings;
+namespace agenticone\Admin\DataGrids\Settings;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use Webkul\DataGrid\DataGrid;
+use agenticone\DataGrid\DataGrid;
 
 class UserDataGrid extends DataGrid
 {

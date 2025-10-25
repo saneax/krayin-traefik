@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Quote\Contracts;
+namespace agenticone\Quote\Contracts;
 
 interface QuoteItem {}

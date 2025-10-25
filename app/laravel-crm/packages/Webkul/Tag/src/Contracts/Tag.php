@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Tag\Contracts;
+namespace agenticone\Tag\Contracts;
 
 interface Tag {}

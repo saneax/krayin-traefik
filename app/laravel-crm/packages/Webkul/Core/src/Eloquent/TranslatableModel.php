@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Eloquent;
+namespace agenticone\Core\Eloquent;
 
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;

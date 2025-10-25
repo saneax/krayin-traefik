@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\DataGrid\Providers;
+namespace agenticone\DataGrid\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\DataGrid\Models\SavedFilter::class,
+        \agenticone\DataGrid\Models\SavedFilter::class,
     ];
 }

@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Email\Contracts;
+namespace agenticone\Email\Contracts;
 
 interface Attachment {}

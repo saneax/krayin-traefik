@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Lead;
+namespace agenticone\Admin\Http\Controllers\Lead;
 
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
@@ -9,24 +9,24 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\DataGrids\Lead\LeadDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\LeadForm;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Requests\MassUpdateRequest;
-use Webkul\Admin\Http\Resources\LeadResource;
-use Webkul\Admin\Http\Resources\StageResource;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\DataGrid\Enums\DateRangeOptionEnum;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Lead\Repositories\PipelineRepository;
-use Webkul\Lead\Repositories\ProductRepository;
-use Webkul\Lead\Repositories\SourceRepository;
-use Webkul\Lead\Repositories\StageRepository;
-use Webkul\Lead\Repositories\TypeRepository;
-use Webkul\Tag\Repositories\TagRepository;
-use Webkul\User\Repositories\UserRepository;
+use agenticone\Admin\DataGrids\Lead\LeadDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\LeadForm;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Admin\Http\Requests\MassUpdateRequest;
+use agenticone\Admin\Http\Resources\LeadResource;
+use agenticone\Admin\Http\Resources\StageResource;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\DataGrid\Enums\DateRangeOptionEnum;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Lead\Repositories\PipelineRepository;
+use agenticone\Lead\Repositories\ProductRepository;
+use agenticone\Lead\Repositories\SourceRepository;
+use agenticone\Lead\Repositories\StageRepository;
+use agenticone\Lead\Repositories\TypeRepository;
+use agenticone\Tag\Repositories\TagRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class LeadController extends Controller
 {

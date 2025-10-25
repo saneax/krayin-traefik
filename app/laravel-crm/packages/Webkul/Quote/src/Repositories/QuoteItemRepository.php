@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Quote\Repositories;
+namespace agenticone\Quote\Repositories;
 
 use Illuminate\Container\Container;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Product\Repositories\ProductRepository;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\Product\Repositories\ProductRepository;
 
 class QuoteItemRepository extends Repository
 {
@@ -27,11 +27,11 @@ class QuoteItemRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Quote\Contracts\QuoteItem';
+        return 'agenticone\Quote\Contracts\QuoteItem';
     }
 
     /**
-     * @return \Webkul\Quote\Contracts\QuoteItem
+     * @return \agenticone\Quote\Contracts\QuoteItem
      */
     public function create(array $data)
     {
@@ -48,7 +48,7 @@ class QuoteItemRepository extends Repository
     /**
      * @param  int  $id
      * @param  string  $attribute
-     * @return \Webkul\Quote\Contracts\QuoteItem
+     * @return \agenticone\Quote\Contracts\QuoteItem
      */
     public function update(array $data, $id, $attribute = 'id')
     {

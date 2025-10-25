@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Core\Contracts;
+namespace agenticone\Core\Contracts;
 
 interface Country {}

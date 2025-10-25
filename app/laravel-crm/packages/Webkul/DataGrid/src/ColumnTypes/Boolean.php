@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\DataGrid\ColumnTypes;
+namespace agenticone\DataGrid\ColumnTypes;
 
-use Webkul\DataGrid\Column;
-use Webkul\DataGrid\Enums\FilterTypeEnum;
-use Webkul\DataGrid\Exceptions\InvalidColumnException;
+use agenticone\DataGrid\Column;
+use agenticone\DataGrid\Enums\FilterTypeEnum;
+use agenticone\DataGrid\Exceptions\InvalidColumnException;
 
 class Boolean extends Column
 {

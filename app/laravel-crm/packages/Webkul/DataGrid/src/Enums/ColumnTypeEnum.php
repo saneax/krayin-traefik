@@ -1,15 +1,15 @@
 <?php
 
-namespace Webkul\DataGrid\Enums;
+namespace agenticone\DataGrid\Enums;
 
-use Webkul\DataGrid\ColumnTypes\Aggregate;
-use Webkul\DataGrid\ColumnTypes\Boolean;
-use Webkul\DataGrid\ColumnTypes\Date;
-use Webkul\DataGrid\ColumnTypes\Datetime;
-use Webkul\DataGrid\ColumnTypes\Decimal;
-use Webkul\DataGrid\ColumnTypes\Integer;
-use Webkul\DataGrid\ColumnTypes\Text;
-use Webkul\DataGrid\Exceptions\InvalidColumnTypeException;
+use agenticone\DataGrid\ColumnTypes\Aggregate;
+use agenticone\DataGrid\ColumnTypes\Boolean;
+use agenticone\DataGrid\ColumnTypes\Date;
+use agenticone\DataGrid\ColumnTypes\Datetime;
+use agenticone\DataGrid\ColumnTypes\Decimal;
+use agenticone\DataGrid\ColumnTypes\Integer;
+use agenticone\DataGrid\ColumnTypes\Text;
+use agenticone\DataGrid\Exceptions\InvalidColumnTypeException;
 
 enum ColumnTypeEnum: string
 {

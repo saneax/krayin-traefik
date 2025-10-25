@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\WebForm\Providers;
+namespace agenticone\WebForm\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

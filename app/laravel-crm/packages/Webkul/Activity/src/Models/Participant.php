@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Activity\Models;
+namespace agenticone\Activity\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Activity\Contracts\Participant as ParticipantContract;
-use Webkul\Contact\Models\PersonProxy;
-use Webkul\User\Models\UserProxy;
+use agenticone\Activity\Contracts\Participant as ParticipantContract;
+use agenticone\Contact\Models\PersonProxy;
+use agenticone\User\Models\UserProxy;
 
 class Participant extends Model implements ParticipantContract
 {

@@ -20,13 +20,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Webkul\\Lead\\": "src/"
+            "agenticone\\Lead\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Webkul\\Lead\\Providers\\LeadServiceProvider"
+                "agenticone\\Lead\\Providers\\LeadServiceProvider"
             ],
             "aliases": {}
         }

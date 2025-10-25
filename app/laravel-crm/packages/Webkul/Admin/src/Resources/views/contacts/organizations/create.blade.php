@@ -51,7 +51,7 @@
                 {!! view_render_event('admin.contacts.organizations.create.form_controls.before') !!}
 
                 <x-admin::attributes
-                    :custom-attributes="app('Webkul\Attribute\Repositories\AttributeRepository')->findWhere([
+                    :custom-attributes="app('agenticone\Attribute\Repositories\AttributeRepository')->findWhere([
                         'entity_type' => 'organizations',
                     ])"
                 />

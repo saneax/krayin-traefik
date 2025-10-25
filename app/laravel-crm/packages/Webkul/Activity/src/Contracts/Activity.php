@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Activity\Contracts;
+namespace agenticone\Activity\Contracts;
 
 interface Activity {}

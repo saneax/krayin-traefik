@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Exceptions;
+namespace agenticone\Core\Exceptions;
 
 class ViterNotFound extends \Exception
 {

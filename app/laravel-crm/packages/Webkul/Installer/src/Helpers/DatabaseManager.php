@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Installer\Helpers;
+namespace agenticone\Installer\Helpers;
 
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Webkul\Installer\Database\Seeders\DatabaseSeeder as KrayinDatabaseSeeder;
+use agenticone\Installer\Database\Seeders\DatabaseSeeder as KrayinDatabaseSeeder;
 
 class DatabaseManager
 {

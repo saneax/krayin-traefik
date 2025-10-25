@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Warehouse\Repositories;
+namespace agenticone\Warehouse\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class LocationRepository extends Repository
 {
@@ -21,6 +21,6 @@ class LocationRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Warehouse\Contracts\Location';
+        return 'agenticone\Warehouse\Contracts\Location';
     }
 }

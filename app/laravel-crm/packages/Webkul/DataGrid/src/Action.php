@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\DataGrid;
+namespace agenticone\DataGrid;
 
 /**
  * Initial implementation of the action class. Stay tuned for more features coming soon.

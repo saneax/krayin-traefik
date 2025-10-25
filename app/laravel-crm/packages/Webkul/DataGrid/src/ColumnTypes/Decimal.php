@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\DataGrid\ColumnTypes;
+namespace agenticone\DataGrid\ColumnTypes;
 
-use Webkul\DataGrid\Column;
+use agenticone\DataGrid\Column;
 
 class Decimal extends Column
 {

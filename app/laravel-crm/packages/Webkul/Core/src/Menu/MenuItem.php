@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Core\Menu;
+namespace agenticone\Core\Menu;
 
 use Illuminate\Support\Collection;
 

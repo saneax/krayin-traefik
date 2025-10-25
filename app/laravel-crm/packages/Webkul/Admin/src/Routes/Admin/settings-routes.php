@@ -1,23 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Settings\AttributeController;
-use Webkul\Admin\Http\Controllers\Settings\EmailTemplateController;
-use Webkul\Admin\Http\Controllers\Settings\GroupController;
-use Webkul\Admin\Http\Controllers\Settings\LocationController;
-use Webkul\Admin\Http\Controllers\Settings\PipelineController;
-use Webkul\Admin\Http\Controllers\Settings\RoleController;
-use Webkul\Admin\Http\Controllers\Settings\SettingController;
-use Webkul\Admin\Http\Controllers\Settings\SourceController;
-use Webkul\Admin\Http\Controllers\Settings\TagController;
-use Webkul\Admin\Http\Controllers\Settings\TypeController;
-use Webkul\Admin\Http\Controllers\Settings\UserController;
-use Webkul\Admin\Http\Controllers\Settings\Warehouse\ActivityController;
-use Webkul\Admin\Http\Controllers\Settings\Warehouse\TagController as WarehouseTagController;
-use Webkul\Admin\Http\Controllers\Settings\Warehouse\WarehouseController;
-use Webkul\Admin\Http\Controllers\Settings\WebFormController;
-use Webkul\Admin\Http\Controllers\Settings\WebhookController;
-use Webkul\Admin\Http\Controllers\Settings\WorkflowController;
+use agenticone\Admin\Http\Controllers\Settings\AttributeController;
+use agenticone\Admin\Http\Controllers\Settings\EmailTemplateController;
+use agenticone\Admin\Http\Controllers\Settings\GroupController;
+use agenticone\Admin\Http\Controllers\Settings\LocationController;
+use agenticone\Admin\Http\Controllers\Settings\PipelineController;
+use agenticone\Admin\Http\Controllers\Settings\RoleController;
+use agenticone\Admin\Http\Controllers\Settings\SettingController;
+use agenticone\Admin\Http\Controllers\Settings\SourceController;
+use agenticone\Admin\Http\Controllers\Settings\TagController;
+use agenticone\Admin\Http\Controllers\Settings\TypeController;
+use agenticone\Admin\Http\Controllers\Settings\UserController;
+use agenticone\Admin\Http\Controllers\Settings\Warehouse\ActivityController;
+use agenticone\Admin\Http\Controllers\Settings\Warehouse\TagController as WarehouseTagController;
+use agenticone\Admin\Http\Controllers\Settings\Warehouse\WarehouseController;
+use agenticone\Admin\Http\Controllers\Settings\WebFormController;
+use agenticone\Admin\Http\Controllers\Settings\WebhookController;
+use agenticone\Admin\Http\Controllers\Settings\WorkflowController;
 
 /**
  * Settings routes.

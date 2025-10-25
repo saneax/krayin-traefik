@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Webkul\Admin\DataGrids\Settings\UserDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Requests\MassDestroyRequest;
-use Webkul\Admin\Http\Requests\MassUpdateRequest;
-use Webkul\Admin\Http\Resources\UserResource;
-use Webkul\Admin\Notifications\User\Create;
-use Webkul\User\Repositories\GroupRepository;
-use Webkul\User\Repositories\RoleRepository;
-use Webkul\User\Repositories\UserRepository;
+use agenticone\Admin\DataGrids\Settings\UserDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Requests\MassDestroyRequest;
+use agenticone\Admin\Http\Requests\MassUpdateRequest;
+use agenticone\Admin\Http\Resources\UserResource;
+use agenticone\Admin\Notifications\User\Create;
+use agenticone\User\Repositories\GroupRepository;
+use agenticone\User\Repositories\RoleRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class UserController extends Controller
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Admin\DataGrids\Activity;
+namespace agenticone\Admin\DataGrids\Activity;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Webkul\Admin\Traits\ProvideDropdownOptions;
-use Webkul\DataGrid\DataGrid;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\User\Repositories\UserRepository;
+use agenticone\Admin\Traits\ProvideDropdownOptions;
+use agenticone\DataGrid\DataGrid;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\User\Repositories\UserRepository;
 
 class ActivityDataGrid extends DataGrid
 {

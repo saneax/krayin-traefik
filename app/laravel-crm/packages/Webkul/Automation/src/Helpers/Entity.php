@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Automation\Helpers;
+namespace agenticone\Automation\Helpers;
 
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\EmailTemplate\Repositories\EmailTemplateRepository;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\EmailTemplate\Repositories\EmailTemplateRepository;
 
 class Entity
 {

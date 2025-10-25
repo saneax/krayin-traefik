@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\User\Contracts;
+namespace agenticone\User\Contracts;
 
 interface User {}

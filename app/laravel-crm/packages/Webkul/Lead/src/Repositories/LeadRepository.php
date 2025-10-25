@@ -1,16 +1,16 @@
 <?php
 
-namespace Webkul\Lead\Repositories;
+namespace agenticone\Lead\Repositories;
 
 use Carbon\Carbon;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Webkul\Attribute\Repositories\AttributeRepository;
-use Webkul\Attribute\Repositories\AttributeValueRepository;
-use Webkul\Contact\Repositories\PersonRepository;
-use Webkul\Core\Eloquent\Repository;
-use Webkul\Lead\Contracts\Lead;
+use agenticone\Attribute\Repositories\AttributeRepository;
+use agenticone\Attribute\Repositories\AttributeValueRepository;
+use agenticone\Contact\Repositories\PersonRepository;
+use agenticone\Core\Eloquent\Repository;
+use agenticone\Lead\Contracts\Lead;
 
 class LeadRepository extends Repository
 {
@@ -108,7 +108,7 @@ class LeadRepository extends Repository
     /**
      * Create.
      *
-     * @return \Webkul\Lead\Contracts\Lead
+     * @return \agenticone\Lead\Contracts\Lead
      */
     public function create(array $data)
     {
@@ -149,7 +149,7 @@ class LeadRepository extends Repository
      *
      * @param  int  $id
      * @param  array|\Illuminate\Database\Eloquent\Collection  $attributes
-     * @return \Webkul\Lead\Contracts\Lead
+     * @return \agenticone\Lead\Contracts\Lead
      */
     public function update(array $data, $id, $attributes = [])
     {

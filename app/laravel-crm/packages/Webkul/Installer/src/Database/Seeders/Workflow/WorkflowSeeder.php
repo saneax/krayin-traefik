@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Database\Seeders\Workflow;
+namespace agenticone\Installer\Database\Seeders\Workflow;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;

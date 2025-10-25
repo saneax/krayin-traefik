@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Lead;
+namespace agenticone\Admin\Http\Controllers\Lead;
 
 use Illuminate\Support\Facades\Event;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Lead\Repositories\LeadRepository;
-use Webkul\Quote\Repositories\QuoteRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Lead\Repositories\LeadRepository;
+use agenticone\Quote\Repositories\QuoteRepository;
 
 class QuoteController extends Controller
 {

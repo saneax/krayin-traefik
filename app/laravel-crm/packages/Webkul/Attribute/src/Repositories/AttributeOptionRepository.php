@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Attribute\Repositories;
+namespace agenticone\Attribute\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class AttributeOptionRepository extends Repository
 {
@@ -13,6 +13,6 @@ class AttributeOptionRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Attribute\Contracts\AttributeOption';
+        return 'agenticone\Attribute\Contracts\AttributeOption';
     }
 }

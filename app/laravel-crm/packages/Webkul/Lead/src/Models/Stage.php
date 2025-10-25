@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Lead\Models;
+namespace agenticone\Lead\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Lead\Contracts\Stage as StageContract;
+use agenticone\Lead\Contracts\Stage as StageContract;
 
 class Stage extends Model implements StageContract
 {

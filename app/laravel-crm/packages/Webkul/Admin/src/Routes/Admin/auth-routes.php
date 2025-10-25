@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Controllers\User\ForgotPasswordController;
-use Webkul\Admin\Http\Controllers\User\ResetPasswordController;
-use Webkul\Admin\Http\Controllers\User\SessionController;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Controllers\User\ForgotPasswordController;
+use agenticone\Admin\Http\Controllers\User\ResetPasswordController;
+use agenticone\Admin\Http\Controllers\User\SessionController;
 
 Route::withoutMiddleware(['user'])->group(function () {
     /**

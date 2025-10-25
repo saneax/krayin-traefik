@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
-use Webkul\Admin\DataGrids\Settings\GroupDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\User\Repositories\GroupRepository;
+use agenticone\Admin\DataGrids\Settings\GroupDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\User\Repositories\GroupRepository;
 
 class GroupController extends Controller
 {

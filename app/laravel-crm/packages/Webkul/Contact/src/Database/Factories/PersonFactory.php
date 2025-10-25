@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Contact\Database\Factories;
+namespace agenticone\Contact\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Webkul\Contact\Models\Person;
+use agenticone\Contact\Models\Person;
 
 class PersonFactory extends Factory
 {

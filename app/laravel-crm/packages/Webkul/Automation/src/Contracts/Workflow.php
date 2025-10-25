@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Automation\Contracts;
+namespace agenticone\Automation\Contracts;
 
 interface Workflow {}

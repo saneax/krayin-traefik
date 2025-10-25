@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Product\Models;
+namespace agenticone\Product\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Webkul\Product\Contracts\ProductInventory as ProductInventoryContract;
-use Webkul\Warehouse\Models\LocationProxy;
-use Webkul\Warehouse\Models\WarehouseProxy;
+use agenticone\Product\Contracts\ProductInventory as ProductInventoryContract;
+use agenticone\Warehouse\Models\LocationProxy;
+use agenticone\Warehouse\Models\WarehouseProxy;
 
 class ProductInventory extends Model implements ProductInventoryContract
 {

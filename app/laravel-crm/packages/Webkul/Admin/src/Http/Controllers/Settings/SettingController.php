@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
-use Webkul\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Controllers\Controller;
 
 class SettingController extends Controller
 {

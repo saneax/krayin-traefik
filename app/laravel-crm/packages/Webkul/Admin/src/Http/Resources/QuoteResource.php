@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Admin\Http\Resources;
+namespace agenticone\Admin\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

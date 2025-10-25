@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Tag\Repositories;
+namespace agenticone\Tag\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class TagRepository extends Repository
 {
@@ -22,6 +22,6 @@ class TagRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Tag\Contracts\Tag';
+        return 'agenticone\Tag\Contracts\Tag';
     }
 }

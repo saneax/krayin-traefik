@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Automation\Providers;
+namespace agenticone\Automation\Providers;
 
-use Webkul\Automation\Models\Webhook;
-use Webkul\Automation\Models\Workflow;
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Automation\Models\Webhook;
+use agenticone\Automation\Models\Workflow;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {

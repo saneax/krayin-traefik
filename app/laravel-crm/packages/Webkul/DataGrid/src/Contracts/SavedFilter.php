@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\DataGrid\Contracts;
+namespace agenticone\DataGrid\Contracts;
 
 interface SavedFilter {}

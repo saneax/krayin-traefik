@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Quote\Models;
+namespace agenticone\Quote\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Quote\Contracts\QuoteItem as QuoteItemContract;
+use agenticone\Quote\Contracts\QuoteItem as QuoteItemContract;
 
 class QuoteItem extends Model implements QuoteItemContract
 {

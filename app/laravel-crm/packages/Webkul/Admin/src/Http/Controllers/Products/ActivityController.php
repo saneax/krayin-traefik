@@ -1,11 +1,11 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Products;
+namespace agenticone\Admin\Http\Controllers\Products;
 
-use Webkul\Activity\Repositories\ActivityRepository;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\Admin\Http\Resources\ActivityResource;
-use Webkul\Email\Repositories\EmailRepository;
+use agenticone\Activity\Repositories\ActivityRepository;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\Admin\Http\Resources\ActivityResource;
+use agenticone\Email\Repositories\EmailRepository;
 
 class ActivityController extends Controller
 {

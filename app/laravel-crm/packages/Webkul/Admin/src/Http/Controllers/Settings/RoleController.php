@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Admin\Http\Controllers\Settings;
+namespace agenticone\Admin\Http\Controllers\Settings;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\View;
-use Webkul\Admin\DataGrids\Settings\RoleDataGrid;
-use Webkul\Admin\Http\Controllers\Controller;
-use Webkul\User\Repositories\RoleRepository;
+use agenticone\Admin\DataGrids\Settings\RoleDataGrid;
+use agenticone\Admin\Http\Controllers\Controller;
+use agenticone\User\Repositories\RoleRepository;
 
 class RoleController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Email\Helpers\Contracts;
+namespace agenticone\Email\Helpers\Contracts;
 
 interface CharsetManager
 {

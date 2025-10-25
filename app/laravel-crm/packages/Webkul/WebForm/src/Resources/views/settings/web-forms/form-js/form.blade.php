@@ -157,7 +157,7 @@
                                         >
                                             @php
                                                 $options = $parentAttribute->lookup_type
-                                                    ? app('Webkul\Attribute\Repositories\AttributeRepository')->getLookUpOptions($parentAttribute->lookup_type)
+                                                    ? app('agenticone\Attribute\Repositories\AttributeRepository')->getLookUpOptions($parentAttribute->lookup_type)
                                                     : $parentAttribute->options()->orderBy('sort_order')->get();
                                             @endphp
 
@@ -188,7 +188,7 @@
 
                                             @php
                                                 $options = $parentAttribute->lookup_type
-                                                    ? app('Webkul\Attribute\Repositories\AttributeRepository')->getLookUpOptions($parentAttribute->lookup_type)
+                                                    ? app('agenticone\Attribute\Repositories\AttributeRepository')->getLookUpOptions($parentAttribute->lookup_type)
                                                     : $parentAttribute->options()->orderBy('sort_order')->get();
                                             @endphp
 
@@ -211,7 +211,7 @@
                                         <div class="checkbox-control">
                                             @php
                                                 $options = $parentAttribute->lookup_type
-                                                    ? app('Webkul\Attribute\Repositories\AttributeRepository')->getLookUpOptions($parentAttribute->lookup_type)
+                                                    ? app('agenticone\Attribute\Repositories\AttributeRepository')->getLookUpOptions($parentAttribute->lookup_type)
                                                     : $parentAttribute->options()->orderBy('sort_order')->get();
                                             @endphp
 

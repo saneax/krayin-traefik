@@ -1,14 +1,14 @@
 <?php
 
-namespace Webkul\Activity\Providers;
+namespace agenticone\Activity\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Activity\Models\Activity::class,
-        \Webkul\Activity\Models\File::class,
-        \Webkul\Activity\Models\Participant::class,
+        \agenticone\Activity\Models\Activity::class,
+        \agenticone\Activity\Models\File::class,
+        \agenticone\Activity\Models\Participant::class,
     ];
 }

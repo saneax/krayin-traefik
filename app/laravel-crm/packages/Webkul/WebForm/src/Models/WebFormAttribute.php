@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\WebForm\Models;
+namespace agenticone\WebForm\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Attribute\Models\AttributeProxy;
-use Webkul\WebForm\Contracts\WebFormAttribute as WebFormAttributeContract;
+use agenticone\Attribute\Models\AttributeProxy;
+use agenticone\WebForm\Contracts\WebFormAttribute as WebFormAttributeContract;
 
 class WebFormAttribute extends Model implements WebFormAttributeContract
 {

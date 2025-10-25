@@ -1,18 +1,18 @@
 <?php
 
-namespace Webkul\Core\Providers;
+namespace agenticone\Core\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Webkul\Core\Acl;
-use Webkul\Core\Console\Commands\Version;
-use Webkul\Core\Core;
-use Webkul\Core\Facades\Acl as AclFacade;
-use Webkul\Core\Facades\Core as CoreFacade;
-use Webkul\Core\Facades\Menu as MenuFacade;
-use Webkul\Core\Facades\SystemConfig as SystemConfigFacade;
-use Webkul\Core\Menu;
-use Webkul\Core\SystemConfig;
+use agenticone\Core\Acl;
+use agenticone\Core\Console\Commands\Version;
+use agenticone\Core\Core;
+use agenticone\Core\Facades\Acl as AclFacade;
+use agenticone\Core\Facades\Core as CoreFacade;
+use agenticone\Core\Facades\Menu as MenuFacade;
+use agenticone\Core\Facades\SystemConfig as SystemConfigFacade;
+use agenticone\Core\Menu;
+use agenticone\Core\SystemConfig;
 
 class CoreServiceProvider extends ServiceProvider
 {

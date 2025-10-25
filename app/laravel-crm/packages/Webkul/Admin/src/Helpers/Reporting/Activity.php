@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Admin\Helpers\Reporting;
+namespace agenticone\Admin\Helpers\Reporting;
 
 class Activity extends AbstractReporting {}

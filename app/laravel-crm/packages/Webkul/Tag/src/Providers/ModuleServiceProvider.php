@@ -1,12 +1,12 @@
 <?php
 
-namespace Webkul\Tag\Providers;
+namespace agenticone\Tag\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {
     protected $models = [
-        \Webkul\Tag\Models\Tag::class,
+        \agenticone\Tag\Models\Tag::class,
     ];
 }

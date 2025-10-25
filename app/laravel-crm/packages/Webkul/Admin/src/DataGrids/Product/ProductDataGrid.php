@@ -1,10 +1,10 @@
 <?php
 
-namespace Webkul\Admin\DataGrids\Product;
+namespace agenticone\Admin\DataGrids\Product;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Webkul\DataGrid\DataGrid;
+use agenticone\DataGrid\DataGrid;
 
 class ProductDataGrid extends DataGrid
 {

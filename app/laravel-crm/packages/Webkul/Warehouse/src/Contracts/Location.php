@@ -1,5 +1,5 @@
 <?php
 
-namespace Webkul\Warehouse\Contracts;
+namespace agenticone\Warehouse\Contracts;
 
 interface Location {}

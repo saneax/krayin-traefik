@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Installer\Database\Seeders\Lead;
+namespace agenticone\Installer\Database\Seeders\Lead;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;

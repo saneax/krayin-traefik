@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Activity\Repositories;
+namespace agenticone\Activity\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class ParticipantRepository extends Repository
 {
@@ -13,6 +13,6 @@ class ParticipantRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Activity\Contracts\Participant';
+        return 'agenticone\Activity\Contracts\Participant';
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Admin\Providers;
+namespace agenticone\Admin\Providers;
 
-use Webkul\Core\Providers\BaseModuleServiceProvider;
+use agenticone\Core\Providers\BaseModuleServiceProvider;
 
 class ModuleServiceProvider extends BaseModuleServiceProvider
 {

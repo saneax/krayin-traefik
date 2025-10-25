@@ -1,8 +1,8 @@
 <?php
 
-namespace Webkul\Product\Repositories;
+namespace agenticone\Product\Repositories;
 
-use Webkul\Core\Eloquent\Repository;
+use agenticone\Core\Eloquent\Repository;
 
 class ProductInventoryRepository extends Repository
 {
@@ -13,6 +13,6 @@ class ProductInventoryRepository extends Repository
      */
     public function model()
     {
-        return 'Webkul\Product\Contracts\ProductInventory';
+        return 'agenticone\Product\Contracts\ProductInventory';
     }
 }

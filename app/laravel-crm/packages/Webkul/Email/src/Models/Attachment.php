@@ -1,9 +1,9 @@
 <?php
 
-namespace Webkul\Email\Models;
+namespace agenticone\Email\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Webkul\Email\Contracts\Attachment as AttachmentContract;
+use agenticone\Email\Contracts\Attachment as AttachmentContract;
 
 class Attachment extends Model implements AttachmentContract
 {
