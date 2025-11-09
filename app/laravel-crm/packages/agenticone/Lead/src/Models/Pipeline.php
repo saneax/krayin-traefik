@@ -3,6 +3,7 @@
 namespace agenticone\Lead\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Webkul\User\Models\Role;
 use agenticone\Lead\Contracts\Pipeline as PipelineContract;
 
 class Pipeline extends Model implements PipelineContract
@@ -18,7 +19,13 @@ class Pipeline extends Model implements PipelineContract
         'name',
         'rotten_days',
         'is_default',
+         'role_id',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 
     /**
      * Get the leads.

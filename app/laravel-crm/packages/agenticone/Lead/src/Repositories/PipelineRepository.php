@@ -44,6 +44,10 @@ class PipelineRepository extends Repository
         $pipeline = $this->model->create($data);
 
         foreach ($data['stages'] as $stageData) {
+            if (empty($stageData['role_id'])) {
+                    $stageData['role_id'] = null;
+                }
+
             $this->stageRepository->create(array_merge([
                 'lead_pipeline_id' => $pipeline->id,
             ], $stageData));
@@ -72,6 +76,9 @@ class PipelineRepository extends Repository
         $previousStageIds = $pipeline->stages()->pluck('id');
 
         foreach ($data['stages'] as $stageId => $stageData) {
+                if (empty($stageData['role_id'])) {
+                    $stageData['role_id'] = null;
+                }
             if (Str::contains($stageId, 'stage_')) {
                 $this->stageRepository->create(array_merge([
                     'lead_pipeline_id' => $pipeline->id,

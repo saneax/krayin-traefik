@@ -22,6 +22,7 @@ class Stage extends Model implements StageContract
         'probability',
         'sort_order',
         'lead_pipeline_id',
+        'role_id',
     ];
 
     /**
@@ -38,5 +39,10 @@ class Stage extends Model implements StageContract
     public function leads()
     {
         return $this->hasMany(LeadProxy::modelClass(), 'lead_pipeline_stage_id');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(RoleProxy::modelClass(), 'role_id');
     }
 }

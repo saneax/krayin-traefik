@@ -44,6 +44,7 @@ class PipelineForm extends FormRequest
 
         return [
             'name'          => 'required|unique:lead_pipelines,name',
+            'role_id' => 'nullable|exists:roles,id',
             'rotten_days'   => 'required',
             'stages.*.name' => 'unique_key',
             'stages.*.code' => 'unique_key',

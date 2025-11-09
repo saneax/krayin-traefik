@@ -14,11 +14,13 @@ class PipelineDataGrid extends DataGrid
     public function prepareQueryBuilder(): Builder
     {
         $queryBuilder = DB::table('lead_pipelines')
+            ->leftJoin('roles', 'lead_pipelines.role_id', '=', 'roles.id')
             ->addSelect(
                 'lead_pipelines.id',
                 'lead_pipelines.name',
+                'roles.name as role_name',
                 'lead_pipelines.rotten_days',
-                'lead_pipelines.is_default',
+                'lead_pipelines.is_default'
             );
 
         $this->addFilter('id', 'lead_pipelines.id');
@@ -44,6 +46,14 @@ class PipelineDataGrid extends DataGrid
             'type'       => 'string',
             'searchable' => true,
             'filterable' => true,
+            'sortable'   => true,
+        ]);
+
+        // ✅ New Role column
+        $this->addColumn([
+            'index'      => 'role_name',
+            'label'      => trans('admin::app.settings.pipelines.index.datagrid.role'),
+            'type'       => 'string',
             'sortable'   => true,
         ]);
 

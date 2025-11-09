@@ -10,6 +10,10 @@ use agenticone\Admin\DataGrids\Settings\PipelineDataGrid;
 use agenticone\Admin\Http\Controllers\Controller;
 use agenticone\Admin\Http\Requests\PipelineForm;
 use agenticone\Lead\Repositories\PipelineRepository;
+use agenticone\User\Repositories\RoleRepository;
+use agenticone\Lead\Repositories\LeadPipelineRepository;
+use agenticone\Lead\Repositories\LeadPipelineStageRepository;
+//use Webkul\User\Repositories\RoleRepository;
 
 class PipelineController extends Controller
 {
@@ -18,7 +22,7 @@ class PipelineController extends Controller
      *
      * @return void
      */
-    public function __construct(protected PipelineRepository $pipelineRepository) {}
+    public function __construct(protected PipelineRepository $pipelineRepository, protected RoleRepository $roleRepository) {}
 
     /**
      * Display a listing of the resource.
@@ -37,7 +41,8 @@ class PipelineController extends Controller
      */
     public function create(): View
     {
-        return view('admin::settings.pipelines.create');
+        $roles = $this->roleRepository->all();
+        return view('admin::settings.pipelines.create', compact('roles'));
     }
 
     /**
@@ -68,8 +73,9 @@ class PipelineController extends Controller
     public function edit(int $id): View
     {
         $pipeline = $this->pipelineRepository->findOrFail($id);
+        $roles = $this->roleRepository->all();
 
-        return view('admin::settings.pipelines.edit', compact('pipeline'));
+        return view('admin::settings.pipelines.edit', compact('pipeline', 'roles'));
     }
 
     /**

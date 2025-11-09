@@ -1288,6 +1288,7 @@ return [
                     'id'          => 'ID',
                     'is-default'  => 'Is Default',
                     'name'        => 'Name',
+                    'role'        => 'Role',
                     'no'          => 'No',
                     'rotten-days' => 'Rotten Days',
                     'yes'         => 'Yes',
@@ -1299,6 +1300,7 @@ return [
                 'save-btn'             => 'Save Pipeline',
                 'name'                 => 'Name',
                 'rotten-days'          => 'Rotten Days',
+                'role'                 => 'Role',
                 'mark-as-default'      => 'Mark as Default',
                 'general'              => 'General',
                 'probability'          => 'Probability(%)',
@@ -1320,6 +1322,7 @@ return [
                 'save-btn'             => 'Save Pipeline',
                 'name'                 => 'Name',
                 'rotten-days'          => 'Rotten Days',
+                'role'                 => 'Role',
                 'mark-as-default'      => 'Mark as Default',
                 'general'              => 'General',
                 'probability'          => 'Probability(%)',
@@ -1891,7 +1894,7 @@ return [
             'state'                => 'State',
             'update-contact-title' => 'Update Contact Numbers',
             'update-emails-title'  => 'Update Contact Emails',
-            'work'                 => 'Work',
+            'work'                 => 'Work'
         ],
     ],
 
